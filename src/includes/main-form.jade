@@ -1,0 +1,25 @@
+section.main-form-block
+	.layout
+		.main-form-top
+			h2.main-form-top__title Не хотите искать самостоятельно?<br>Оставьте Ваши пожелания по подбору квартиры
+			.main-form-top__subtitle Получите на e-mail подборку эксклюзивных предложений от застройщиков Орла
+			form(action="/" method="POST").main-form-top__form
+				.main-form-top__left
+					textarea(type="text" placeholder="Укажите пожелания по подбору квартиры").main-form-top__message
+				.main-form-top__right
+					input(type="text" placeholder="*Ваш e-mail").main-form-top__mail
+					input(type="text" placeholder="*Номер телефона").main-form-top__phone
+					button.main-form-top__submit Получить подборку
+		.main-form-bottom
+			h2.main-form-bottom__title Или свяжитесь напрямую с нашим экспертом
+			.main-form-consultant
+				.main-form-consultant__photo
+					img(src="styles/default/css/images/consultant.png").main-form-consultant__img
+				.main-form-consultant__info
+					.main-form-consultant__name Анна Смирнова
+					.main-form-consultant__text Эксперт по недвижимости Центра новостроек «Штаб-квартира»
+					.main-form-consultant__phone Звоните: <strong>(4862) 78-08-15</strong>
+			.main-form-bottom__subtitle Или оставьте номер, Анна перезвонит вам
+			form(action="/" method="POST").main-form-bottom__form
+				input(type="text" placeholder="*Номер телефона").main-form-bottom__phone
+				button.main-form-bottom__submit Перезвоните мне

@@ -2,6 +2,7 @@ var appSite = {
 	init:function(){
 		appSite.bindOpenMap();
 		appSite.bind2gisMap();
+		appSite.bindCarousel();
 	},
 	initReady:function(){
 		$(window).load(function(){
@@ -18,6 +19,15 @@ var appSite = {
 				});
 			});
 
+	},
+	bindCarousel:function(){
+		  $('.offers-carousel').slick({
+				infinite: false,
+				slidesToShow: 4,
+				slidesToScroll: 4,
+			  	prevArrow: '.offers-prev',
+			  	nextArrow: '.offers-next',
+			});
 	},
 	bindOpenMap:function(){
 		var rMap = $('[data-open-map]');

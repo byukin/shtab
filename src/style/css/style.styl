@@ -3,6 +3,7 @@
 // Open Sans
 @import url('fonts/opensans/font.css')
 @import url('../js-libs/fancybox/css/jquery.fancybox.css')
+@import url('//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
 
 $headblue = #31475d
 
@@ -45,6 +46,7 @@ section
 	max-width 1170px
 	min-width 1024px
 	margin 0 auto
+	position relative
 h1
 	font-family 'Neo Sans Pro'
 	font-size 2.75rem
@@ -329,6 +331,7 @@ h2
 /* ------------- Блок подарки ------------- */
 .houses-block
 	padding 20px
+	padding-bottom 60px
 .houses-block__title
 	color #31475d
 	text-align center
@@ -462,6 +465,399 @@ h2
 .houses-on-map__2gis
 	width 100%
 	height 600px
+
+
+/* ------------- Главная форма ------------- */
+.main-form-block
+	background url(images/form-background.png)
+	padding 20px
+	padding-top 60px
+	padding-bottom 60px
+	background-position center center
+	background-size cover
+.main-form-top
+	background url(images/main-form-top.png)
+	padding 20px
+	box-sizing border-box
+	background-position center center
+	background-size cover
+.main-form-bottom
+	background url(images/main-form-bottom.png)
+	padding 20px
+	padding-bottom 60px
+	box-sizing border-box
+	background-position center center
+	background-size cover
+.main-form-top__title
+	font-size 2.125rem
+	line-height 1.2
+	color #31475d
+	text-align center
+.main-form-top__subtitle
+	text-align center
+	color #554c4c
+	font-size 1.375rem
+.main-form-top__form
+	display flex
+	width 80%
+	margin 0 auto
+	margin-top 30px
+	margin-bottom 60px
+.main-form-top__left
+	flex-basis 60%
+	padding-right 15px
+.main-form-top__right
+	flex-basis 40%
+	padding-left 15px
+.main-form-top input
+	background #fff
+	border 1px solid #ccc
+	padding 15px
+	font-size 1rem
+	border-radius 3px
+.main-form-bottom input
+	background #fff
+	border 1px solid #ccc
+	padding 15px
+	font-size 1rem
+	border-radius 3px
+.main-form-top textarea
+	background #fff
+	border 1px solid #ccc
+	padding 15px
+	font-size 1rem
+	border-radius 3px
+	resize none
+.main-form-top__message
+	width 100%
+	height 200px
+	margin-top 1px
+.main-form-top__mail
+	width 100%
+	margin-bottom 20px
+.main-form-top__phone
+	width 100%
+	margin-bottom 20px
+.main-form-top__submit
+	background #ff7100
+	padding 15px
+	border none
+	border-bottom: 2px solid #c15906;
+	color #fff
+	font-size 0.9375rem
+	font-weight bold
+	margin-bottom 15px
+	text-transform uppercase
+	border-radius 3px
+	display inline-block
+	&:hover
+		background #fe811e
+.main-form-bottom__title
+	font-size 2.125rem
+	line-height 1.2
+	color #31475d
+	text-align center
+.main-form-bottom__form
+	display flex
+	width 80%
+	margin 0 auto
+	margin-top 0px
+	margin-bottom 60px
+.main-form-consultant
+	display flex
+	width 50%
+	margin 0 auto
+	border-bottom 1px solid rgba(0,0,0,0.2)
+	padding-bottom 40px
+.main-form-consultant__photo
+	flex-basis 130px
+.main-form-consultant__img
+	border-radius 50%
+.main-form-consultant__info
+	margin-left 30px
+.main-form-consultant__name
+	font-size 1.25rem
+.main-form-consultant__text
+	font-style italic
+	font-size 0.9345rem
+	font-weight 300
+	margin-top 5px
+.main-form-consultant__phone
+	margin-top 5px
+.main-form-bottom__form
+	width 50%
+	margin 0 auto
+	display flex
+	margin-top 30px
+.main-form-bottom__phone
+	flex-basis 65%
+	height 55px
+.main-form-bottom__submit
+	background #ff7100
+	padding 15px
+	border none
+	border-bottom: 2px solid #c15906;
+	color #fff
+	font-size 0.9375rem
+	font-weight bold
+	margin-bottom 15px
+	margin-left 15px
+	text-transform uppercase
+	border-radius 3px
+	display inline-block
+	white-space nowrap
+	&:hover
+		background #fe811e
+.main-form-bottom__subtitle
+	text-align center
+	margin-top 30px
+
+
+/* ------------- Экстра ------------- */
+.extra
+	background #31475d
+	padding 20px
+	position relative
+	padding-top 60px
+	padding-bottom 60px
+	background linear-gradient(to bottom, #fff, 50%, #31475d 50%);
+	&:before
+		content ""
+		position absolute
+		display block
+		margin-left -20px
+		z-index 0
+		width 100%
+		height 40%
+		margin-top 300px
+		background url(images/extra-pattern.png)
+		background-size contain
+		background-repeat no-repeat
+.extra-tour
+	background #f2f5f9
+	display flex
+	position relative
+	z-index 1
+.extra-tour__content
+	flex-basis 40%
+	padding 40px
+	box-sizing border-box
+.extra-tour__thumbnail
+	flex-basis 60%
+.extra-tour__title
+	font-size 1.625rem
+	line-height 1.2
+.extra-tour__text
+	margin-top 10px
+.extra-tour__img
+	width 100%
+.extra-tour__submit
+	background #ff7100
+	padding 20px
+	border none
+	color #fff
+	font-size 0.75rem
+	font-weight bold
+	margin-top 25px
+	margin-bottom 15px
+	text-transform uppercase
+	border-radius 3px
+	display inline-block
+	&:hover
+		background #fe811e
+
+.extra-cards
+	display flex
+	margin-top 23px
+	min-height 570px
+	position relative
+	z-index 1
+.extra-economy
+	background #f2f5f9 url(images/extra-money.png)
+	background-repeat no-repeat
+	background-position 100px 160%
+	padding 40px
+	flex-basis 49%
+	box-sizing border-box
+.extra-economy__title
+	font-size 1.625rem
+	line-height 1.2
+.extra-economy__text
+	margin-top 10px
+	max-width 70%
+.extra-economy__submit
+	background #ff7100
+	padding 20px
+	border none
+	color #fff
+	font-size 0.75rem
+	font-weight bold
+	margin-top 25px
+	margin-bottom 15px
+	text-transform uppercase
+	border-radius 3px
+	display inline-block
+	width 200px
+	&:hover
+		background #fe811e
+
+.extra-gift
+	background #f2f5f9 url(images/extra-gift.png)
+	background-repeat no-repeat
+	background-position 120% 200%
+	padding 40px
+	flex-basis 49%
+	margin-left 2%
+	box-sizing border-box
+.extra-gift__title
+	font-size 1.625rem
+	line-height 1.2
+.extra-gift__text
+	margin-top 10px
+	max-width 70%
+.extra-gift__submit
+	background #ff7100
+	padding 20px
+	border none
+	color #fff
+	font-size 0.75rem
+	font-weight bold
+	margin-top 25px
+	margin-bottom 15px
+	text-transform uppercase
+	border-radius 3px
+	width 200px
+	display inline-block
+	&:hover
+		background #fe811e
+.extra-advantages
+	display flex
+	margin-top 40px
+.extra-advantages .advantages__title
+	color #fff
+.extra-advantages .advantages__text
+	color #fff
+	font-size 0.9375rem
+.extra-advantages .advantages__button
+	color #fff
+	background #1eaae9
+	border none
+	border-bottom 2px solid #0078c4
+	&:hover
+		background #0078c4
+.advantages__icon.icon-4
+	background url(icons/advantages__icon4.png)
+	background-repeat no-repeat
+	background-size contain
+.advantages__icon.icon-5
+	background url(icons/advantages__icon5.png)
+	background-repeat no-repeat
+	background-size contain
+.advantages__icon.icon-6
+	background url(icons/advantages__icon6.png)
+	background-repeat no-repeat
+	background-size contain
+
+
+/* ------------- Банки ------------- */
+.banks
+	padding 20px
+	padding-bottom 60px
+	box-sizing border-box
+	text-align center
+.banks__title
+	color #31475d
+
+/* ------------- Предложения ------------- */
+.offers-block
+	padding 20px
+	padding-top 40px
+	box-sizing border-box
+	background #f2f5f9
+	position relative
+.offers-block__title
+	text-align center
+	color #31475d
+	width 1170px
+.offers
+	width 1170px
+.offers__item
+	padding 15px
+	text-align center
+	height 450px
+.offers-prev
+	background #fff
+	width 50px
+	height 50px
+	border none
+	position absolute
+	transform rotate(45deg)
+	z-index 100000
+	top 75px
+	left -10px
+	cursor pointer
+	&:before
+		content "<"
+		font-family 'Neo Sans Pro'
+		position absolute
+		display block
+		transform rotate(-45deg)
+		margin-top 8px
+		margin-left 16px
+		font-size 2rem
+.offers-next
+	background #f46709
+	width 50px
+	height 50px
+	border none
+	position absolute
+	transform rotate(45deg)
+	z-index 100000
+	top 75px
+	right -11px
+	cursor pointer
+	&:before
+		content ">"
+		font-family 'Neo Sans Pro'
+		position absolute
+		display block
+		color #fff
+		transform rotate(-45deg)
+		margin-top 3px
+		margin-left 20px
+		font-size 2rem
+.offers__content
+	background #fff
+	padding 15px
+	box-sizing border-box
+.offers__title
+	font-weight bold
+	margin-bottom 10px
+.offers__square
+	font-size 0.9375rem
+	margin-bottom 10px
+.offers__price
+	color #0085c1
+	font-weight bold
+	margin-bottom 10px
+.offers__button
+	background transparent
+	border 2px solid #0085c1
+	border-radius 3px
+	color #0085c1
+	font-weight 1rem
+	font-weight bold
+	width 70%
+	padding 10px
+	text-transform uppercase
+	margin-top 10px
+	transition-duration .1s
+	&:hover
+		background #0085c1
+		color #fff
+
+
+
 
 
 
