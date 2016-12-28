@@ -1,58 +1,112 @@
-var colors = new Array(
-	[10,10,10],
-	[40,40,40],
-	[50,50,50],
-	[30,30,30]);
+var appSite = {
+	init:function(){
+		appSite.bindOpenMap();
+		appSite.bind2gisMap();
+	},
+	initReady:function(){
+		$(window).load(function(){
+			appSite.init();
+		});
+	},
+	bind2gisMap:function(){
+		var map;
+			DG.then(function () {
+				map = DG.map('map', {
+					center: [54.98, 82.89],
+					zoom: 13,
+					scrollWheelZoom: false
+				});
+			});
 
-var step = 0;
-//color table indices for:
-// current color left
-// next color left
-// current color right
-// next color right
-var colorIndices = [0,1,2,3];
+	},
+	bindOpenMap:function(){
+		var rMap = $('[data-open-map]');
+		rMap.click(function(){
+			console.log("click");
+			var rThis = $(this);
+			appSite.openMapBlock(rThis);
+		});
+	},
+	openMapBlock:function(rThis) {
+		var sUri = rThis.attr('href');
+		var aCoord = rThis.attr("data-open-map").split(",");
+						console.log("fancy");
+        try {
+            $.fancybox({
+                "padding": 0,
+				'scrolling': 'no',
+                "centerOnScroll": true,
+                "autoDimensions": true,
+                "titlePosition": "inside",
+                "autoResize": true,
+                "href": sUri,
+                'beforeShow': function() {
+					appSite.openMap(aCoord, sUri);
+                }
+            });
+        } catch(e) {
+				console.log("fancyerror");
+			}
+	},
+	openMap:function(aMapCoord, sUri){
 
-//transition speed
-var gradientSpeed = 0.002;
+                    try {
 
-function updateGradient()
-{
+                        ymaps.ready(function () {
+                            var rMapSite = $(sUri);
+                            if ( rMapSite.is('div') ) {
+								rMapSite.empty();
+                                var iMapZoom = 17;
+                                var sMapCoordAttr = $.trim( rMapSite.data('map-coords') );
+                                if (sMapCoordAttr !== '') {
+                                    var aMapCoordAttr = sMapCoordAttr.split(',');
+                                    if (aMapCoordAttr[0] && aMapCoordAttr[1]) {
+                                        aMapCoord = [aMapCoordAttr[0], aMapCoordAttr[1]];
+                                    }
+                                }
+                                var sMapZoomAttr = parseInt(rMapSite.data('map-zoom'));
+                                if (sMapZoomAttr) {
+                                    iMapZoom = sMapZoomAttr;
+                                }
+                                var myMap = new ymaps.Map('houses-modal-map', {
+                                    center: aMapCoord,
+                                    zoom: iMapZoom,
+                                    type: 'yandex#satellite',
+                                }, {
+                                    //searchControlProvider: 'yandex#satellite',
+                                }),
 
-  if ( $===undefined ) return;
+                                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+                                    hintContent: rMapSite.data('map-title'),
+                                    balloonContent: rMapSite.data('map-descr')
+                                }, {
+                                    // Опции.
+                                    // Необходимо указать данный тип макета.
+                                    iconLayout: 'default#image',
+                                    // Своё изображение иконки метки.
+                                    iconImageHref: '/img/ava.png',
+                                    // Размеры метки.
+                                    iconImageSize: [50, 50],
+                                    // Смещение левого верхнего угла иконки относительно
+                                    // её "ножки" (точки привязки).
+                                    iconImageOffset: [-25, -70]
+                                });
 
-var c0_0 = colors[colorIndices[0]];
-var c0_1 = colors[colorIndices[1]];
-var c1_0 = colors[colorIndices[2]];
-var c1_1 = colors[colorIndices[3]];
+                                myMap.geoObjects.add(myPlacemark);
+                                myMap.controls.add(new ymaps.control.SmallZoomControl () );
+                                myMap.behaviors.disable('drag');
 
-var istep = 1 - step;
-var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-var color1 = "rgb("+r1+","+g1+","+b1+")";
+                            }
+                        });
+                    } catch(e) {
 
-var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-var color2 = "rgb("+r2+","+g2+","+b2+")";
+                    }
 
- $('body').css({
-   background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
-    background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
+                            //map.setCenter(new YMaps.GeoPoint(9.19484,45.46844), 17);
+                            //s.iconStyle.href = "/img/404.png";
 
-  step += gradientSpeed;
-  if ( step >= 1 )
-  {
-    step %= 1;
-    colorIndices[0] = colorIndices[1];
-    colorIndices[2] = colorIndices[3];
 
-    //pick two new target color indices
-    //do not pick the same as the current one
-    colorIndices[1] = ( colorIndices[1] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
-    colorIndices[3] = ( colorIndices[3] + Math.floor( 1 + Math.random() * (colors.length - 1))) % colors.length;
 
-  }
-}
-
-setInterval(updateGradient,10);
+	}
+};
+appSite.initReady();

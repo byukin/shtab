@@ -10,7 +10,416 @@
 		<link href="styles/default/css/style.css" rel="stylesheet"/>
 	</head>
 	<body>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<!-- includes/head-->
+		<section class="head">
+			<div class="layout">
+				<div class="head-menu">
+					<ul>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Подарки</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Каталог квартир</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Консультация эксперта</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Свежие предложения</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Отзывы</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Бронирование</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">О центре</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Контакты</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- includes/header-->
+		<section class="header">
+			<div class="layout clearfix">
+				<div class="header-logo"></div>
+				<div class="header-contacts">
+					<ul>
+						<li class="header-contacts__adress"><a href="#" class="header-contacts__link_adress">Орел, Московская 42</a></li>
+						<li class="header-contacts__time">с 9:00 до 18:00</li>
+						<li class="header-contacts__phone"><a href="tel:+74862780815" class="header-contacts__link">(4862) 78-08-15</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- includes/main-info-->
+		<section class="main-info-block">
+			<div class="layout">
+				<div class="main-info">
+					<div class="main-info-image"></div>
+					<div class="main-info-content">
+						<h1 class="main-info-content__title">Продажа квартир в&nbsp;новостройках Орла<br><span>по ценам застройщиков</span></h1>
+						<div class="main-info-content__subtitle">Поиск по базе из более 800 вариантов квартир:</div>
+						<button class="main-info-content__button">Подобрать<br>квартиру</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- includes/advantages-->
+		<section class="advantages-block">
+			<div class="layout">
+				<div class="advantages">
+					<div class="advantages__item">
+						<div class="advantages__icon icon-1"></div>
+						<div class="advantages__title">Экономия до 910 000 руб. при&nbsp;покупке квартиры</div>
+						<div class="advantages__text">Бесплатно оформим для вас налоговый вычет.  Поможем вернуть каждому из&nbsp;супругов до 260 000 рублей за&nbsp;покупку жилья + 390 000 рублей за проценты по ипотеке</div><a href="" class="advantages__link">Узнать подробности</a>
+					</div>
+					<div class="advantages__item">
+						<div class="advantages__icon icon-2"></div>
+						<div class="advantages__title">Виртуальная экскурсия по&nbsp;вашей будущей квартире</div>
+						<div class="advantages__text">В нашем офисе вы сможете виртуально посетить квартиры даже в&nbsp;недостроенных домах</div>
+						<button class="advantages__button advantages__excursion">Записаться на экскурсию</button>
+					</div>
+					<div class="advantages__item">
+						<div class="advantages__icon icon-3"></div>
+						<div class="advantages__title">Подарки от партнеров на&nbsp;сумму&nbsp;до 150 000 руб.</div>
+						<div class="advantages__text">Выберите подарки при покупке квартиры в&nbsp;Центре новостроек «Штаб-квартира»</div>
+						<button class="advantages__button advantages__gift">Выбрать подарок</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- includes/gifts-->
+		<section class="gifts-block">
+			<div class="layout">
+				<h2 class="gifts__title">Выберите один из 3-х подарков для&nbsp;вашей новой квартиры</h2>
+				<div class="gifts__subtitle">Кликните мышкой на&nbsp;один из&nbsp;ящиков и&nbsp;узнайте, какой подарок вам достался</div>
+				<div class="gifts-boxes">
+					<div class="gifts-boxes__item"><img src="styles/default/css/images/box-1.png" class="gifts-boxes__img"/>
+						<button class="gifts-boxes__button">Выбрать</button>
+					</div>
+					<div class="gifts-boxes__item"><img src="styles/default/css/images/box-2.png" class="gifts-boxes__img"/>
+						<button class="gifts-boxes__button">Выбрать</button>
+					</div>
+					<div class="gifts-boxes__item"><img src="styles/default/css/images/box-3.png" class="gifts-boxes__img"/>
+						<button class="gifts-boxes__button">Выбрать</button>
+					</div>
+				</div>
+				<div class="gift-boxes__rules">Выбор можно сделать только один раз</div>
+			</div>
+		</section>
+		<!-- includes/houses-->
+		<section class="houses-block">
+			<div id="houses-modal-map" class="houses-map-block"></div>
+			<div class="layout">
+				<h2 class="houses-block__title">Выберите квартиру в подходящем<br>жилом комплексе</h2>
+				<div class="houses-block__subtitle">В нашей базе более 700 предложений от 9 застройщиков Орла</div>
+				<div class="houses">
+					<div class="houses-item">
+						<div class="houses-item__holder">
+							<div class="houses-item__thumbnail"><img src="uploads/img/house-1.png" class="houses-item__img"/>
+								<div class="houses-item-params houses-item__sale-open"><a href="#houses-modal-map" data-open-map="50.12,30.45" class="houses-item__map"></a></div>
+							</div>
+							<div class="houses-item__info">
+								<div class="houses-item__title">ЖК «Разградский»</div>
+								<div class="houses-item__price">от 1 400 000 руб. за м<sup>2</sup></div>
+								<div class="houses-item__text">Жилой комплекс в районе ТРЦ «МегаГРИНН», остановка «МегаГРИНН»</div>
+								<button class="houses-item__button">Получить планировки</button>
+								<div class="houses-item__phone"><a href="tel:+74862780515" class="houses-item__phone-link">(4862) 78-05-15</a></div>
+								<div class="houses-item-more-price">
+									<ul>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 24 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 400 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">2-комн. от 52 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 800 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 74 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 600 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">3-комн. от 65 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 300 000 руб.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="houses-item">
+						<div class="houses-item__holder">
+							<div class="houses-item__thumbnail"><img src="uploads/img/house-1.png" class="houses-item__img"/>
+								<div class="houses-item-params houses-item__sale-close"><a href="#houses-modal-map" data-open-map="50.12,30.45" class="houses-item__map"></a></div>
+							</div>
+							<div class="houses-item__info">
+								<div class="houses-item__title">ЖК «Разградский»</div>
+								<div class="houses-item__price">от 1 400 000 руб. за м<sup>2</sup></div>
+								<div class="houses-item__text">Жилой комплекс в районе ТРЦ «МегаГРИНН», остановка «МегаГРИНН»</div>
+								<button class="houses-item__button">Получить планировки</button>
+								<div class="houses-item__phone"><a href="tel:+74862780515" class="houses-item__phone-link">(4862) 78-05-15</a></div>
+								<div class="houses-item-more-price">
+									<ul>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 24 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 400 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">2-комн. от 52 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 800 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 74 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 600 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">3-комн. от 65 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 300 000 руб.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="houses-item">
+						<div class="houses-item__holder">
+							<div class="houses-item__thumbnail"><img src="uploads/img/house-1.png" class="houses-item__img"/>
+								<div class="houses-item-params houses-item__sale-open"><a href="#houses-modal-map" data-open-map="50.12,30.45" class="houses-item__map"></a></div>
+							</div>
+							<div class="houses-item__info">
+								<div class="houses-item__title">ЖК «Разградский»</div>
+								<div class="houses-item__price">от 1 400 000 руб. за м<sup>2</sup></div>
+								<div class="houses-item__text">Жилой комплекс в районе ТРЦ «МегаГРИНН», остановка «МегаГРИНН»</div>
+								<button class="houses-item__button">Получить планировки</button>
+								<div class="houses-item__phone"><a href="tel:+74862780515" class="houses-item__phone-link">(4862) 78-05-15</a></div>
+								<div class="houses-item-more-price">
+									<ul>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 24 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 400 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">2-комн. от 52 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 800 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 74 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 600 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">3-комн. от 65 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 300 000 руб.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="houses-item">
+						<div class="houses-item__holder">
+							<div class="houses-item__thumbnail"><img src="uploads/img/house-1.png" class="houses-item__img"/>
+								<div class="houses-item-params houses-item__sale-open"><a href="#houses-modal-map" data-open-map="50.12,30.45" class="houses-item__map"></a></div>
+							</div>
+							<div class="houses-item__info">
+								<div class="houses-item__title">ЖК «Разградский»</div>
+								<div class="houses-item__price">от 1 400 000 руб. за м<sup>2</sup></div>
+								<div class="houses-item__text">Жилой комплекс в районе ТРЦ «МегаГРИНН», остановка «МегаГРИНН»</div>
+								<button class="houses-item__button">Получить планировки</button>
+								<div class="houses-item__phone"><a href="tel:+74862780515" class="houses-item__phone-link">(4862) 78-05-15</a></div>
+								<div class="houses-item-more-price">
+									<ul>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 24 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 400 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">2-комн. от 52 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 800 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 74 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 600 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">3-комн. от 65 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 300 000 руб.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="houses-item">
+						<div class="houses-item__holder">
+							<div class="houses-item__thumbnail"><img src="uploads/img/house-1.png" class="houses-item__img"/>
+								<div class="houses-item-params houses-item__sale-open"><a href="#houses-modal-map" data-open-map="50.12,30.45" class="houses-item__map"></a></div>
+							</div>
+							<div class="houses-item__info">
+								<div class="houses-item__title">ЖК «Разградский»</div>
+								<div class="houses-item__price">от 1 400 000 руб. за м<sup>2</sup></div>
+								<div class="houses-item__text">Жилой комплекс в районе ТРЦ «МегаГРИНН», остановка «МегаГРИНН»</div>
+								<button class="houses-item__button">Получить планировки</button>
+								<div class="houses-item__phone"><a href="tel:+74862780515" class="houses-item__phone-link">(4862) 78-05-15</a></div>
+								<div class="houses-item-more-price">
+									<ul>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 24 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 400 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">2-комн. от 52 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 800 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 74 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 600 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">3-комн. от 65 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 300 000 руб.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="houses-item">
+						<div class="houses-item__holder">
+							<div class="houses-item__thumbnail"><img src="uploads/img/house-1.png" class="houses-item__img"/>
+								<div class="houses-item-params houses-item__sale-open"><a href="#houses-modal-map" data-open-map="50.12,30.45" class="houses-item__map"></a></div>
+							</div>
+							<div class="houses-item__info">
+								<div class="houses-item__title">ЖК «Разградский»</div>
+								<div class="houses-item__price">от 1 400 000 руб. за м<sup>2</sup></div>
+								<div class="houses-item__text">Жилой комплекс в районе ТРЦ «МегаГРИНН», остановка «МегаГРИНН»</div>
+								<button class="houses-item__button">Получить планировки</button>
+								<div class="houses-item__phone"><a href="tel:+74862780515" class="houses-item__phone-link">(4862) 78-05-15</a></div>
+								<div class="houses-item-more-price">
+									<ul>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 24 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 400 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">2-комн. от 52 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 800 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 74 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 600 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">3-комн. от 65 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 300 000 руб.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="houses-item">
+						<div class="houses-item__holder">
+							<div class="houses-item__thumbnail"><img src="uploads/img/house-1.png" class="houses-item__img"/>
+								<div class="houses-item-params houses-item__sale-open"><a href="#houses-modal-map" data-open-map="50.12,30.45" class="houses-item__map"></a></div>
+							</div>
+							<div class="houses-item__info">
+								<div class="houses-item__title">ЖК «Разградский»</div>
+								<div class="houses-item__price">от 1 400 000 руб. за м<sup>2</sup></div>
+								<div class="houses-item__text">Жилой комплекс в районе ТРЦ «МегаГРИНН», остановка «МегаГРИНН»</div>
+								<button class="houses-item__button">Получить планировки</button>
+								<div class="houses-item__phone"><a href="tel:+74862780515" class="houses-item__phone-link">(4862) 78-05-15</a></div>
+								<div class="houses-item-more-price">
+									<ul>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 24 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 400 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">2-комн. от 52 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 800 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 74 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 600 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">3-комн. от 65 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 300 000 руб.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="houses-item">
+						<div class="houses-item__holder">
+							<div class="houses-item__thumbnail"><img src="uploads/img/house-1.png" class="houses-item__img"/>
+								<div class="houses-item-params houses-item__sale-open"><a href="#houses-modal-map" data-open-map="50.12,30.45" class="houses-item__map"></a></div>
+							</div>
+							<div class="houses-item__info">
+								<div class="houses-item__title">ЖК «Разградский»</div>
+								<div class="houses-item__price">от 1 400 000 руб. за м<sup>2</sup></div>
+								<div class="houses-item__text">Жилой комплекс в районе ТРЦ «МегаГРИНН», остановка «МегаГРИНН»</div>
+								<button class="houses-item__button">Получить планировки</button>
+								<div class="houses-item__phone"><a href="tel:+74862780515" class="houses-item__phone-link">(4862) 78-05-15</a></div>
+								<div class="houses-item-more-price">
+									<ul>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 24 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 400 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">2-комн. от 52 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 1 800 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">1-комн. от 74 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 600 000 руб.</div>
+										</li>
+										<li class="more-price__item">
+											<div class="more-price__square">3-комн. от 65 м<sup>2</sup> </div>
+											<div class="more-price__divider"></div>
+											<div class="more-price__price">от 2 300 000 руб.</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- includes/houses-on-map-->
+		<section class="houses-on-map">
+			<h2 class="houses-on-map__title">Все новостройки базы Штаб-квартиры на карте Орла</h2>
+			<div id="map" class="houses-on-map__2gis"></div>
+		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&amp;lang=ru-RU"></script>
+		<script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
 		<script src="https://use.fontawesome.com/e04476514d.js"></script>
+		<script src="styles/default/js-libs/fancybox/jquery.fancybox.pack.js"></script>
+		<script src="styles/default/js/main.js"></script>
 	</body>
 </html>

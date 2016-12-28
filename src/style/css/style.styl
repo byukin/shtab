@@ -1,11 +1,17 @@
-@import url('fonts/museo/font1.css')
+// Neo Sans Pro
+@import url('fonts/neosanspro/font.css')
+// Open Sans
+@import url('fonts/opensans/font.css')
+@import url('../js-libs/fancybox/css/jquery.fancybox.css')
+
+$headblue = #31475d
 
 html
 	-ms-text-size-adjust 100%
 	-webkit-text-size-adjust 100%
-	font-family 'Museo'
+	font-family 'Open Sans'
 	line-height 1.414
-	font-weight 300
+	font-weight normal
 body
 	padding 0
 	margin 0
@@ -16,3 +22,462 @@ body
 	visibility hidden
 	clear both
 }
+ul,li
+	margin 0
+	padding 0
+	list-style-type none
+a
+	color $headblue
+	text-decoration none
+	border-bottom 1px solid $headblue
+	&:hover
+		color red
+img
+	width auto
+	max-width 100%
+button
+	font-family 'Open Sans'
+	cursor pointer
+section
+	box-sizing border-box
+	width 100%
+.layout
+	max-width 1170px
+	min-width 1024px
+	margin 0 auto
+h1
+	font-family 'Neo Sans Pro'
+	font-size 2.75rem
+	font-weight normal
+h2
+	font-family 'Neo Sans Pro'
+	font-size 2.5rem
+	font-weight normal
+	line-height 1.2
+
+
+/* ------------- Топ-фикс ------------- */
+.head
+	background $headblue
+	padding 15px 20px 15px 20px
+.head-menu
+	box-sizing border-box
+	text-align center
+.head-menu__item
+	display inline-block
+	padding-left 15px
+	padding-right 15px
+	&:first-child
+		padding-left 0
+	&:last-child
+		padding-right 0
+.head-menu__link
+	color #fff
+	border none
+/* ------------- Топ-маню-фикс ------------- */
+.head-fixed
+	background $headblue
+	padding 15px 20px 15px 20px
+	display none
+	position fixed
+.head-menu-fixed
+	box-sizing border-box
+	text-align center
+	display none
+.head-menu-fixed__item
+	display inline-block
+	padding-left 15px
+	padding-right 15px
+	&:first-child
+		padding-left 0
+	&:last-child
+		padding-right 0
+.head-menu-fixed__link
+	color #fff
+	border none
+/* ------------- Шапка ------------- */
+
+.header
+	padding 20px
+.header-logo
+	background-image url(icons/main-logo.svg)
+	background-repeat no-repeat
+	background-size cover
+	width 255px
+	height 60px
+	float left
+.header-contacts
+	float right
+	font-size 1.125rem
+	margin-top 10px
+.header-contacts__link
+	color #000
+	border-bottom none
+.header-contacts__link_adress
+	color #000
+	border-bottom 1px dotted #000
+.header-contacts__adress
+	display inline-block
+	margin-right 30px
+	&:before
+		content ""
+		position relative
+		display inline-block
+		vertical-align middle
+		width 30px
+		height 30px
+		margin-right 15px
+		background-image url(icons/map-icon.png)
+		background-repeat no-repeat
+		background-size cover
+.header-contacts__time
+	display inline-block
+	margin-right 30px
+	&:before
+		content ""
+		position relative
+		display inline-block
+		vertical-align middle
+		width 30px
+		height 30px
+		margin-right 15px
+		background-image url(icons/clock-icon.png)
+		background-repeat no-repeat
+		background-size cover
+.header-contacts__phone
+	display inline-block
+	margin-right 0px
+	font-weight 600
+	&:before
+		content ""
+		position relative
+		display inline-block
+		vertical-align middle
+		width 30px
+		height 30px
+		margin-right 15px
+		background-image url(icons/phone-icon.png)
+		background-repeat no-repeat
+		background-size cover
+
+/* ------------- Инфобанер на главной ------------- */
+.main-info-block
+	background url(images/wall-pattern.png)
+	position relative
+	padding-left 20px
+	padding-right 20px
+.main-info
+	display flex
+	width 100%
+.main-info-image
+	flex-basis 50%
+	background url(images/main-info-image-1.png)
+	background-size cover
+	background-repeat no-repeat
+	background-position center center
+.main-info-content
+	flex-basis 50%
+	text-align center
+	box-sizing border-box
+	background #f8fcff
+	padding 20px
+	box-sizing border-box
+.main-info-content__title
+	color #31475d
+	line-height 1.1
+.main-info-content__title
+	span
+		color #ff7100
+		line-height 1.1
+		font-size 2.4375rem
+.main-info-content__subtitle
+	font-size 1.5rem
+	line-height 1.2
+	color #31475d
+	font-weight 600
+	width 60%
+	margin 0 auto
+	margin-top -10px
+.main-info-content__button
+	background #ff7100 url(icons/main-info-content__button.png)
+	background-repeat no-repeat
+	background-position 15px 13px
+	margin-top 30px
+	margin-bottom 30px
+	padding 12px
+	padding-left 60px
+	padding-right 40px
+	border none
+	text-align left
+	text-transform uppercase
+	color #fff
+	font-weight 600
+	font-size 0.875rem
+	line-height 1.4
+	border-radius 2px
+	border-bottom 2px solid #c15906
+	cursor pointer
+
+/* ------------- Преимущества ------------- */
+.advantages-block
+	padding 40px 20px
+	padding-bottom 60px
+.advantages
+	display flex
+.advantages__item
+	flex-basis 33.333333333%
+	text-align center
+	padding 10px
+.advantages__icon
+	width 50px
+	height 50px
+	display block
+	margin 0 auto
+	margin-bottom 30px
+.advantages__icon.icon-1
+	background url(icons/advantages__icon1.png)
+	background-repeat no-repeat
+	background-size contain
+.advantages__icon.icon-2
+	background url(icons/advantages__icon2.png)
+	background-repeat no-repeat
+	background-size contain
+.advantages__icon.icon-3
+	background url(icons/advantages__icon3.png)
+	background-repeat no-repeat
+	background-size contain
+.advantages__title
+	font-size 1.375rem
+	font-weight 600
+	margin-bottom 10px
+.advantages__text
+	width 80%
+	margin 0 auto
+	margin-bottom 20px
+.advantages__link
+	color #0081ba
+	text-transform uppercase
+	font-size 0.8125rem
+	font-weight bold
+	border-bottom 1px dotted #0081ba
+.advantages__button
+	color #0081ba
+	text-transform uppercase
+	font-size 0.8125rem
+	font-weight bold
+	border 2px solid #0081ba
+	background none
+	border-radius 3px
+	padding 20px 0px
+	width 80%
+	transition-duration .1s
+	&:hover
+		color #fff
+		background #0081ba
+
+
+/* ------------- Блок подарки ------------- */
+.gifts-block
+	padding 20px
+	background url(icons/gift-background.png)
+	background-repeat repeat-x
+.gifts__title
+	text-align center
+	color #fff
+	width 60%
+	margin 0 auto
+	margin-top 30px
+	margin-bottom 10px
+.gifts__subtitle
+	font-size 1.375rem
+	color #cdb5b1
+	text-align center
+.gifts-boxes
+	display flex
+	margin 0 auto
+	max-width 900px
+	margin-top 30px
+	text-align center
+.gifts-boxes__item
+	width 300px
+	height 300px
+	text-align center
+	border-radius 50%
+	transition-duration .3s
+	&:hover
+		background rgba(255,255,255,0.08)
+.gifts-boxes__img
+	margin-top 50px
+.gifts-boxes__button
+	font-size 0.875rem
+	font-weight bold
+	border none
+	color #cdb5b1
+	background none
+	display block
+	margin 0 auto
+	width 140px
+	padding 15px
+	text-align center
+.gift-boxes__rules
+	color #fff
+	margin-top 40px
+	margin-bottom 40px
+	text-align center
+
+
+/* ------------- Блок подарки ------------- */
+.houses-block
+	padding 20px
+.houses-block__title
+	color #31475d
+	text-align center
+	margin-bottom 10px
+.houses-block__subtitle
+	font-size 1.375rem
+	color #666
+	text-align center
+.houses
+	display flex
+	margin-top 60px
+	flex-wrap wrap
+	margin-left -15px
+	margin-right -15px
+.houses-item
+	flex-basis 33.33333333%
+	padding 15px
+	box-sizing border-box
+.houses-item__thumbnail
+	position relative
+.houses-item-params
+	position absolute
+	bottom 0
+	width 100%
+	background rgba(0,0,0,0.4)
+	color #fff
+	padding 15px
+	font-size 0.9375rem
+	box-sizing border-box
+	z-index 100
+.houses-item__sale-open:before
+	content "Дом сдан"
+	padding-left 30px
+	background url(icons/houses-item__sale-open.png)
+	background-repeat no-repeat
+	background-position center left
+.houses-item__sale-close:before
+	content "Дом строится"
+	padding-left 30px
+	background url(icons/houses-item__sale-close.png)
+	background-repeat no-repeat
+	background-position center left
+.houses-item__map
+	width 40px
+	height 40px
+	display block
+	position absolute
+	right 15px
+	top 5px
+	background url(icons/houses-item__map.png)
+	background-repeat no-repeat
+	background-position center center
+	color transparent
+	border none
+.houses-map-block
+	min-width 640px
+	min-height 480px
+	display none
+.houses-item__info
+	border 1px solid #ebebeb
+	border-top none
+	padding 15px
+	box-sizing border-box
+.houses-item__title
+	font-weight bold
+	font-size 1.125rem
+.houses-item__price
+	color #0074be
+	font-weight bold
+	font-size 0.9375rem
+.houses-item__text
+	font-size 0.9375rem
+	margin-top 10px
+	margin-bottom 15px
+.houses-item__button
+	background #ff7100
+	padding 10px
+	border none
+	color #fff
+	margin-right 20px
+	font-size 0.75rem
+	font-weight bold
+	margin-bottom 15px
+	text-transform uppercase
+	border-radius 3px
+	display inline-block
+	&:hover
+		background #fe811e
+.houses-item__phone
+	display inline-block
+	&:before
+		content ""
+		display inline-block
+		width 20px
+		height 20px
+		margin-top -1px
+		vertical-align middle
+		background url(icons/houses-item__phone.png)
+		background-repeat no-repeat
+		background-position center left
+.houses-item__phone-link
+	border none
+	color #999999
+	font-size 0.9375rem
+	font-weight bold
+	margin-bottom 25px
+.more-price__item
+	display flex
+	font-size 0.9375rem
+.more-price__square
+	flex-basis 120px
+	white-space nowrap
+.more-price__divider
+	flex-basis 25%
+	margin-left 5px
+	margin-right 5px
+	height 18px
+	border-bottom 1px dotted #000
+.more-price__price
+	flex-basis 130px
+	white-space nowrap
+
+/* ------------- Квартиры на карте ------------- */
+
+.houses-on-map
+	background #31475d
+	padding-top 20px
+.houses-on-map__title
+	text-align center
+	color #fff
+.houses-on-map__2gis
+	width 100%
+	height 600px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -20,7 +20,7 @@ var path = {
         fonts: 'master/styles/default/css/fonts/'
     },
     src: { //Пути откуда брать исходники
-        html: 'src/*.jade',
+        html: 'src/**/*.jade',
         js: 'src/js/main.js',
         css: 'src/style/css/*.styl',
         img: 'src/style/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
