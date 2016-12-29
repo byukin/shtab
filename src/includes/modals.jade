@@ -1,2 +1,180 @@
 section.modals
 	button.scrolltop__button <img src="styles/default/css/icons/scrolltop__button.png"> Наверх
+	.screen-cover
+	// Форма - подбор вариантов квартир
+	.main-search-form(data-modal-form)
+		.form__close
+		form(action="/" method="POST" data-form-name="Подбор вариантов квартир")
+			.main-search-form__description Подбор вариантов квартир
+			.main-search-form__screen(data-form-step)
+				.main-search-form__steps Шаг 1 из 5
+				.main-search-form__title Выберите жилой комлекс
+				.main-search-form__checkboxes
+					.main-search-form__checkboxes-left
+						ul
+							li
+								input(type="checkbox" name="doesntmatter" id="doesntmatter").main-search-form__checkbox
+								label(for="doesntmatter").main-search-form__label Не важно
+							li
+								input(type="checkbox" name="razgradsky" id="razgradsky").main-search-form__checkbox
+								label(for="razgradsky").main-search-form__label Разградский
+							li
+								input(type="checkbox" name="pervyi" id="pervyi").main-search-form__checkbox
+								label(for="pervyi").main-search-form__label Микрорайон «Первый»
+							li
+								input(type="checkbox" name="revolution" id="revolution").main-search-form__checkbox
+								label(for="revolution").main-search-form__label ЖК на ул. Революции, 3
+							li
+								input(type="checkbox" name="solovinaya" id="solovinaya").main-search-form__checkbox
+								label(for="solovinaya").main-search-form__label Соловьиная роща
+					.main-search-form__checkboxes-right
+						ul
+							li
+								input(type="checkbox" name="ostrov" id="ostrov").main-search-form__checkbox
+								label(for="ostrov").main-search-form__label Зеленый остров
+							li
+								input(type="checkbox" name="moscow" id="moscow").main-search-form__checkbox
+								label(for="moscow").main-search-form__label ЖК на ул. Московское шоссе, 155
+							li
+								input(type="checkbox" name="star" id="star").main-search-form__checkbox
+								label(for="star").main-search-form__label Северная звезда
+							li
+								input(type="checkbox" name="andrianova-37" id="andrianova-37").main-search-form__checkbox
+								label(for="andrianova-37").main-search-form__label ЖК на ул. Андрианова, 37
+							li
+								input(type="checkbox" name="andrianova-31" id="andrianova-31").main-search-form__checkbox
+								label(for="andrianova-31").main-search-form__label ЖК на ул. Андрианова, 31
+				button(data-form-step-next).main-search-form__button Следующий шаг
+				.main-search-form__subinfo Услуга подбора бесплатна и ни к чему вас не обязывает
+
+			.main-search-form__screen(data-form-step).main-search-form__screen-2.invisible
+				.main-search-form__steps Шаг 2 из 5
+				.main-search-form__title.main-search-form__title-screen-2 Укажите количество комнат
+				.main-search-form__room-checkboxes
+					ul
+						li
+							input(type="checkbox" name="1-room" id="1-room").main-search-form__room-checkbox
+							label(for="1-room").main-search-form__room-label 1
+						li
+							input(type="checkbox" name="2-room" id="2-room").main-search-form__room-checkbox
+							label(for="2-room").main-search-form__room-label 2
+						li
+							input(type="checkbox" name="3-room" id="3-room").main-search-form__room-checkbox
+							label(for="3-room").main-search-form__room-label 3
+						li
+							input(type="checkbox" name="4-room" id="4-room").main-search-form__room-checkbox
+							label(for="4-room").main-search-form__room-label 4+
+				.main-search-form__buttons
+					button(data-form-step-prev).main-search-form__button_prev <span>К предыдущему шагу</span>
+					button(data-form-step-next).main-search-form__button Следующий шаг
+
+
+			.main-search-form__screen(data-form-step).main-search-form__screen-3.invisible
+				.main-search-form__steps Шаг 3 из 5
+				.main-search-form__title.main-search-form__title-screen-3 Укажите площадь и цену
+					ul
+						li
+							span.main-search-form__input-title Площадь
+							span.main-search-form__input-prefixes От
+							input(type="text" name="square").main-search-form__input-square
+							span.main-search-form__input-prefixes м<sup>2</sup>
+						li
+							span.main-search-form__input-title Цена
+							span.main-search-form__input-prefixes До
+							input(type="text" name="price").main-search-form__input-price
+							span.main-search-form__input-prefixes р.
+				.main-search-form__buttons
+					button(data-form-step-prev).main-search-form__button_prev <span>К предыдущему шагу</span>
+					button(data-form-step-next).main-search-form__button Следующий шаг
+
+
+			.main-search-form__screen(data-form-step).main-search-form__screen-4.invisible
+				.main-search-form__steps Шаг 4 из 5
+				.main-search-form__title.main-search-form__title-screen-4 Выберите вариант с отделкой
+					ul
+						li
+							input(type="checkbox" name="otdelka-doesntmatter" id="otdelka-doesntmatter").main-search-form__checkbox
+							label(for="otdelka-doesntmatter").main-search-form__label Не важно
+						li
+							input(type="checkbox" name="otdelka-razgradsky" id="otdelka-razgradsky").main-search-form__checkbox
+							label(for="otdelka-razgradsky").main-search-form__label Разградский
+						li
+							input(type="checkbox" name="otdelka-pervyi" id="otdelka-pervyi").main-search-form__checkbox
+							label(for="otdelka-pervyi").main-search-form__label Микрорайон «Первый»
+
+				.main-search-form__buttons
+					button(data-form-step-prev).main-search-form__button_prev <span>К предыдущему шагу</span>
+					button(data-form-step-next).main-search-form__button Следующий шаг
+
+			.main-search-form__screen(data-form-step , data-form-step-wait).main-search-form__screen-5.invisible
+				.main-search-form__wait
+				.main-search-form__title.main-search-form__title-screen-5 Ваши данные обрабатываются
+
+
+			.main-search-form__screen(data-form-step).main-search-form__screen-6.invisible
+				.main-search-form__steps Шаг 5 из 5
+				.main-search-form__title.main-search-form__title-screen-6 Ваши данные переданы эксперту
+				.main-search-form__description Мы подберем объекты и пришлем на ваш e-mail
+				ul
+					li
+						input(type="text" name="mail" placeholder="*Ваш e-mail").main-search-form__input-mail
+						span.main-search-form__input-subfixes Чтобы прислать вам подборку
+					li
+						input(type="text" name="phone" placeholder="Номер телефона в любом формате").main-search-form__input-phone
+						span.main-search-form__input-subfixes Чтобы задать вопросы и проконсультировать вас
+				.main-search-form__buttons
+					button(data-form-submit).main-search-form__button Получить подборку
+
+
+
+
+	// Форма - получение планировок квартир в наличии
+	.get-plans-form(data-modal-form)
+		.form__close
+		form(action="/" method="POST" data-form-name="Получение планировок квартир в наличии")
+			.get-plans-form__title Заполните форму
+			.get-plans-form__description Мы пришлем на ваш e-mail планировки квартир данного комплекса
+			.get-plans-form-content
+				ul
+					li
+						input(type="text" name="mail" placeholder="*Ваш e-mail").get-plans-form__input-mail
+					li
+						input(type="text" name="phone" placeholder="Номер телефона в любом формате").get-plans-form__input-phone
+						.get-plans-form__input-subfixes Чтобы задать вопросы и проконсультировать вас
+			button(data-form-submit).get-plans-form__button Получить планировки
+			.get-plans-form__sub-description Или позвоните эксперту <strong>(4862) 78-08-15</strong>
+
+
+
+	// Форма - узнать подробности про налоговый вычет и экономию
+	.nalog-economy-form(data-modal-form)
+		.form__close
+		form(action="/" method="POST" data-form-name="Узнать подробности про налоговый вычет и экономию")
+			.nalog-economy-form__title Услуги предполагают оказание помощи в подготовке и оформлении документов, которые дают право на получение налоговых вычетов. При этом мы не гарантируем 100% получение налогового вычета, т.к. решение о его выплате и размере принимает Федеральная налоговая служба РФ
+			.nalog-economy-form__description Чтобы узнать все подробности, оставьте номер телефона
+			.nalog-economy-form-content
+				ul
+					li
+						input(type="text" name="phone" placeholder="*Ваш номер телефона").nalog-economy-form__input-phone
+
+			button(data-form-submit).nalog-economy-form__button Перезвоните мне
+			.nalog-economy-form__sub-description Или позвоните эксперту <strong>(4862) 78-08-15</strong>
+
+
+	// Форма - подборка эксклюзивных предложений от застройщиков
+	.exclusive-offers-form(data-modal-form)
+		.form__close
+		form(action="/" method="POST" data-form-name="Подборка эксклюзивных предложений от застройщиков")
+			.exclusive-offers-form__title Получите на e-mail подборку эксклюзивных предложений от&nbsp;застройщиков Орла
+			.exclusive-offers-form-content
+				ul
+					li
+						input(type="text" name="mail" placeholder="*Ваш e-mail").exclusive-offers-form__input-mail
+						.exclusive-offers-form__input-subfixes Чтобы выслать вам купон
+					li
+						input(type="text" name="phone" placeholder="*Номер телефона").exclusive-offers-form__input-phone
+						.exclusive-offers-form__input-subfixes Чтобы задать вопросы и проконсультировать вас
+
+			button(data-form-submit).exclusive-offers-form__button Получить подборку
+
+

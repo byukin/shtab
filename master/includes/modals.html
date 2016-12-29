@@ -1,4 +1,214 @@
 
 <section class="modals">
 	<button class="scrolltop__button"><img src="styles/default/css/icons/scrolltop__button.png"> Наверх</button>
+	<div class="screen-cover"></div>
+	<!-- Форма - подбор вариантов квартир-->
+	<div data-modal-form="data-modal-form" class="main-search-form">
+		<div class="form__close"></div>
+		<form action="/" method="POST" data-form-name="Подбор вариантов квартир">
+			<div class="main-search-form__description">Подбор вариантов квартир</div>
+			<div data-form-step="data-form-step" class="main-search-form__screen">
+				<div class="main-search-form__steps">Шаг 1 из 5</div>
+				<div class="main-search-form__title">Выберите жилой комлекс</div>
+				<div class="main-search-form__checkboxes">
+					<div class="main-search-form__checkboxes-left">
+						<ul>
+							<li>
+								<input type="checkbox" name="doesntmatter" id="doesntmatter" class="main-search-form__checkbox"/>
+								<label for="doesntmatter" class="main-search-form__label">Не важно</label>
+							</li>
+							<li>
+								<input type="checkbox" name="razgradsky" id="razgradsky" class="main-search-form__checkbox"/>
+								<label for="razgradsky" class="main-search-form__label">Разградский</label>
+							</li>
+							<li>
+								<input type="checkbox" name="pervyi" id="pervyi" class="main-search-form__checkbox"/>
+								<label for="pervyi" class="main-search-form__label">Микрорайон «Первый»</label>
+							</li>
+							<li>
+								<input type="checkbox" name="revolution" id="revolution" class="main-search-form__checkbox"/>
+								<label for="revolution" class="main-search-form__label">ЖК на ул. Революции, 3</label>
+							</li>
+							<li>
+								<input type="checkbox" name="solovinaya" id="solovinaya" class="main-search-form__checkbox"/>
+								<label for="solovinaya" class="main-search-form__label">Соловьиная роща</label>
+							</li>
+						</ul>
+					</div>
+					<div class="main-search-form__checkboxes-right">
+						<ul>
+							<li>
+								<input type="checkbox" name="ostrov" id="ostrov" class="main-search-form__checkbox"/>
+								<label for="ostrov" class="main-search-form__label">Зеленый остров</label>
+							</li>
+							<li>
+								<input type="checkbox" name="moscow" id="moscow" class="main-search-form__checkbox"/>
+								<label for="moscow" class="main-search-form__label">ЖК на ул. Московское шоссе, 155</label>
+							</li>
+							<li>
+								<input type="checkbox" name="star" id="star" class="main-search-form__checkbox"/>
+								<label for="star" class="main-search-form__label">Северная звезда</label>
+							</li>
+							<li>
+								<input type="checkbox" name="andrianova-37" id="andrianova-37" class="main-search-form__checkbox"/>
+								<label for="andrianova-37" class="main-search-form__label">ЖК на ул. Андрианова, 37</label>
+							</li>
+							<li>
+								<input type="checkbox" name="andrianova-31" id="andrianova-31" class="main-search-form__checkbox"/>
+								<label for="andrianova-31" class="main-search-form__label">ЖК на ул. Андрианова, 31</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button data-form-step-next="data-form-step-next" class="main-search-form__button">Следующий шаг</button>
+				<div class="main-search-form__subinfo">Услуга подбора бесплатна и ни к чему вас не обязывает </div>
+			</div>
+			<div data-form-step="data-form-step" class="main-search-form__screen main-search-form__screen-2 invisible">
+				<div class="main-search-form__steps">Шаг 2 из 5</div>
+				<div class="main-search-form__title main-search-form__title-screen-2">Укажите количество комнат</div>
+				<div class="main-search-form__room-checkboxes">
+					<ul>
+						<li>
+							<input type="checkbox" name="1-room" id="1-room" class="main-search-form__room-checkbox"/>
+							<label for="1-room" class="main-search-form__room-label">1</label>
+						</li>
+						<li>
+							<input type="checkbox" name="2-room" id="2-room" class="main-search-form__room-checkbox"/>
+							<label for="2-room" class="main-search-form__room-label">2</label>
+						</li>
+						<li>
+							<input type="checkbox" name="3-room" id="3-room" class="main-search-form__room-checkbox"/>
+							<label for="3-room" class="main-search-form__room-label">3</label>
+						</li>
+						<li>
+							<input type="checkbox" name="4-room" id="4-room" class="main-search-form__room-checkbox"/>
+							<label for="4-room" class="main-search-form__room-label">4+</label>
+						</li>
+					</ul>
+				</div>
+				<div class="main-search-form__buttons">
+					<button data-form-step-prev="data-form-step-prev" class="main-search-form__button_prev"><span>К предыдущему шагу</span></button>
+					<button data-form-step-next="data-form-step-next" class="main-search-form__button">Следующий шаг</button>
+				</div>
+			</div>
+			<div data-form-step="data-form-step" class="main-search-form__screen main-search-form__screen-3 invisible">
+				<div class="main-search-form__steps">Шаг 3 из 5</div>
+				<div class="main-search-form__title main-search-form__title-screen-3">Укажите площадь и цену
+					<ul>
+						<li><span class="main-search-form__input-title">Площадь</span><span class="main-search-form__input-prefixes">От</span>
+							<input type="text" name="square" class="main-search-form__input-square"/><span class="main-search-form__input-prefixes">м<sup>2</sup></span>
+						</li>
+						<li><span class="main-search-form__input-title">Цена</span><span class="main-search-form__input-prefixes">До</span>
+							<input type="text" name="price" class="main-search-form__input-price"/><span class="main-search-form__input-prefixes">р.</span>
+						</li>
+					</ul>
+				</div>
+				<div class="main-search-form__buttons">
+					<button data-form-step-prev="data-form-step-prev" class="main-search-form__button_prev"><span>К предыдущему шагу</span></button>
+					<button data-form-step-next="data-form-step-next" class="main-search-form__button">Следующий шаг</button>
+				</div>
+			</div>
+			<div data-form-step="data-form-step" class="main-search-form__screen main-search-form__screen-4 invisible">
+				<div class="main-search-form__steps">Шаг 4 из 5</div>
+				<div class="main-search-form__title main-search-form__title-screen-4">Выберите вариант с отделкой
+					<ul>
+						<li>
+							<input type="checkbox" name="otdelka-doesntmatter" id="otdelka-doesntmatter" class="main-search-form__checkbox"/>
+							<label for="otdelka-doesntmatter" class="main-search-form__label">Не важно</label>
+						</li>
+						<li>
+							<input type="checkbox" name="otdelka-razgradsky" id="otdelka-razgradsky" class="main-search-form__checkbox"/>
+							<label for="otdelka-razgradsky" class="main-search-form__label">Разградский</label>
+						</li>
+						<li>
+							<input type="checkbox" name="otdelka-pervyi" id="otdelka-pervyi" class="main-search-form__checkbox"/>
+							<label for="otdelka-pervyi" class="main-search-form__label">Микрорайон «Первый»</label>
+						</li>
+					</ul>
+				</div>
+				<div class="main-search-form__buttons">
+					<button data-form-step-prev="data-form-step-prev" class="main-search-form__button_prev"><span>К предыдущему шагу</span></button>
+					<button data-form-step-next="data-form-step-next" class="main-search-form__button">Следующий шаг</button>
+				</div>
+			</div>
+			<div data-form-step="data-form-step" data-form-step-wait="data-form-step-wait" class="main-search-form__screen main-search-form__screen-5 invisible">
+				<div class="main-search-form__wait"></div>
+				<div class="main-search-form__title main-search-form__title-screen-5">Ваши данные обрабатываются</div>
+			</div>
+			<div data-form-step="data-form-step" class="main-search-form__screen main-search-form__screen-6 invisible">
+				<div class="main-search-form__steps">Шаг 5 из 5</div>
+				<div class="main-search-form__title main-search-form__title-screen-6">Ваши данные переданы эксперту</div>
+				<div class="main-search-form__description">Мы подберем объекты и пришлем на ваш e-mail</div>
+				<ul>
+					<li>
+						<input type="text" name="mail" placeholder="*Ваш e-mail" class="main-search-form__input-mail"/><span class="main-search-form__input-subfixes">Чтобы прислать вам подборку</span>
+					</li>
+					<li>
+						<input type="text" name="phone" placeholder="Номер телефона в любом формате" class="main-search-form__input-phone"/><span class="main-search-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас		</span>
+					</li>
+				</ul>
+				<div class="main-search-form__buttons">
+					<button data-form-submit="data-form-submit" class="main-search-form__button">Получить подборку</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- Форма - получение планировок квартир в наличии-->
+	<div data-modal-form="data-modal-form" class="get-plans-form">
+		<div class="form__close"></div>
+		<form action="/" method="POST" data-form-name="Получение планировок квартир в наличии">
+			<div class="get-plans-form__title">Заполните форму</div>
+			<div class="get-plans-form__description">Мы пришлем на ваш e-mail планировки квартир данного комплекса</div>
+			<div class="get-plans-form-content">
+				<ul>
+					<li>
+						<input type="text" name="mail" placeholder="*Ваш e-mail" class="get-plans-form__input-mail"/>
+					</li>
+					<li>
+						<input type="text" name="phone" placeholder="Номер телефона в любом формате" class="get-plans-form__input-phone"/>
+						<div class="get-plans-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас		</div>
+					</li>
+				</ul>
+			</div>
+			<button data-form-submit="data-form-submit" class="get-plans-form__button">Получить планировки</button>
+			<div class="get-plans-form__sub-description">Или позвоните эксперту <strong>(4862) 78-08-15</strong></div>
+		</form>
+	</div>
+	<!-- Форма - узнать подробности про налоговый вычет и экономию-->
+	<div data-modal-form="data-modal-form" class="nalog-economy-form">
+		<div class="form__close"></div>
+		<form action="/" method="POST" data-form-name="Узнать подробности про налоговый вычет и экономию">
+			<div class="nalog-economy-form__title">Услуги предполагают оказание помощи в подготовке и оформлении документов, которые дают право на получение налоговых вычетов. При этом мы не гарантируем 100% получение налогового вычета, т.к. решение о его выплате и размере принимает Федеральная налоговая служба РФ</div>
+			<div class="nalog-economy-form__description">Чтобы узнать все подробности, оставьте номер телефона</div>
+			<div class="nalog-economy-form-content">
+				<ul>
+					<li>
+						<input type="text" name="phone" placeholder="*Ваш номер телефона" class="nalog-economy-form__input-phone"/>
+					</li>
+				</ul>
+			</div>
+			<button data-form-submit="data-form-submit" class="nalog-economy-form__button">Перезвоните мне</button>
+			<div class="nalog-economy-form__sub-description">Или позвоните эксперту <strong>(4862) 78-08-15</strong></div>
+		</form>
+	</div>
+	<!-- Форма - подборка эксклюзивных предложений от застройщиков-->
+	<div data-modal-form="data-modal-form" class="exclusive-offers-form">
+		<div class="form__close"></div>
+		<form action="/" method="POST" data-form-name="Подборка эксклюзивных предложений от застройщиков">
+			<div class="exclusive-offers-form__title">Получите на e-mail подборку эксклюзивных предложений от&nbsp;застройщиков Орла</div>
+			<div class="exclusive-offers-form-content">
+				<ul>
+					<li>
+						<input type="text" name="mail" placeholder="*Ваш e-mail" class="exclusive-offers-form__input-mail"/>
+						<div class="exclusive-offers-form__input-subfixes">Чтобы выслать вам купон</div>
+					</li>
+					<li>
+						<input type="text" name="phone" placeholder="*Номер телефона" class="exclusive-offers-form__input-phone"/>
+						<div class="exclusive-offers-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</div>
+					</li>
+				</ul>
+			</div>
+			<button data-form-submit="data-form-submit" class="exclusive-offers-form__button">Получить подборку</button>
+		</form>
+	</div>
 </section>

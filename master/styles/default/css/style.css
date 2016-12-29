@@ -1424,3 +1424,562 @@ h2 {
   margin: 0 auto;
   margin-bottom: 10px;
 }
+.screen-cover {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 100000000;
+  transition-duration: 0.9s;
+}
+.form__close {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  background: url("icons/form-close.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.6;
+}
+.form__close:hover {
+  opacity: 1;
+}
+/* ------------- Шаговая форма ------------- */
+.main-search-form {
+  display: none;
+  background: #f8fcff;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  max-height: 600px;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.main-search-form__description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+}
+.main-search-form__steps {
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: #ff5910;
+  text-align: center;
+  margin-top: -10px;
+}
+.main-search-form__title {
+  color: #31475d;
+  font-size: 2.25rem;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.main-search-form__title-screen-2 {
+  margin-top: 90px;
+}
+.main-search-form__title-screen-3 {
+  margin-top: 60px;
+}
+.main-search-form__title-screen-4 {
+  margin-top: 60px;
+}
+.main-search-form__title-screen-5 {
+  margin-top: 30px;
+}
+.main-search-form__title-screen-6 {
+  margin-top: 60px;
+}
+.main-search-form__screen {
+  margin-top: 20px;
+}
+.main-search-form__screen.invisible {
+  display: none;
+}
+.main-search-form__checkboxes {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+.main-search-form__checkboxes-left {
+  flex-basis: 50%;
+}
+.main-search-form__checkboxes-right {
+  flex-basis: 50%;
+}
+.main-search-form__label {
+  font-size: 0.9375rem;
+  display: block;
+  vertical-align: middle;
+  cursor: pointer;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ebebeb;
+  margin-right: 10px;
+  margin-top: -2px;
+  background: #fff;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #fff url("icons/checkbox.png");
+  background-repeat: no-repeat;
+}
+.main-search-form__button {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  color: #fff;
+  background: #ff5910;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid #c15906;
+  text-align: center;
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.main-search-form__button:hover {
+  background: #fe6f31;
+}
+.main-search-form__button_prev {
+  font-size: 0.875rem;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+}
+.main-search-form__button_prev:before {
+  content: "";
+  display: inline-block;
+  border: none;
+  width: 13px;
+  height: 23px;
+  background: url("icons/prev-step.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+.main-search-form__button_prev span {
+  border-bottom: 1px dotted #000;
+  padding-bottom: 1px;
+}
+.main-search-form__subinfo {
+  text-align: center;
+  margin-top: 50px;
+}
+.main-search-form__room-checkboxes {
+  text-align: center;
+}
+.main-search-form__room-checkboxes li {
+  display: inline-block;
+  padding: 10px;
+}
+.main-search-form__room-label {
+  width: 60px;
+  height: 60px;
+  display: block;
+  box-sizing: border-box;
+  vertical-align: top;
+  background: #fff;
+  border: 3px solid #ebebeb;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 54px;
+  cursor: pointer;
+  color: #31475d;
+}
+input[type="checkbox"].main-search-form__room-checkbox + label:before {
+  content: "";
+  opacity: 0;
+  display: none;
+}
+input[type="checkbox"].main-search-form__room-checkbox:checked + label {
+  background: #ff5910;
+  border-color: #ff5910;
+  color: #fff;
+}
+.main-search-form__buttons {
+  display: flex;
+  width: 70%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  margin: auto;
+}
+.main-search-form__button_prev {
+  margin-top: 40px;
+  margin-right: 100px;
+  margin-left: 30px;
+}
+.main-search-form__input-title {
+  font-size: 1.375rem;
+  font-weight: bold;
+  color: #ff5910;
+  display: block;
+  text-align: left;
+  margin-left: 50px;
+  margin-bottom: 5px;
+}
+input.main-search-form__input-square {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1.25rem;
+  border-radius: 3px;
+  width: 200px;
+  font-family: 'Open Sans';
+  margin-bottom: 20px;
+}
+.main-search-form__input-price {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1.25rem;
+  border-radius: 3px;
+  font-family: 'Open Sans';
+  width: 200px;
+}
+.main-search-form__title-screen-3 li {
+  width: 300px;
+  margin: 0 auto;
+  display: block;
+  box-sizing: border-box;
+}
+.main-search-form__title-screen-3 ul {
+  margin-top: 30px;
+}
+.main-search-form__input-prefixes {
+  font-size: 1.25rem;
+  padding: 5px;
+  padding-left: 10px;
+  display: inline-block;
+}
+.main-search-form__title-screen-4 ul {
+  text-align: left;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+.main-search-form__screen-6 ul {
+  text-align: left;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.main-search-form__wait {
+  display: block;
+  width: 44px;
+  height: 54px;
+  margin: 0 auto;
+  margin-top: 200px;
+  background: url("icons/main-search-form__wait.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.main-search-form__input-mail {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.main-search-form__input-phone {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.main-search-form__input-subfixes {
+  font-size: 0.8125rem;
+  display: block;
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.main-search-form__screen-6 .main-search-form__description {
+  margin-top: -30px;
+}
+/* ------------- Форма - получение планировок квартир в наличии ------------- */
+.get-plans-form {
+  display: none;
+  background: #f8fcff;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  max-height: 600px;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.get-plans-form__description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+}
+.get-plans-form__sub-description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+  margin-top: 60px;
+}
+.get-plans-form__title {
+  color: #31475d;
+  font-size: 2.25rem;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.get-plans-form__input-mail {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  margin-bottom: 20px;
+  font-family: 'Open Sans';
+}
+.get-plans-form__input-phone {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.get-plans-form__input-subfixes {
+  font-size: 0.8125rem;
+  display: block;
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.get-plans-form-content {
+  text-align: left;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.get-plans-form__button {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  color: #fff;
+  background: #ff5910;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid #c15906;
+  text-align: center;
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.get-plans-form__button:hover {
+  background: #fe6f31;
+}
+/* ------------- Форма - узнать подробности про налоговый вычет и экономию ------------- */
+.nalog-economy-form {
+  display: none;
+  background: #f8fcff;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  max-height: 600px;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.nalog-economy-form__description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+}
+.nalog-economy-form__sub-description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+  margin-top: 60px;
+}
+.nalog-economy-form__title {
+  color: #31475d;
+  font-size: 1rem;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.nalog-economy-form__input-phone {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.nalog-economy-form-content {
+  text-align: left;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+.nalog-economy-form__button {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  color: #fff;
+  background: #ff5910;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid #c15906;
+  text-align: center;
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.nalog-economy-form__button:hover {
+  background: #fe6f31;
+}
+/* ------------- Форма - подборка эксклюзивных предложений от застройщиков ------------- */
+.exclusive-offers-form {
+  display: none;
+  background: #f8fcff;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  max-height: 600px;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.exclusive-offers-form__description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+}
+.exclusive-offers-form__sub-description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+  margin-top: 60px;
+}
+.exclusive-offers-form__title {
+  color: #31475d;
+  font-size: 1.625rem;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.exclusive-offers-form__input-mail {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  margin-bottom: 20px;
+  font-family: 'Open Sans';
+}
+.exclusive-offers-form__input-phone {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.exclusive-offers-form__input-subfixes {
+  font-size: 0.8125rem;
+  display: block;
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.exclusive-offers-form-content {
+  text-align: left;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.exclusive-offers-form__button {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  color: #fff;
+  background: #ff5910;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid #c15906;
+  text-align: center;
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.exclusive-offers-form__button:hover {
+  background: #fe6f31;
+}

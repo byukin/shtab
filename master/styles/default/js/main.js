@@ -5,10 +5,65 @@ var appSite = {
 		appSite.bindOffers();
 		appSite.bindFeedback();
 		appSite.bindSeoCardSlider();
+		appSite.bindOpenForm('[data-form-type]');
+		appSite.bindFormSteps();
 	},
 	initReady:function(){
 		$(window).load(function(){
 			appSite.init();
+		});
+	},
+	bindFormStepWait:function(rStep){
+		var sAttr = 'data-form-step-wait';
+		var sWait = rStep.next().attr(sAttr);
+		if (sWait) {
+			var rStepW = $('['+sAttr+']');
+			var rWaitTm = setTimeout(function(){
+				rStepW.addClass('invisible');
+				rStepW.next().removeClass('invisible');
+			},2000);
+		}
+
+	},
+	bindFormSteps:function(){
+
+		var rButtonNext = $('[data-form-step-next]');
+		var rButtonPrev = $('[data-form-step-prev]');
+
+		rButtonNext.unbind('submit');
+		rButtonNext.click(function(){
+			var rThis = $(this);
+			var rStep = rThis.parents('[data-form-step]');
+			rStep.addClass('invisible');
+			rStep.next().removeClass('invisible');
+			appSite.bindFormStepWait(rStep);
+			return false;
+		});
+
+		rButtonPrev.unbind('submit');
+		rButtonPrev.click(function(){
+			var rThis = $(this);
+			var rStep = rThis.parents('[data-form-step]');
+			rStep.addClass('invisible');
+			rStep.prev().removeClass('invisible');
+			return false;
+		});
+
+	},
+	bindOpenForm:function(sEl){
+		var rScreenCover = $('.screen-cover');
+		var rElement = $(sEl);
+		rElement.click(function(){
+			var rThis = $(this);
+			var formtype = rThis.attr("data-form-type");
+			$(formtype).fadeIn(200);
+			rScreenCover.fadeIn(200);
+			return false;
+		});
+		$('.form__close').click(function(){
+			$(this).parents('[data-modal-form]').css('display','none');
+			rScreenCover.css('display','none');
+			return false;
 		});
 	},
 	bind2gisMap:function(){
