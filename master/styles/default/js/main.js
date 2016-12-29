@@ -2,7 +2,9 @@ var appSite = {
 	init:function(){
 		appSite.bindOpenMap();
 		appSite.bind2gisMap();
-		appSite.bindCarousel();
+		appSite.bindOffers();
+		appSite.bindFeedback();
+		appSite.bindSeoCardSlider();
 	},
 	initReady:function(){
 		$(window).load(function(){
@@ -20,11 +22,28 @@ var appSite = {
 			});
 
 	},
-	bindCarousel:function(){
+	bindSeoCardSlider:function(){
+		  $('.seo-cards__slider').slick({
+				infinite: false,
+			  	adaptiveHeight: true,
+				prevArrow: '.seo-cards-prev',
+			  	nextArrow: '.seo-cards-next',
+			});
+	},
+	bindFeedback:function(){
+		  $('.feedback-carousel').slick({
+				infinite: false,
+			  	adaptiveHeight: true,
+				prevArrow: '.feedback-prev',
+			  	nextArrow: '.feedback-next',
+			});
+	},
+	bindOffers:function(){
 		  $('.offers-carousel').slick({
 				infinite: false,
 				slidesToShow: 4,
 				slidesToScroll: 4,
+			  	adaptiveHeight: true,
 			  	prevArrow: '.offers-prev',
 			  	nextArrow: '.offers-next',
 			});

@@ -862,6 +862,7 @@ h2
 	padding 10px
 	text-transform uppercase
 	margin-top 10px
+	margin-bottom 10px
 	transition-duration .1s
 	&:hover
 		background #0085c1
@@ -869,10 +870,187 @@ h2
 
 
 
+/* ------------- Отзывы ------------- */
+
+.feedback-block
+	padding 20px
+	padding-bottom 40px
+	background url(icons/gift-background.png)
+	background-repeat repeat-x
+.feedback-block__title
+	color #fff
+	text-align center
+.feedback-prev
+	background #efefef
+	width 50px
+	height 50px
+	border none
+	position absolute
+	transform rotate(45deg)
+	z-index 100000
+	top 280px
+	left -25px
+	cursor pointer
+	&:before
+		content "<"
+		font-family 'Neo Sans Pro'
+		position absolute
+		display block
+		transform rotate(-45deg)
+		margin-top 10px
+		margin-left 14px
+		font-size 2rem
+		line-height 1
+.feedback-next
+	background #f46709
+	width 50px
+	height 50px
+	border none
+	position absolute
+	transform rotate(45deg)
+	z-index 100000
+	top 280px
+	right -25px
+	cursor pointer
+	&:before
+		content ">"
+		font-family 'Neo Sans Pro'
+		position absolute
+		display block
+		color #fff
+		transform rotate(-45deg)
+		margin-top 7px
+		margin-left 17px
+		font-size 2rem
+		line-height 1
+.feedback
+	background #fff
+	box-shadow 0px 10px 30px -10px rgba(0,0,0,0.4)
+.feedback__item
+	height 450px
+	outline none
+.feedback__content
+	display flex
+	width 70%
+	margin 0 auto
+	margin-top 70px
+.feedback__left
+	flex-basis 30%
+	margin-right 60px
+.feedback__thumbnail
+	width 130px
+.feedback__img
+	border-radius 50%
+.feedback__title
+	font-size 1.3125rem
+	font-weight bold
+	margin-bottom 20px
+.feedback__title
+	margin-bottom 20px
+.feedback__text
+	margin-bottom 20px
+.feedback__name
+	font-style italic
+	font-weight 300
 
 
 
 
+/* ------------- Сео-блок ------------- */
+.seo-block
+	padding 20px
+	padding-bottom 40px
+	box-sizing border-box
+.seo-block__title
+	color #31475d
+	text-align center
+.seo-cards
+	display flex
+	flex-wrap wrap
+	margin-top 40px
+.seo-cards__item
+	flex-basis 50%
+	width 50%
+	position relative
+.seo-cards__item_gray
+	flex-basis 50%
+	background #f4f4f4
+	padding 60px
+	box-sizing border-box
+.seo-cards__item_plan
+	flex-basis 50%
+	padding 60px
+	box-sizing border-box
+.seo-cards__image
+	width 100%
+.seo-cards__title
+	font-size 1.625rem
+	font-weight bold
+	margin-bottom 30px
+.seo-cards__text
+	font-weight 300
+	line-height 1.6
+.seo-cards__item_padding
+	flex-basis 50%
+	padding-top 60px
+	margin-top -50px
+	padding-right 60px
+	box-sizing border-box
+	border-top 1px solid #ebebeb
+.seo-cards-prev
+	background #efefef
+	width 50px
+	height 50px
+	border none
+	position absolute
+	transform rotate(45deg)
+	z-index 100000
+	top 445px
+	left 0px
+	cursor pointer
+	&:before
+		content "<"
+		font-family 'Neo Sans Pro'
+		position absolute
+		display block
+		transform rotate(-45deg)
+		margin-top 10px
+		margin-left 14px
+		font-size 2rem
+		line-height 1
+.seo-cards-next
+	background #f46709
+	width 50px
+	height 50px
+	border none
+	position absolute
+	transform rotate(45deg)
+	z-index 100000
+	top 445px
+	left 80px
+	cursor pointer
+	&:before
+		content ">"
+		font-family 'Neo Sans Pro'
+		position absolute
+		display block
+		color #fff
+		transform rotate(-45deg)
+		margin-top 7px
+		margin-left 17px
+		font-size 2rem
+		line-height 1
+.seo-cards__slider
+	width 100%
+	position relative
+	height 415px
+.seo-cards__slider-subtext
+	color #31475d
+	font-weight 600
+	position absolute
+	top 455px
+	left 330px
+	font-size 1.1875rem
 
 
 
