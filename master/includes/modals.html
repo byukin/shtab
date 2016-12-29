@@ -211,4 +211,65 @@
 			<button data-form-submit="data-form-submit" class="exclusive-offers-form__button">Получить подборку</button>
 		</form>
 	</div>
+	<!-- Форма - запись на экскурсию-->
+	<div data-modal-form="data-modal-form" class="get-excursion-form">
+		<div class="form__close"></div>
+		<form action="/" method="POST" data-form-name="Запись на экскурсию">
+			<div class="get-excursion-form__title">Оставьте номер телефона, мы перезвоним и согласуем время вашей экскурсии</div>
+			<div class="get-excursion-form-content">
+				<ul>
+					<li>
+						<input type="text" name="phone" placeholder="*Номер телефона" class="get-excursion-form__input-phone"/>
+						<div class="get-excursion-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</div>
+					</li>
+				</ul>
+			</div>
+			<button data-form-submit="data-form-submit" class="get-excursion-form__button">Перезвоните мне</button>
+			<div class="get-excursion-form__sub-description">Или позвоните, чтобы записаться <strong>(4862) 78-08-15</strong></div>
+		</form>
+	</div>
+	<!-- Форма - запрос ставок по ипотеке-->
+	<div data-modal-form="data-modal-form" class="get-credit-rates-form">
+		<div class="form__close"></div>
+		<form action="/" method="POST" data-form-name="Запрос ставок по ипотеке">
+			<div class="get-credit-rates-form__title">Оставьте номер телефона</div>
+			<div class="get-credit-rates-form__description">Эксперт сообщит вам наиболее выгодные ставки по ипотеке</div>
+			<div class="get-credit-rates-form-content">
+				<ul>
+					<li>
+						<input type="text" name="phone" placeholder="*Ваш номер телефона" class="get-credit-rates-form__input-phone"/>
+					</li>
+				</ul>
+			</div>
+			<button data-form-submit="data-form-submit" class="get-credit-rates-form__button">Перезвоните мне</button>
+			<div class="get-credit-rates-form__sub-description">Или позвоните: <strong>(4862) 78-08-15</strong></div>
+		</form>
+	</div>
+	<!-- Форма - получения подарка-->
+	<div data-modal-form="data-modal-form" class="get-gift-form">
+		<div class="form__close"></div>
+		<form action="/" method="POST" data-form-name="Получения подарка">
+			<div data-form-step="data-form-step" class="get-gift-form__wait">
+				<div class="get-gift-form__wait-icon"></div>
+				<div class="get-gift-form__title_wait">Идет определение подарка</div>
+			</div>
+			<div class="get-gift-form__title">Вы получаете:</div>
+			<div class="get-gift-form__description">Именной подарочный сертификат на 50 000 руб!</div>
+			<div class="get-gift-form-content">
+				<ul>
+					<li>
+						<input type="text" name="name" placeholder="*ФИО" class="get-gift-form__input-name"/>
+					</li>
+					<li>
+						<input type="text" name="male" placeholder="*E-mail" class="get-gift-form__input-mail"/>
+					</li>
+					<li>
+						<input type="text" name="phone" placeholder="*Ваш номер телефона" class="get-gift-form__input-phone"/>
+					</li>
+				</ul>
+			</div>
+			<button data-form-submit="data-form-submit" class="get-gift-form__button">Перезвоните мне</button>
+			<div class="get-gift-form__sub-description">Или позвоните: <strong>(4862) 78-08-15</strong></div>
+		</form>
+	</div>
 </section>

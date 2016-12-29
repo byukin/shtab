@@ -177,4 +177,52 @@ section.modals
 
 			button(data-form-submit).exclusive-offers-form__button Получить подборку
 
+	// Форма - запись на экскурсию
+	.get-excursion-form(data-modal-form)
+		.form__close
+		form(action="/" method="POST" data-form-name="Запись на экскурсию")
+			.get-excursion-form__title Оставьте номер телефона, мы перезвоним и согласуем время вашей экскурсии
+			.get-excursion-form-content
+				ul
+					li
+						input(type="text" name="phone" placeholder="*Номер телефона").get-excursion-form__input-phone
+						.get-excursion-form__input-subfixes Чтобы задать вопросы и проконсультировать вас
+
+			button(data-form-submit).get-excursion-form__button Перезвоните мне
+			.get-excursion-form__sub-description Или позвоните, чтобы записаться <strong>(4862) 78-08-15</strong>
+
+
+	// Форма - запрос ставок по ипотеке
+	.get-credit-rates-form(data-modal-form)
+		.form__close
+		form(action="/" method="POST" data-form-name="Запрос ставок по ипотеке")
+			.get-credit-rates-form__title Оставьте номер телефона
+			.get-credit-rates-form__description Эксперт сообщит вам наиболее выгодные ставки по ипотеке
+			.get-credit-rates-form-content
+				ul
+					li
+						input(type="text" name="phone" placeholder="*Ваш номер телефона").get-credit-rates-form__input-phone
+
+			button(data-form-submit).get-credit-rates-form__button Перезвоните мне
+			.get-credit-rates-form__sub-description Или позвоните: <strong>(4862) 78-08-15</strong>
+	// Форма - получения подарка
+	.get-gift-form(data-modal-form)
+		.form__close
+		form(action="/" method="POST" data-form-name="Получения подарка")
+			.get-gift-form__wait(data-form-step)
+				.get-gift-form__wait-icon
+				.get-gift-form__title_wait Идет определение подарка
+			.get-gift-form__title Вы получаете:
+			.get-gift-form__description Именной подарочный сертификат на 50 000 руб!
+			.get-gift-form-content
+				ul
+					li
+						input(type="text" name="name" placeholder="*ФИО").get-gift-form__input-name
+					li
+						input(type="text" name="male" placeholder="*E-mail").get-gift-form__input-mail
+					li
+						input(type="text" name="phone" placeholder="*Ваш номер телефона").get-gift-form__input-phone
+
+			button(data-form-submit).get-gift-form__button Перезвоните мне
+			.get-gift-form__sub-description Или позвоните: <strong>(4862) 78-08-15</strong>
 

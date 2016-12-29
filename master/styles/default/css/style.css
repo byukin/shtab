@@ -1152,6 +1152,14 @@ h2 {
   font-weight: 300;
   line-height: 1.6;
 }
+.seo-cards__item_gray ul li {
+  margin-bottom: 3px;
+}
+.seo-cards__item_gray ul li:before {
+  content: "\2014";
+  display: inline-block;
+  margin-right: 5px;
+}
 .seo-cards__item_padding {
   flex-basis: 50%;
   padding-top: 60px;
@@ -1938,7 +1946,6 @@ input.main-search-form__input-square {
   font-size: 1rem;
   border-radius: 3px;
   width: 320px;
-  margin-bottom: 20px;
   font-family: 'Open Sans';
 }
 .exclusive-offers-form__input-phone {
@@ -1982,4 +1989,319 @@ input.main-search-form__input-square {
 }
 .exclusive-offers-form__button:hover {
   background: #fe6f31;
+}
+/* ------------- Форма - запись на экскурсию ------------- */
+.get-excursion-form {
+  display: none;
+  background: url("images/get-excursion-form.png");
+  background-position: center center;
+  background-size: cover;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  max-height: 80vh;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.get-excursion-form__description {
+  text-align: center;
+  color: #fff;
+  font-size: 1.25rem;
+}
+.get-excursion-form__sub-description {
+  text-align: center;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-top: 60px;
+}
+.get-excursion-form__title {
+  color: #fff;
+  font-size: 1.625rem;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.get-excursion-form__input-mail {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.get-excursion-form__input-phone {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.get-excursion-form__input-subfixes {
+  font-size: 0.8125rem;
+  display: block;
+  text-align: left;
+  color: #fff;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.get-excursion-form-content {
+  text-align: left;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.get-excursion-form__button {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  color: #fff;
+  background: #ff5910;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid #c15906;
+  text-align: center;
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.get-excursion-form__button:hover {
+  background: #fe6f31;
+}
+.get-excursion-form__sub-description {
+  text-align: center;
+  color: #fff;
+  font-size: 1.25rem;
+  margin-top: 60px;
+}
+/* ------------- Форма - запрос ставок по ипотеке ------------- */
+.get-credit-rates-form {
+  display: none;
+  background: #f8fcff;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  max-height: 80vh;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.get-credit-rates-form__description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+}
+.get-credit-rates-form__sub-description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+  margin-top: 60px;
+}
+.get-credit-rates-form__title {
+  color: #31475d;
+  font-size: 1.625rem;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.get-credit-rates-form__input-mail {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.get-credit-rates-form__input-phone {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.get-credit-rates-form__input-subfixes {
+  font-size: 0.8125rem;
+  display: block;
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.get-credit-rates-form-content {
+  text-align: left;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.get-credit-rates-form__button {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  color: #fff;
+  background: #ff5910;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid #c15906;
+  text-align: center;
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.get-credit-rates-form__button:hover {
+  background: #fe6f31;
+}
+/* ------------- Форма - запрос ставок по ипотеке ------------- */
+.get-gift-form {
+  display: none;
+  background: #f8fcff url("images/gift-sert.png");
+  background-repeat: no-repeat;
+  background-position: center -20px;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 850px;
+  height: 100%;
+  max-height: 80vh;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.get-gift-form__description {
+  text-align: center;
+  font-size: 1.625rem;
+  color: #ff5910;
+  font-weight: bold;
+}
+.get-gift-form__sub-description {
+  text-align: center;
+  color: #31475d;
+  font-size: 1.25rem;
+  margin-top: 60px;
+}
+.get-gift-form__title {
+  color: #31475d;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.get-gift-form__input-name {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  margin-bottom: 20px;
+  font-family: 'Open Sans';
+}
+.get-gift-form__input-mail {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  margin-bottom: 20px;
+  font-family: 'Open Sans';
+}
+.get-gift-form__input-phone {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 3px;
+  width: 320px;
+  font-family: 'Open Sans';
+}
+.get-gift-form__input-subfixes {
+  font-size: 0.8125rem;
+  display: block;
+  text-align: left;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.get-gift-form-content {
+  text-align: left;
+  width: 320px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.get-gift-form__button {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: block;
+  color: #fff;
+  background: #ff5910;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  border-bottom: 2px solid #c15906;
+  text-align: center;
+  width: 230px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+.get-gift-form__button:hover {
+  background: #fe6f31;
+}
+.get-gift-form__wait {
+  background: #f8fcff;
+  display: none;
+  position: absolute;
+  width: 100%;
+  margin-top: -30px;
+  margin-left: -30px;
+  height: 100%;
+  z-index: 1000;
+}
+.get-gift-form__wait-icon {
+  display: block;
+  width: 44px;
+  height: 54px;
+  margin: 0 auto;
+  margin-top: 200px;
+  background: url("icons/main-search-form__wait.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.get-gift-form__title_wait {
+  color: #31475d;
+  font-size: 1.625rem;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
 }
