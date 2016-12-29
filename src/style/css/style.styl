@@ -521,6 +521,7 @@ h2
 	padding 15px
 	font-size 1rem
 	border-radius 3px
+	font-family 'Open Sans'
 .main-form-top textarea
 	background #fff
 	border 1px solid #ccc
@@ -528,6 +529,7 @@ h2
 	font-size 1rem
 	border-radius 3px
 	resize none
+	font-family 'Open Sans'
 .main-form-top__message
 	width 100%
 	height 200px
@@ -535,9 +537,11 @@ h2
 .main-form-top__mail
 	width 100%
 	margin-bottom 20px
+	font-family 'Open Sans'
 .main-form-top__phone
 	width 100%
 	margin-bottom 20px
+	font-family 'Open Sans'
 .main-form-top__submit
 	background #ff7100
 	padding 15px
@@ -592,6 +596,7 @@ h2
 .main-form-bottom__phone
 	flex-basis 65%
 	height 55px
+	font-family 'Open Sans'
 .main-form-bottom__submit
 	background #ff7100
 	padding 15px
@@ -620,7 +625,7 @@ h2
 	position relative
 	padding-top 60px
 	padding-bottom 60px
-	background linear-gradient(to bottom, #fff, 50%, #31475d 50%);
+	background linear-gradient(to bottom, #fff, 45%, #31475d 45%);
 	&:before
 		content ""
 		position absolute
@@ -628,11 +633,12 @@ h2
 		margin-left -20px
 		z-index 0
 		width 100%
-		height 40%
-		margin-top 300px
+		height 900px
+		margin-top 100px
 		background url(images/extra-pattern.png)
-		background-size contain
+		background-size cover
 		background-repeat no-repeat
+		background-position top center
 .extra-tour
 	background #f2f5f9
 	display flex
@@ -779,12 +785,15 @@ h2
 	text-align center
 	color #31475d
 	width 1170px
+	margin 0 auto
 .offers
 	width 1170px
+	margin-top 30px
 .offers__item
 	padding 15px
 	text-align center
-	height 450px
+	height 400px
+	outline none
 .offers-prev
 	background #fff
 	width 50px
@@ -793,7 +802,7 @@ h2
 	position absolute
 	transform rotate(45deg)
 	z-index 100000
-	top 75px
+	top 70px
 	left -10px
 	cursor pointer
 	&:before
@@ -802,9 +811,10 @@ h2
 		position absolute
 		display block
 		transform rotate(-45deg)
-		margin-top 8px
-		margin-left 16px
+		margin-top 10px
+		margin-left 14px
 		font-size 2rem
+		line-height 1
 .offers-next
 	background #f46709
 	width 50px
@@ -813,7 +823,7 @@ h2
 	position absolute
 	transform rotate(45deg)
 	z-index 100000
-	top 75px
+	top 70px
 	right -11px
 	cursor pointer
 	&:before
@@ -823,9 +833,10 @@ h2
 		display block
 		color #fff
 		transform rotate(-45deg)
-		margin-top 3px
-		margin-left 20px
+		margin-top 7px
+		margin-left 17px
 		font-size 2rem
+		line-height 1
 .offers__content
 	background #fff
 	padding 15px
