@@ -140,7 +140,7 @@ h2 {
 }
 .header-contacts__link_adress {
   color: #000;
-  border-bottom: 1px dotted #000;
+  border-bottom: none;
 }
 .header-contacts__link_adress:hover {
   border-color: #ff7100;
