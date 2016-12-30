@@ -4,14 +4,14 @@
 		<div class="main-form-top">
 			<h2 class="main-form-top__title">Не хотите искать самостоятельно?<br>Оставьте Ваши пожелания по подбору квартиры</h2>
 			<div class="main-form-top__subtitle">Получите на e-mail подборку эксклюзивных предложений</div>
-			<form action="/" method="POST" class="main-form-top__form">
+			<form action="/" method="POST" data-form-post="main-form-top" class="main-form-top__form">
 				<div class="main-form-top__left">
-					<textarea type="text" placeholder="Укажите пожелания по подбору квартиры" class="main-form-top__message"></textarea>
+					<textarea type="text" name="message" placeholder="Укажите пожелания по подбору квартиры" class="main-form-top__message"></textarea>
 				</div>
 				<div class="main-form-top__right">
-					<input type="text" placeholder="*Ваш e-mail" class="main-form-top__mail"/>
-					<input type="text" placeholder="*Номер телефона" class="main-form-top__phone"/>
-					<button class="main-form-top__submit">Получить подборку</button>
+					<input type="text" name="mail" placeholder="*Ваш e-mail" class="main-form-top__mail"/>
+					<input type="text" name="phone" placeholder="*Номер телефона" class="main-form-top__phone"/>
+					<button data-form-submit="data-form-submit" class="main-form-top__submit">Получить подборку</button>
 				</div>
 			</form>
 		</div>
@@ -26,9 +26,9 @@
 				</div>
 			</div>
 			<div class="main-form-bottom__subtitle">Или оставьте номер, Анна перезвонит вам</div>
-			<form action="/" method="POST" class="main-form-bottom__form">
-				<input type="text" placeholder="*Номер телефона" class="main-form-bottom__phone"/>
-				<button class="main-form-bottom__submit">Перезвоните мне</button>
+			<form action="/" method="POST" data-form-post="main-form-bottom" class="main-form-bottom__form">
+				<input type="text" name="phone" placeholder="*Номер телефона" class="main-form-bottom__phone"/>
+				<button data-form-submit="data-form-submit" class="main-form-bottom__submit">Перезвоните мне</button>
 			</form>
 		</div>
 	</div>

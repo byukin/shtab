@@ -421,14 +421,14 @@
 				<div class="main-form-top">
 					<h2 class="main-form-top__title">Не хотите искать самостоятельно?<br>Оставьте Ваши пожелания по подбору квартиры</h2>
 					<div class="main-form-top__subtitle">Получите на e-mail подборку эксклюзивных предложений</div>
-					<form action="/" method="POST" class="main-form-top__form">
+					<form action="/" method="POST" data-form-post="main-form-top" class="main-form-top__form">
 						<div class="main-form-top__left">
-							<textarea type="text" placeholder="Укажите пожелания по подбору квартиры" class="main-form-top__message"></textarea>
+							<textarea type="text" name="message" placeholder="Укажите пожелания по подбору квартиры" class="main-form-top__message"></textarea>
 						</div>
 						<div class="main-form-top__right">
-							<input type="text" placeholder="*Ваш e-mail" class="main-form-top__mail"/>
-							<input type="text" placeholder="*Номер телефона" class="main-form-top__phone"/>
-							<button class="main-form-top__submit">Получить подборку</button>
+							<input type="text" name="mail" placeholder="*Ваш e-mail" class="main-form-top__mail"/>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="main-form-top__phone"/>
+							<button data-form-submit="data-form-submit" class="main-form-top__submit">Получить подборку</button>
 						</div>
 					</form>
 				</div>
@@ -443,9 +443,9 @@
 						</div>
 					</div>
 					<div class="main-form-bottom__subtitle">Или оставьте номер, Анна перезвонит вам</div>
-					<form action="/" method="POST" class="main-form-bottom__form">
-						<input type="text" placeholder="*Номер телефона" class="main-form-bottom__phone"/>
-						<button class="main-form-bottom__submit">Перезвоните мне</button>
+					<form action="/" method="POST" data-form-post="main-form-bottom" class="main-form-bottom__form">
+						<input type="text" name="phone" placeholder="*Номер телефона" class="main-form-bottom__phone"/>
+						<button data-form-submit="data-form-submit" class="main-form-bottom__submit">Перезвоните мне</button>
 					</form>
 				</div>
 			</div>
@@ -853,7 +853,7 @@
 					<div class="main-search-form__description">Мы подберем объекты и пришлем на ваш e-mail</div>
 					<ul>
 						<li>
-							<input type="text" name="mail" placeholder="*Ваш e-mail" class="main-search-form__input-mail"/><span class="main-search-form__input-subfixes">Чтобы прислать вам подборку</span>
+							<input type="text" name="mail" placeholder="*Ваш e-mail" class="required main-search-form__input-mail"/><span class="main-search-form__input-subfixes">Чтобы прислать вам подборку</span>
 						</li>
 						<li>
 							<input type="text" name="phone" placeholder="Номер телефона в любом формате" class="main-search-form__input-phone"/><span class="main-search-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</span>
@@ -894,10 +894,10 @@
 				<div class="get-plans-form-content">
 					<ul>
 						<li>
-							<input type="text" name="mail" placeholder="*Ваш e-mail" class="get-plans-form__input-mail"/>
+							<input type="text" name="mail" placeholder="*Ваш e-mail" class="required get-plans-form__input-mail"/>
 						</li>
 						<li>
-							<input type="text" name="phone" placeholder="*Номер телефона" class="get-plans-form__input-phone"/>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="required get-plans-form__input-phone"/>
 							<div class="get-plans-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</div>
 						</li>
 					</ul>
@@ -915,7 +915,7 @@
 				<div class="nalog-economy-form-content">
 					<ul>
 						<li>
-							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="nalog-economy-form__input-phone"/>
+							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required nalog-economy-form__input-phone"/>
 						</li>
 					</ul>
 				</div>
@@ -931,11 +931,11 @@
 				<div class="exclusive-offers-form-content">
 					<ul>
 						<li>
-							<input type="text" name="mail" placeholder="*Ваш e-mail" class="exclusive-offers-form__input-mail"/>
+							<input type="text" name="mail" placeholder="*Ваш e-mail" class="required exclusive-offers-form__input-mail"/>
 							<div class="exclusive-offers-form__input-subfixes">Чтобы выслать вам купон</div>
 						</li>
 						<li>
-							<input type="text" name="phone" placeholder="*Номер телефона" class="exclusive-offers-form__input-phone"/>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="required exclusive-offers-form__input-phone"/>
 							<div class="exclusive-offers-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</div>
 						</li>
 					</ul>
@@ -951,7 +951,7 @@
 				<div class="get-excursion-form-content">
 					<ul>
 						<li>
-							<input type="text" name="phone" placeholder="*Номер телефона" class="get-excursion-form__input-phone"/>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="required get-excursion-form__input-phone"/>
 							<div class="get-excursion-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</div>
 						</li>
 					</ul>
@@ -969,7 +969,7 @@
 				<div class="get-credit-rates-form-content">
 					<ul>
 						<li>
-							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="get-credit-rates-form__input-phone"/>
+							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-credit-rates-form__input-phone"/>
 						</li>
 					</ul>
 				</div>
@@ -1000,13 +1000,13 @@
 					<div class="get-gift-form__gift-inputs">
 						<ul>
 							<li>
-								<input type="text" name="name" placeholder="*ФИО" class="get-gift-form__input-name"/>
+								<input type="text" name="name" placeholder="*ФИО" class="required get-gift-form__input-name"/>
 							</li>
 							<li>
-								<input type="text" name="mail" placeholder="*E-mail" class="get-gift-form__input-mail"/>
+								<input type="text" name="mail" placeholder="*E-mail" class="required get-gift-form__input-mail"/>
 							</li>
 							<li>
-								<input type="text" name="phone" placeholder="*Ваш номер телефона" class="get-gift-form__input-phone"/>
+								<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-gift-form__input-phone"/>
 							</li>
 						</ul>
 					</div>
@@ -1023,7 +1023,7 @@
 				<div class="get-offer-form-content">
 					<ul>
 						<li>
-							<input type="text" name="phone" placeholder="*Номер телефона" class="get-offer-form__input-phone"/>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="required get-offer-form__input-phone"/>
 						</li>
 					</ul>
 					<div class="get-offer-form__sub-description">Или забронируйте квартиру по телефону: <strong>(4862) 78-08-15</strong></div>
@@ -1040,7 +1040,7 @@
 				<div class="get-partnership-form-content">
 					<ul>
 						<li>
-							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="get-partnership-form__input-phone"/>
+							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-partnership-form__input-phone"/>
 						</li>
 					</ul>
 				</div>
@@ -1057,7 +1057,7 @@
 				<div class="get-individual-partnership-form-content">
 					<ul>
 						<li>
-							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="get-individual-partnership-form__input-phone"/>
+							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-individual-partnership-form__input-phone"/>
 						</li>
 					</ul>
 				</div>

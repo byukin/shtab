@@ -116,7 +116,7 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 			.main-search-form__description Мы подберем объекты и пришлем на ваш e-mail
 			ul
 				li
-					input(type="text" name="mail" placeholder="*Ваш e-mail").main-search-form__input-mail
+					input(type="text" name="mail" placeholder="*Ваш e-mail").required.main-search-form__input-mail
 					span.main-search-form__input-subfixes Чтобы прислать вам подборку
 				li
 					input(type="text" name="phone" placeholder="Номер телефона в любом формате").main-search-form__input-phone
@@ -150,9 +150,9 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.get-plans-form-content
 			ul
 				li
-					input(type="text" name="mail" placeholder="*Ваш e-mail").get-plans-form__input-mail
+					input(type="text" name="mail" placeholder="*Ваш e-mail").required.get-plans-form__input-mail
 				li
-					input(type="text" name="phone" placeholder="*Номер телефона").get-plans-form__input-phone
+					input(type="text" name="phone" placeholder="*Номер телефона").required.get-plans-form__input-phone
 					.get-plans-form__input-subfixes Чтобы задать вопросы и проконсультировать вас
 		button(data-form-submit).get-plans-form__button Получить
 		.get-plans-form__sub-description Или позвоните эксперту <strong>(4862) 78-08-15</strong>
@@ -168,7 +168,7 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.nalog-economy-form-content
 			ul
 				li
-					input(type="text" name="phone" placeholder="*Ваш номер телефона").nalog-economy-form__input-phone
+					input(type="text" name="phone" placeholder="*Ваш номер телефона").required.nalog-economy-form__input-phone
 
 		button(data-form-submit).nalog-economy-form__button Перезвоните мне
 		.nalog-economy-form__sub-description Или позвоните эксперту <strong>(4862) 78-08-15</strong>
@@ -182,10 +182,10 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.exclusive-offers-form-content
 			ul
 				li
-					input(type="text" name="mail" placeholder="*Ваш e-mail").exclusive-offers-form__input-mail
+					input(type="text" name="mail" placeholder="*Ваш e-mail").required.exclusive-offers-form__input-mail
 					.exclusive-offers-form__input-subfixes Чтобы выслать вам купон
 				li
-					input(type="text" name="phone" placeholder="*Номер телефона").exclusive-offers-form__input-phone
+					input(type="text" name="phone" placeholder="*Номер телефона").required.exclusive-offers-form__input-phone
 					.exclusive-offers-form__input-subfixes Чтобы задать вопросы и проконсультировать вас
 
 		button(data-form-submit).exclusive-offers-form__button Получить подборку
@@ -198,7 +198,7 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.get-excursion-form-content
 			ul
 				li
-					input(type="text" name="phone" placeholder="*Номер телефона").get-excursion-form__input-phone
+					input(type="text" name="phone" placeholder="*Номер телефона").required.get-excursion-form__input-phone
 					.get-excursion-form__input-subfixes Чтобы задать вопросы и проконсультировать вас
 
 		button(data-form-submit).get-excursion-form__button Перезвоните мне
@@ -214,7 +214,7 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.get-credit-rates-form-content
 			ul
 				li
-					input(type="text" name="phone" placeholder="*Ваш номер телефона").get-credit-rates-form__input-phone
+					input(type="text" name="phone" placeholder="*Ваш номер телефона").required.get-credit-rates-form__input-phone
 
 		button(data-form-submit).get-credit-rates-form__button Перезвоните мне
 		.get-credit-rates-form__sub-description Или позвоните: <strong>(4862) 78-08-15</strong>
@@ -242,11 +242,11 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 			.get-gift-form__gift-inputs
 				ul
 					li
-						input(type="text" name="name" placeholder="*ФИО").get-gift-form__input-name
+						input(type="text" name="name" placeholder="*ФИО").required.get-gift-form__input-name
 					li
-						input(type="text" name="mail" placeholder="*E-mail").get-gift-form__input-mail
+						input(type="text" name="mail" placeholder="*E-mail").required.get-gift-form__input-mail
 					li
-						input(type="text" name="phone" placeholder="*Ваш номер телефона").get-gift-form__input-phone
+						input(type="text" name="phone" placeholder="*Ваш номер телефона").required.get-gift-form__input-phone
 
 		button(data-form-submit).get-gift-form__button Перезвоните мне
 		.get-gift-form__gift-rules Подарочный сертификат действителен при покупке квартиры в Центре новостроек «Штаб-квартира». Подробные  условия получения подарка – в нашем офисе
@@ -260,7 +260,7 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.get-offer-form-content
 			ul
 				li
-					input(type="text" name="phone" placeholder="*Номер телефона").get-offer-form__input-phone
+					input(type="text" name="phone" placeholder="*Номер телефона").required.get-offer-form__input-phone
 			.get-offer-form__sub-description Или забронируйте квартиру по телефону: <strong>(4862) 78-08-15</strong>
 		button(data-form-submit).get-offer-form__button Забронировать
 
@@ -275,7 +275,7 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.get-partnership-form-content
 			ul
 				li
-					input(type="text" name="phone" placeholder="*Ваш номер телефона").get-partnership-form__input-phone
+					input(type="text" name="phone" placeholder="*Ваш номер телефона").required.get-partnership-form__input-phone
 
 		button(data-form-submit).get-partnership-form__button Перезвоните мне
 		.get-partnership-form__sub-description Или позвоните эксперту <strong>(4862) 78-08-15</strong>
@@ -290,7 +290,7 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.get-individual-partnership-form-content
 			ul
 				li
-					input(type="text" name="phone" placeholder="*Ваш номер телефона").get-individual-partnership-form__input-phone
+					input(type="text" name="phone" placeholder="*Ваш номер телефона").required.get-individual-partnership-form__input-phone
 
 		button(data-form-submit).get-individual-partnership-form__button Перезвоните мне
 		.get-individual-partnership-form__sub-description Или позвоните эксперту <strong>(4862) 78-08-15</strong>
