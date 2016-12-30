@@ -12,36 +12,36 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 				.main-search-form__checkboxes-left
 					ul
 						li
-							input(type="checkbox" name="doesntmatter" id="doesntmatter").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="doesntmatter" value="Не важно").main-search-form__checkbox
 							label(for="doesntmatter").main-search-form__label Не важно
 						li
-							input(type="checkbox" name="razgradsky" id="razgradsky").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="razgradsky" value="Разградский").main-search-form__checkbox
 							label(for="razgradsky").main-search-form__label Разградский
 						li
-							input(type="checkbox" name="pervyi" id="pervyi").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="pervyi" value="Микрорайон «Первый»").main-search-form__checkbox
 							label(for="pervyi").main-search-form__label Микрорайон «Первый»
 						li
-							input(type="checkbox" name="revolution" id="revolution").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="revolution" value="ЖК на ул. Революции, 3").main-search-form__checkbox
 							label(for="revolution").main-search-form__label ЖК на ул. Революции, 3
 						li
-							input(type="checkbox" name="solovinaya" id="solovinaya").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="solovinaya" value="Соловьиная роща").main-search-form__checkbox
 							label(for="solovinaya").main-search-form__label Соловьиная роща
 				.main-search-form__checkboxes-right
 					ul
 						li
-							input(type="checkbox" name="ostrov" id="ostrov").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="ostrov" value="Зеленый остров").main-search-form__checkbox
 							label(for="ostrov").main-search-form__label Зеленый остров
 						li
-							input(type="checkbox" name="moscow" id="moscow").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="moscow" value="ЖК на ул. Московское шоссе, 155").main-search-form__checkbox
 							label(for="moscow").main-search-form__label ЖК на ул. Московское шоссе, 155
 						li
-							input(type="checkbox" name="star" id="star").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="star" value="Северная звезда").main-search-form__checkbox
 							label(for="star").main-search-form__label Северная звезда
 						li
-							input(type="checkbox" name="andrianova-37" id="andrianova-37").main-search-form__checkbox
+							input(type="checkbox" name="complex" id="andrianova-37" value="ЖК на ул. Андрианова, 37").main-search-form__checkbox
 							label(for="andrianova-37").main-search-form__label ЖК на ул. Андрианова, 37
 						li
-							input(type="checkbox" name="andrianova-31" id="andrianova-31").main-search-form__checkbox
+							input(type="checkbox" name="acomplex" id="andrianova-31" value="ЖК на ул. Андрианова, 31").main-search-form__checkbox
 							label(for="andrianova-31").main-search-form__label ЖК на ул. Андрианова, 31
 			button(data-form-step-next).main-search-form__button Следующий шаг
 			.main-search-form__subinfo Услуга подбора бесплатна и ни к чему вас не обязывает
@@ -52,16 +52,16 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 			.main-search-form__room-checkboxes
 				ul
 					li
-						input(type="checkbox" name="1-room" id="1-room").main-search-form__room-checkbox
+						input(type="checkbox" name="rooms[]" id="1-room" value="1").main-search-form__room-checkbox
 						label(for="1-room").main-search-form__room-label 1
 					li
-						input(type="checkbox" name="2-room" id="2-room").main-search-form__room-checkbox
+						input(type="checkbox" name="rooms[]" id="2-room" value="2").main-search-form__room-checkbox
 						label(for="2-room").main-search-form__room-label 2
 					li
-						input(type="checkbox" name="3-room" id="3-room").main-search-form__room-checkbox
+						input(type="checkbox" name="rooms[]" id="3-room" value="3").main-search-form__room-checkbox
 						label(for="3-room").main-search-form__room-label 3
 					li
-						input(type="checkbox" name="4-room" id="4-room").main-search-form__room-checkbox
+						input(type="checkbox" name="rooms[]" id="4-room" value="4+").main-search-form__room-checkbox
 						label(for="4-room").main-search-form__room-label 4+
 			.main-search-form__buttons
 				button(data-form-step-prev).main-search-form__button_prev <span>К предыдущему шагу</span>
@@ -92,13 +92,13 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 			.main-search-form__title.main-search-form__title-screen-4 Выберите вариант с отделкой
 				ul
 					li
-						input(type="checkbox" name="otdelka-doesntmatter" id="otdelka-doesntmatter").main-search-form__checkbox
+						input(type="checkbox" name="otdelka[]" id="otdelka-doesntmatter" value="Не важно").main-search-form__checkbox
 						label(for="otdelka-doesntmatter").main-search-form__label Не важно
 					li
-						input(type="checkbox" name="otdelka-razgradsky" id="otdelka-razgradsky").main-search-form__checkbox
+						input(type="checkbox" name="otdelka[]" id="otdelka-razgradsky" value="Разградский").main-search-form__checkbox
 						label(for="otdelka-razgradsky").main-search-form__label Разградский
 					li
-						input(type="checkbox" name="otdelka-pervyi" id="otdelka-pervyi").main-search-form__checkbox
+						input(type="checkbox" name="otdelka[]" id="otdelka-pervyi" value="Первый").main-search-form__checkbox
 						label(for="otdelka-pervyi").main-search-form__label Микрорайон «Первый»
 
 			.main-search-form__buttons
@@ -136,16 +136,16 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 		.get-plans-form__room-checkboxes
 			ul
 				li
-					input(type="checkbox" name="1-room-plan" id="1-room-plan").get-plans-form__room-checkbox
+					input(type="checkbox" name="rooms[]" id="1-room-plan" value="1").get-plans-form__room-checkbox
 					label(for="1-room-plan").get-plans-form__room-label 1
 				li
-					input(type="checkbox" name="2-room-plan" id="2-room-plan").get-plans-form__room-checkbox
+					input(type="checkbox" name="rooms[]" id="2-room-plan" value="2").get-plans-form__room-checkbox
 					label(for="2-room-plan").get-plans-form__room-label 2
 				li
-					input(type="checkbox" name="3-room-plan" id="3-room-plan").get-plans-form__room-checkbox
+					input(type="checkbox" name="rooms[]" id="3-room-plan" value="3").get-plans-form__room-checkbox
 					label(for="3-room-plan").get-plans-form__room-label 3
 				li
-					input(type="checkbox" name="4-room-plan" id="4-room-plan").get-plans-form__room-checkbox
+					input(type="checkbox" name="rooms[]" id="4-room-plan" value="4+").get-plans-form__room-checkbox
 					label(for="4-room-plan").get-plans-form__room-label 4+
 		.get-plans-form-content
 			ul
@@ -244,7 +244,7 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 					li
 						input(type="text" name="name" placeholder="*ФИО").get-gift-form__input-name
 					li
-						input(type="text" name="male" placeholder="*E-mail").get-gift-form__input-mail
+						input(type="text" name="mail" placeholder="*E-mail").get-gift-form__input-mail
 					li
 						input(type="text" name="phone" placeholder="*Ваш номер телефона").get-gift-form__input-phone
 
