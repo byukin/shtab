@@ -32,7 +32,7 @@ a {
   border-bottom: 1px solid #31475d;
 }
 a:hover {
-  color: #f00;
+  color: #ff7100;
 }
 img {
   width: auto;
@@ -87,6 +87,9 @@ h2 {
   color: #fff;
   border: none;
 }
+.head-menu__link:hover {
+  color: #ff7100;
+}
 /* ------------- Топ-маню-фикс ------------- */
 .head-fixed {
   background: #31475d;
@@ -138,6 +141,9 @@ h2 {
 .header-contacts__link_adress {
   color: #000;
   border-bottom: 1px dotted #000;
+}
+.header-contacts__link_adress:hover {
+  border-color: #ff7100;
 }
 .header-contacts__adress {
   display: inline-block;
@@ -308,6 +314,9 @@ h2 {
   font-size: 0.8125rem;
   font-weight: bold;
   border-bottom: 1px dotted #0081ba;
+}
+.advantages__link:hover {
+  border-color: #ff7100;
 }
 .advantages__button {
   color: #0081ba;
@@ -1279,6 +1288,9 @@ h2 {
   color: #fff;
   border-bottom: 1px dotted #fff;
 }
+.contact-us__map-link:hover {
+  border-color: #ff7100;
+}
 .contact-us__recv {
   margin-bottom: 20px;
 }
@@ -1297,6 +1309,9 @@ h2 {
 .contact-us__recv-link {
   color: #fff;
   border-bottom: 1px dotted #fff;
+}
+.contact-us__recv-link:hover {
+  border-color: #ff7100;
 }
 /* ------------- Подвал ------------- */
 .footer-block {
@@ -1356,12 +1371,18 @@ h2 {
   font-weight: bold;
   border-bottom: 1px dotted #0081ba;
 }
+.footer__partners-link:hover {
+  border-color: #ff7100;
+}
 .footer__developer {
   margin-top: 20px;
 }
 .footer__developer-link {
   color: #0081ba;
   border-bottom: none;
+}
+.footer__developer-link:hover {
+  border-color: #ff7100;
 }
 .creditals {
   border-top: 1px solid #ebebeb;
