@@ -1,241 +1,4 @@
 
-var appScrolling = {
-	toTopButton:function(){
-		$(window).scroll(function() {
-			var scrBtn = $('[data-scroll-top-button]');
-			var scro = $(this).scrollTop();
-			scrBtn.css("display", "block");
-			if (scro > 200) {
-				scrBtn.css("display", "block");
-			}
-			if (scro < 200) {
-				scrBtn.css("display", "none");
-			}
-		});
-	},
-	toElem: function(e) {
-		var o = $(e).offset(),
-			r = o.top;
-		$("body,html").animate({
-			scrollTop: r
-		}, 800, function() {
-			location.hash = e;
-		});
-	},
-	toScroll: function(rThis, sAttr) {
-		appScrolling.toElem( rThis.attr(sAttr) );
-	},
-	bindScroll: function(sElem, sAttr) {
-		$(sElem).click(function() {
-			appScrolling.toScroll( $(this), sAttr);
-			return false;
-		});
-	}
-};
-
-var appSite = {
-	init:function(){
-		appSite.bindOpenMap();
-		appSite.bind2gisMap();
-		appSite.bindOffers();
-		appSite.bindFeedback();
-		appSite.bindSeoCardSlider();
-		appSite.bindOpenForm('[data-form-type]');
-		appSite.bindFormSteps();
-		appScrolling.bindScroll('[data-scroll-to]' , 'href');
-		appScrolling.bindScroll('[data-scroll-to-b]' , 'data-href');
-	},
-	initReady:function(){
-		$(window).load(function(){
-			appSite.init();
-		});
-	},
-	bindHideScroll:function(sSw){
-			//$('body').css('overflow-y', sSw);
-	},
-	bindFormSetWait:function(rThis){
-		var rWait = rThis.find('[data-form-set-wait]');
-		if (rWait) {
-			rWait.removeClass('invisible');
-			var rWaitTm = setTimeout(function(){
-				rWait.addClass('invisible');
-			},3000);
-		}
-	},
-	bindFormStepWait:function(rStep){
-		var sAttr = 'data-form-step-wait';
-		var sWait = rStep.next().attr(sAttr);
-		if (sWait) {
-			var rStepW = $('['+sAttr+']');
-			var rWaitTm = setTimeout(function(){
-				rStepW.addClass('invisible');
-				rStepW.next().removeClass('invisible');
-			},2000);
-		}
-	},
-	bindFormSteps:function(){
-		var rButtonNext = $('[data-form-step-next]');
-		var rButtonPrev = $('[data-form-step-prev]');
-		rButtonNext.unbind('submit');
-		rButtonNext.click(function(){
-			var rThis = $(this);
-			var rStep = rThis.parents('[data-form-step]');
-			rStep.addClass('invisible');
-			rStep.next().removeClass('invisible');
-			appSite.bindFormStepWait(rStep);
-			return false;
-		});
-
-		rButtonPrev.unbind('submit');
-		rButtonPrev.click(function(){
-			var rThis = $(this);
-			var rStep = rThis.parents('[data-form-step]');
-			rStep.addClass('invisible');
-			rStep.prev().removeClass('invisible');
-			return false;
-		});
-
-	},
-	bindOpenForm:function(sEl){
-		var rScreenCover = $('.screen-cover');
-		var rElement = $(sEl);
-		rElement.click(function(){
-			appSite.bindHideScroll('hidden');
-			var rThis = $(this);
-			var formtype = rThis.attr("data-form-type");
-			var rFormType = $(formtype);
-			rFormType.attr('data-modal-opened', true);
-			rFormType.fadeIn(200);
-			rScreenCover.fadeIn(200);
-			appModalLite.setPosTpl( 0, rFormType );
-			appSite.bindFormSetWait( rFormType );
-			return false;
-		});
-		$('.form__close , .screen-cover').click(function(){
-			$('[data-modal-form]').css('display','none').removeAttr('data-modal-opened');
-			rScreenCover.css('display','none');
-			appSite.bindHideScroll('auto');
-			return false;
-		});
-	},
-	bind2gisMap:function(){
-		var map;
-			DG.then(function () {
-				map = DG.map('map', {
-					center: [54.98, 82.89],
-					zoom: 13,
-					scrollWheelZoom: false
-				});
-			});
-
-	},
-	bindSeoCardSlider:function(){
-		  $('.seo-cards__slider').slick({
-				infinite: false,
-			  	adaptiveHeight: true,
-				prevArrow: '.seo-cards-prev',
-			  	nextArrow: '.seo-cards-next',
-			});
-	},
-	bindFeedback:function(){
-		  $('.feedback-carousel').slick({
-				infinite: false,
-			  	adaptiveHeight: true,
-				prevArrow: '.feedback-prev',
-			  	nextArrow: '.feedback-next',
-			});
-	},
-	bindOffers:function(){
-		  $('.offers-carousel').slick({
-				infinite: false,
-				slidesToShow: 4,
-				slidesToScroll: 4,
-			  	adaptiveHeight: true,
-			  	prevArrow: '.offers-prev',
-			  	nextArrow: '.offers-next',
-			});
-	},
-	bindOpenMap:function(){
-		var rMap = $('[data-open-map]');
-		rMap.click(function(){
-			console.log("click");
-			var rThis = $(this);
-			appSite.openMapBlock(rThis);
-		});
-	},
-	openMapBlock:function(rThis) {
-		var sUri = rThis.attr('href');
-		var aCoord = rThis.attr("data-open-map").split(",");
-		console.log("fancy");
-        try {
-            $.fancybox({
-                "padding": 0,
-				'scrolling': 'no',
-                "centerOnScroll": true,
-                "autoDimensions": true,
-                "titlePosition": "inside",
-                "autoResize": true,
-                "href": sUri,
-                'beforeShow': function() {
-					appSite.openMap(aCoord, sUri);
-                }
-            });
-        } catch(e) {
-				console.log("fancyerror");
-			}
-	},
-	openMap:function(aMapCoord, sUri){
-        try {
-            ymaps.ready(function () {
-                var rMapSite = $(sUri);
-                if ( rMapSite.is('div') ) {
-					rMapSite.empty();
-                    var iMapZoom = 17;
-                    var sMapCoordAttr = $.trim( rMapSite.data('map-coords') );
-                    if (sMapCoordAttr !== '') {
-                        var aMapCoordAttr = sMapCoordAttr.split(',');
-                        if (aMapCoordAttr[0] && aMapCoordAttr[1]) {
-                            aMapCoord = [aMapCoordAttr[0], aMapCoordAttr[1]];
-                        }
-                    }
-                    var sMapZoomAttr = parseInt(rMapSite.data('map-zoom'));
-                    if (sMapZoomAttr) {
-                        iMapZoom = sMapZoomAttr;
-                    }
-                    var myMap = new ymaps.Map('houses-modal-map', {
-                        center: aMapCoord,
-                        zoom: iMapZoom,
-                        type: 'yandex#satellite',
-                    }, {
-                        //searchControlProvider: 'yandex#satellite',
-                    }),
-                    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                        hintContent: rMapSite.data('map-title'),
-                        balloonContent: rMapSite.data('map-descr')
-                    }, {
-                        // Опции.
-                        // Необходимо указать данный тип макета.
-                        iconLayout: 'default#image',
-                        // Своё изображение иконки метки.
-                        iconImageHref: '/img/ava.png',
-                        // Размеры метки.
-                        iconImageSize: [50, 50],
-                        // Смещение левого верхнего угла иконки относительно
-                        // её "ножки" (точки привязки).
-                        iconImageOffset: [-25, -70]
-                    });
-                    myMap.geoObjects.add(myPlacemark);
-                    myMap.controls.add(new ymaps.control.SmallZoomControl () );
-                    myMap.behaviors.disable('drag');
-
-                }
-            });
-        } catch(e) {
-
-        }
-	}
-};
-
 //
 var appMetrics = {
 	vars: {
@@ -398,7 +161,7 @@ var appFormSubmit = {
 		var sErrorSend = appFormSubmit.readError(rForm, sRes);
 		if (sErrorSend === '') {
 			rForm.trigger('reset');
-			// rForm.find('.success-form').css('display', 'block');
+			rForm.find('.success_message').css('display', 'block');
 			appFormSubmit.sendOkModal( rForm.data('send-ok') );
 			appMetrics.triggerGoal( rForm.data('goal') );
 		}
@@ -407,8 +170,15 @@ var appFormSubmit = {
 		}
 	},
 	sendOkModal: function(sStr) {
-		//$('.screen-cover').trigger('click');
-		$('.success-form').fadeIn();
+		try {
+			$.fancybox({
+				'minWidth': 500,
+				'scrolling': 'no',
+				'padding': 0,
+				'helpers': { 'overlay': { 'locked': false }, 'title' : {} },
+				'content': appFormSubmit.sendOkTpl( sStr ),
+			});
+		} catch(e) { }
 	},
 	sendOkTpl: function(sText) {
 		return '\
@@ -485,10 +255,9 @@ var appFormSubmit = {
 		return '<div class="form-wait-send" '+appFormSubmit.loadStartTplElem()+'></div>';
 	},
 	loadStartForm: function(rForm) {
-		/*rForm.css('position','relative');
+		rForm.css('position','relative');
 		rForm.append( appFormSubmit.loadStartTpl() );
 		appFormSubmit.loadStartTplElemR( rForm ).css( appFormSubmit.loadStartTplCss() );
-		*/
 	},
 	loadStopForm: function(rForm) {
 		appFormSubmit.loadStartTplElemR( rForm ).remove();
@@ -496,92 +265,13 @@ var appFormSubmit = {
 };
 
 //
-var appIsMobile = {
-	check: function() {
-		var check = false;
-		(function (a) {
-			if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true
-		})(navigator.userAgent || navigator.vendor || window.opera);
-		return check;
-	},
-};
-
-
-//-------------------------------------
-
-var appModalLite = {
-	getPageH: function() {
-		var windowHeight;
-		if(self.innerHeight) { // all except Explorer
-			windowHeight = self.innerHeight;
-		} else if(document.documentElement && document.documentElement.clientHeight) { // Explorer 6 Strict Mode
-			windowHeight = document.documentElement.clientHeight;
-		} else if(document.body) { // other Explorers
-			windowHeight = document.body.clientHeight;
-		}
-		return windowHeight
-	},
-	/**
-	 *
-	 * @returns {Array}
-	 */
-	getPageS: function() {
-		var xScroll, yScroll;
-		if(self.pageYOffset) {
-			yScroll = self.pageYOffset;
-			xScroll = self.pageXOffset;
-		} else if(document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
-			yScroll = document.documentElement.scrollTop;
-			xScroll = document.documentElement.scrollLeft;
-		} else if(document.body) { // all other Explorers
-			yScroll = document.body.scrollTop;
-			xScroll = document.body.scrollLeft;
-		}
-		return new Array(xScroll, yScroll)
-	},
-	setPosTpl: function(vNoTop , rModal) {
-		if ( rModal.is('div') ) {
-			var iModalPaddingLR = 30;
-			var iModalPaddingTB = 30;
-			if (!vNoTop) {
-				var iModalTop = (appModalLite.getPageS()[1]) + (((appModalLite.getPageH() / 2) - (rModal.height() / 2) - (iModalPaddingTB )));
-				if ((rModal.height() + (iModalPaddingTB)) > $(window).height()) {
-					iModalTop = (appModalLite.getPageS()[1] + appModalLite.getPageH()) - (rModal.height() + (iModalPaddingTB * 2));
-				}
-				if (iModalTop < 0) {
-					iModalTop = 0;
-				}
-				rModal.css("top", iModalTop);
-			}
-			rModal.css({
-				'left': $(window).width() / 2 - (( rModal.width() / 2)+iModalPaddingLR),
-				'right': 'auto'
-			});
-		}
-	},
-	bindResize: function() {
-		var isMobile = appIsMobile.check();
-		appModalLite.setPosTpl( 0, $('[data-modal-opened]') );
-		$(window).unbind('resize');
-		$(window).resize(function() {
-			appModalLite.setPosTpl( isMobile, $('[data-modal-opened]') );
-		});
-	},
-};
-
-//
 var appBind = {
 	ready: function() {
 		$(document).ready(function() {
-
+			appFormSubmit.initClick();
 		});
 		$(window).load(function() {
 			appSite.init();
-			appFormSubmit.initClick();
 		});
-		appModalLite.bindResize();
-		appScrolling.toTopButton();
 	}
 };
-
-appBind.ready();

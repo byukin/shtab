@@ -309,9 +309,11 @@ h2
 	height 300px
 	text-align center
 	border-radius 50%
+	cursor pointer
 	transition-duration .3s
 	&:hover
-		background rgba(255,255,255,0.08)
+		background rgba(255,255,255,0.15)
+		box-shadow 0px 0px 40px 30px rgba(255,255,255,0.15)
 .gifts-boxes__img
 	margin-top 50px
 .gifts-boxes__button
@@ -325,6 +327,7 @@ h2
 	width 140px
 	padding 15px
 	text-align center
+	outline none
 .gift-boxes__rules
 	color #fff
 	margin-top 40px
@@ -788,10 +791,10 @@ h2
 .offers-block__title
 	text-align center
 	color #31475d
-	width 1170px
+	max-width 1170px
 	margin 0 auto
 .offers
-	width 1170px
+	max-width 1170px
 	margin-top 30px
 .offers__item
 	padding 15px
@@ -799,48 +802,31 @@ h2
 	height 400px
 	outline none
 .offers-prev
-	background #fff
+	background #efefef url(icons/carousel-prev.png)
+	background-repeat no-repeat
+	background-position 16px center
 	width 50px
 	height 50px
+	border-radius 50%
 	border none
 	position absolute
-	transform rotate(45deg)
 	z-index 100000
 	top 70px
-	left -10px
+	left 20px
 	cursor pointer
-	&:before
-		content "<"
-		font-family 'Neo Sans Pro'
-		position absolute
-		display block
-		transform rotate(-45deg)
-		margin-top 10px
-		margin-left 14px
-		font-size 2rem
-		line-height 1
 .offers-next
-	background #f46709
+	background #f46709 url(icons/carousel-next.png)
+	background-repeat no-repeat
+	background-position 20px center
 	width 50px
 	height 50px
+	border-radius 50%
 	border none
 	position absolute
-	transform rotate(45deg)
 	z-index 100000
 	top 70px
-	right -11px
+	right 20px
 	cursor pointer
-	&:before
-		content ">"
-		font-family 'Neo Sans Pro'
-		position absolute
-		display block
-		color #fff
-		transform rotate(-45deg)
-		margin-top 7px
-		margin-left 17px
-		font-size 2rem
-		line-height 1
 .offers__content
 	background #fff
 	padding 15px
@@ -885,48 +871,31 @@ h2
 	color #fff
 	text-align center
 .feedback-prev
-	background #efefef
+	background #efefef url(icons/carousel-prev.png)
+	background-repeat no-repeat
+	background-position 16px center
 	width 50px
 	height 50px
+	border-radius 50%
 	border none
 	position absolute
-	transform rotate(45deg)
 	z-index 100000
 	top 280px
-	left -25px
+	left 25px
 	cursor pointer
-	&:before
-		content "<"
-		font-family 'Neo Sans Pro'
-		position absolute
-		display block
-		transform rotate(-45deg)
-		margin-top 10px
-		margin-left 14px
-		font-size 2rem
-		line-height 1
 .feedback-next
-	background #f46709
+	background #f46709 url(icons/carousel-next.png)
+	background-repeat no-repeat
+	background-position 20px center
 	width 50px
 	height 50px
+	border-radius 50%
 	border none
 	position absolute
-	transform rotate(45deg)
 	z-index 100000
 	top 280px
-	right -25px
+	right 25px
 	cursor pointer
-	&:before
-		content ">"
-		font-family 'Neo Sans Pro'
-		position absolute
-		display block
-		color #fff
-		transform rotate(-45deg)
-		margin-top 7px
-		margin-left 17px
-		font-size 2rem
-		line-height 1
 .feedback
 	background #fff
 	box-shadow 0px 10px 30px -10px rgba(0,0,0,0.4)
@@ -1003,53 +972,36 @@ h2
 .seo-cards__item_padding
 	flex-basis 50%
 	padding-top 60px
-	margin-top -50px
+	margin-top -80px
 	padding-right 60px
 	box-sizing border-box
 	border-top 1px solid #ebebeb
 .seo-cards-prev
-	background #efefef
+	background #efefef url(icons/carousel-prev.png)
+	background-repeat no-repeat
+	background-position 16px center
 	width 50px
 	height 50px
+	border-radius 50%
 	border none
 	position absolute
-	transform rotate(45deg)
 	z-index 100000
-	top 445px
-	left 0px
+	top 280px
+	left 25px
 	cursor pointer
-	&:before
-		content "<"
-		font-family 'Neo Sans Pro'
-		position absolute
-		display block
-		transform rotate(-45deg)
-		margin-top 10px
-		margin-left 14px
-		font-size 2rem
-		line-height 1
 .seo-cards-next
-	background #f46709
+	background #f46709 url(icons/carousel-next.png)
+	background-repeat no-repeat
+	background-position 20px center
 	width 50px
 	height 50px
+	border-radius 50%
 	border none
 	position absolute
-	transform rotate(45deg)
 	z-index 100000
-	top 445px
-	left 80px
+	top 280px
+	right 25px
 	cursor pointer
-	&:before
-		content ">"
-		font-family 'Neo Sans Pro'
-		position absolute
-		display block
-		color #fff
-		transform rotate(-45deg)
-		margin-top 7px
-		margin-left 17px
-		font-size 2rem
-		line-height 1
 .seo-cards__slider
 	width 100%
 	position relative
@@ -1227,6 +1179,7 @@ h2
 .scrolltop__button
 	position fixed
 	background #ff7100
+	display none
 	z-index 100000
 	right 0
 	bottom 80px
@@ -1265,6 +1218,8 @@ h2
 	opacity 0.6
 	&:hover
 		opacity 1
+.novalid
+	border 1px solid red
 
 /* ------------- Шаговая форма ------------- */
 
@@ -1272,16 +1227,15 @@ h2
 	display none
 	background #f8fcff
 	padding 30px
-	position fixed
+	box-sizing border-box
+	position absolute
 	top 0
-	bottom 0
 	left 0
 	right 0
 	margin auto
 	width 100%
-	max-width 850px
-	height 100%
-	max-height 600px
+	max-width 910px
+	height auto
 	z-index 1000000000
 	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
 	transition-duration .3s
@@ -1299,26 +1253,30 @@ h2
 	color #31475d
 	font-size 2.25rem
 	text-align center
-	margin-top 30px
+	margin-top 8vh
 	margin-bottom 40px
 .main-search-form__title-screen-2
-	margin-top 90px
+	margin-top 8vh
 .main-search-form__title-screen-3
-	margin-top 60px
+	margin-top 8vh
 .main-search-form__title-screen-4
-	margin-top 60px
+	margin-top 8vh
 .main-search-form__title-screen-5
 	margin-top 30px
+	margin-bottom 160px
 .main-search-form__title-screen-6
-	margin-top 60px
+	margin-top 8vh
 .main-search-form__screen
-	margin-top 20px
+	margin-top 2vh
 .main-search-form__screen.invisible
+	display none
+.invisible
 	display none
 .main-search-form__checkboxes
 	display flex
 	width 70%
 	margin 0 auto
+	margin-top 5vh
 .main-search-form__checkboxes-left
 	flex-basis 50%
 .main-search-form__checkboxes-right
@@ -1390,6 +1348,7 @@ input[type="checkbox"]
 	margin-top 50px
 .main-search-form__room-checkboxes
 	text-align center
+	margin-bottom 40px
 .main-search-form__room-checkboxes li
 	display inline-block
 	padding 10px
@@ -1420,11 +1379,12 @@ input[type="checkbox"].main-search-form__room-checkbox
 .main-search-form__buttons
 	display flex
 	width 70%
-	position absolute
 	left 0
 	right 0
 	bottom 70px
 	margin auto
+	margin-top 30px
+
 .main-search-form__button_prev
 	margin-top 40px
 	margin-right 100px
@@ -1483,7 +1443,7 @@ input.main-search-form__input-square
 	width 44px
 	height 54px
 	margin 0 auto
-	margin-top 200px
+	margin-top 100px
 	background url(icons/main-search-form__wait.png)
 	background-repeat no-repeat
 	background-size contain
@@ -1520,16 +1480,14 @@ input.main-search-form__input-square
 	display none
 	background #f8fcff
 	padding 30px
-	position fixed
+	position absolute
 	top 0
-	bottom 0
 	left 0
 	right 0
 	margin auto
 	width 100%
 	max-width 850px
-	height 100%
-	max-height 600px
+	height auto
 	z-index 1000000000
 	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
 	transition-duration .3s
@@ -1537,6 +1495,7 @@ input.main-search-form__input-square
 	text-align center
 	color #31475d
 	font-size 1.25rem
+	margin-top 30px
 .get-plans-form__sub-description
 	text-align center
 	color #31475d
@@ -1544,7 +1503,9 @@ input.main-search-form__input-square
 	margin-top 60px
 .get-plans-form__title
 	color #31475d
-	font-size 2.25rem
+	font-size 1.875rem
+	line-height 1.2
+	font-weight bold
 	text-align center
 	margin-top 30px
 	margin-bottom 40px
@@ -1594,6 +1555,35 @@ input.main-search-form__input-square
 	margin-top 80px
 	&:hover
 		background #fe6f31
+.get-plans-form__room-checkboxes
+	text-align center
+.get-plans-form__room-checkboxes li
+	display inline-block
+	padding 10px
+.get-plans-form__room-label
+	width 60px
+	height 60px
+	display block
+	box-sizing border-box
+	vertical-align top
+	background #fff
+	border 3px solid #ebebeb
+	font-size 1.5rem
+	text-align center
+	line-height 54px
+	cursor pointer
+	color #31475d
+
+input[type="checkbox"].get-plans-form__room-checkbox + label
+	&:before
+		content ""
+		opacity 0
+		display none
+input[type="checkbox"].get-plans-form__room-checkbox
+	&:checked + label
+		background #ff5910
+		border-color #ff5910
+		color #fff
 
 /* ------------- Форма - узнать подробности про налоговый вычет и экономию ------------- */
 
@@ -1601,16 +1591,14 @@ input.main-search-form__input-square
 	display none
 	background #f8fcff
 	padding 30px
-	position fixed
+	position absolute
 	top 0
-	bottom 0
 	left 0
 	right 0
 	margin auto
 	width 100%
 	max-width 850px
-	height 100%
-	max-height 600px
+	height auto
 	z-index 1000000000
 	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
 	transition-duration .3s
@@ -1671,16 +1659,14 @@ input.main-search-form__input-square
 	display none
 	background #f8fcff
 	padding 30px
-	position fixed
+	position absolute
 	top 0
-	bottom 0
 	left 0
 	right 0
 	margin auto
 	width 100%
 	max-width 850px
-	height 100%
-	max-height 600px
+	height auto
 	z-index 1000000000
 	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
 	transition-duration .3s
@@ -1755,16 +1741,14 @@ input.main-search-form__input-square
 	background-position center center
 	background-size cover
 	padding 30px
-	position fixed
+	position absolute
 	top 0
-	bottom 0
 	left 0
 	right 0
 	margin auto
 	width 100%
 	max-width 850px
-	height 100%
-	max-height 80vh
+	height auto
 	z-index 1000000000
 	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
 	transition-duration .3s
@@ -1781,8 +1765,8 @@ input.main-search-form__input-square
 	color #fff
 	font-size 1.625rem
 	text-align center
-	margin-top 30px
-	margin-bottom 40px
+	margin-top 10vh
+	margin-bottom 0px
 .get-excursion-form__input-mail
 	background #fff
 	border 1px solid #ccc
@@ -1826,7 +1810,7 @@ input.main-search-form__input-square
 	text-align center
 	width 230px
 	margin 0 auto
-	margin-top 80px
+	margin-top 60px
 	&:hover
 		background #fe6f31
 .get-excursion-form__sub-description
@@ -1843,16 +1827,14 @@ input.main-search-form__input-square
 	display none
 	background #f8fcff
 	padding 30px
-	position fixed
+	position absolute
 	top 0
-	bottom 0
 	left 0
 	right 0
 	margin auto
 	width 100%
 	max-width 850px
-	height 100%
-	max-height 80vh
+	height auto
 	z-index 1000000000
 	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
 	transition-duration .3s
@@ -1923,31 +1905,30 @@ input.main-search-form__input-square
 	display none
 	background #f8fcff url(images/gift-sert.png)
 	background-repeat no-repeat
-	background-position center -20px
+	background-position center 20px
 	padding 30px
-	position fixed
+	position absolute
 	top 0
-	bottom 0
 	left 0
 	right 0
 	margin auto
 	width 100%
 	max-width 850px
-	height 100%
-	max-height 80vh
+	height auto
+	min-height 700px
 	z-index 1000000000
 	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
 	transition-duration .3s
 .get-gift-form__description
 	text-align center
-	font-size 1.625rem
+	font-size 2.0625rem
 	color #ff5910
 	font-weight bold
 .get-gift-form__sub-description
 	text-align center
 	color #31475d
-	font-size 1.25rem
-	margin-top 60px
+	font-size 1rem
+	margin-top -20px
 .get-gift-form__title
 	color #31475d
 	font-size 1.25rem
@@ -1989,11 +1970,148 @@ input.main-search-form__input-square
 	margin-bottom 20px
 .get-gift-form-content
 	text-align left
+	width 80%
+	margin 0 auto
+	margin-top 30px
+	margin-bottom 50px
+.get-gift-form__button
+	font-size 0.875rem
+	text-transform uppercase
+	font-weight bold
+	display block
+	color #fff
+	background #ff5910
+	padding 15px
+	border none
+	border-radius 3px
+	border-bottom 2px solid #c15906
+	text-align center
+	width 230px
+	margin 0 auto
+	margin-top 30px
+	&:hover
+		background #fe6f31
+.get-gift-form__wait
+	background #f8fcff
+	position absolute
+	width 100%
+	margin-top -40px
+	margin-left -30px
+	height 100%
+	z-index 1000
+.get-gift-form__wait-icon
+	display block
+	width 44px
+	height 54px
+	margin 0 auto
+	margin-top 35vh
+	background url(icons/main-search-form__wait.png)
+	background-repeat no-repeat
+	background-size contain
+.get-gift-form__title_wait
+	color #31475d
+	font-size 1.625rem
+	text-align center
+	margin-top 30px
+	margin-bottom 40px
+.get-gift-form__gift-list
+	margin-top 20px
+.get-gift-form__gift-list li
+	margin-bottom 5px
+	&:before
+		content ""
+		display inline-block
+		vertical-align middle
+		margin-right 5px
+		margin-top -2px
+		width 25px
+		height 25px
+		background url(icons/checkbox.png)
+		background-repeat no-repeat
+.get-gift-form__gift-inputs ul
 	width 320px
+	margin 0 auto
+.get-gift-form__gift-list span
+	text-align center
+	display block
+	margin-top 30px
+	margin-bottom 30px
+	color #31475d
+	font-size 1.75rem
+	line-height 1.2
+	font-weight bold
+.get-gift-form__gift-rules
+	font-size 0.825rem
+	text-align center
+	margin-top 20px
+
+
+
+
+/* ------------- Форма - подборка эксклюзивных предложений от застройщиков ------------- */
+
+.get-offer-form
+	display none
+	background #f8fcff
+	padding 30px
+	position absolute
+	top 0
+	left 0
+	right 0
+	margin auto
+	width 100%
+	max-width 850px
+	height auto
+	z-index 1000000000
+	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
+	transition-duration .3s
+.get-offer-form__description
+	text-align center
+	color #31475d
+	font-size 1.25rem
+.get-offer-form__sub-description
+	text-align center
+	color #31475d
+	font-size 1.25rem
+	margin-top 60px
+.get-offer-form__title
+	color #31475d
+	font-size 1.625rem
+	text-align center
+	margin-top 30px
+	margin-bottom 40px
+.get-offer-form__input-mail
+	background #fff
+	border 1px solid #ccc
+	padding 10px
+	font-size 1rem
+	border-radius 3px
+	width 320px
+	font-family 'Open Sans'
+.get-offer-form__input-phone
+	background #fff
+	border 1px solid #ccc
+	padding 10px
+	font-size 1rem
+	border-radius 3px
+	width 320px
+	font-family 'Open Sans'
+.get-offer-form__input-subfixes
+	font-size 0.8125rem
+	display block
+	text-align left
+	margin-top 5px
+	margin-bottom 20px
+.get-offer-form-content
+	text-align left
+	width 80%
 	margin 0 auto
 	margin-top 100px
 	margin-bottom 50px
-.get-gift-form__button
+.get-offer-form-content ul
+	width 320px
+	margin 0 auto
+.get-offer-form__button
 	font-size 0.875rem
 	text-transform uppercase
 	font-weight bold
@@ -2010,30 +2128,192 @@ input.main-search-form__input-square
 	margin-top 80px
 	&:hover
 		background #fe6f31
-.get-gift-form__wait
-	background #f8fcff
+
+
+
+
+/* ------------- Форма - Форма - партнерство с застройщиками ------------- */
+
+.get-partnership-form
 	display none
+	background #f8fcff
+	padding 30px
 	position absolute
+	top 0
+	left 0
+	right 0
+	margin auto
 	width 100%
-	margin-top -30px
-	margin-left -30px
-	height 100%
-	z-index 1000
-.get-gift-form__wait-icon
-	display block
-	width 44px
-	height 54px
+	max-width 850px
+	height auto
+	z-index 1000000000
+	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
+	transition-duration .3s
+.get-partnership-form__description
+	text-align center
+	color #31475d
+	font-size 1.25rem
+.get-partnership-form__sub-description
+	text-align center
+	color #31475d
+	font-size 1.25rem
+	margin-top 60px
+.get-partnership-form__title
+	color #31475d
+	font-size 1rem
+	text-align center
+	width 70%
 	margin 0 auto
-	margin-top 200px
-	background url(icons/main-search-form__wait.png)
-	background-repeat no-repeat
-	background-size contain
-.get-gift-form__title_wait
+	margin-top 30px
+	margin-bottom 40px
+.get-partnership-form__input-phone
+	background #fff
+	border 1px solid #ccc
+	padding 10px
+	font-size 1rem
+	border-radius 3px
+	width 320px
+	font-family 'Open Sans'
+.get-partnership-form-content
+	text-align left
+	width 320px
+	margin 0 auto
+	margin-top 80px
+	margin-bottom 50px
+.get-partnership-form__button
+	font-size 0.875rem
+	text-transform uppercase
+	font-weight bold
+	display block
+	color #fff
+	background #ff5910
+	padding 15px
+	border none
+	border-radius 3px
+	border-bottom 2px solid #c15906
+	text-align center
+	width 230px
+	margin 0 auto
+	margin-top 80px
+	&:hover
+		background #fe6f31
+
+/* ------------- Форма - партнерство индивидуальное ------------- */
+
+.get-individual-partnership-form
+	display none
+	background #f8fcff
+	padding 30px
+	position absolute
+	top 0
+	left 0
+	right 0
+	margin auto
+	width 100%
+	max-width 850px
+	height auto
+	z-index 1000000000
+	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
+	transition-duration .3s
+.get-individual-partnership-form__description
+	text-align center
+	color #31475d
+	font-size 1.25rem
+.get-individual-partnership-form__sub-description
+	text-align center
+	color #31475d
+	font-size 1.25rem
+	margin-top 60px
+.get-individual-partnership-form__title
+	color #31475d
+	font-size 1rem
+	text-align center
+	width 70%
+	margin 0 auto
+	margin-top 30px
+	margin-bottom 40px
+.get-individual-partnership-form__input-phone
+	background #fff
+	border 1px solid #ccc
+	padding 10px
+	font-size 1rem
+	border-radius 3px
+	width 320px
+	font-family 'Open Sans'
+.get-individual-partnership-form-content
+	text-align left
+	width 320px
+	margin 0 auto
+	margin-top 80px
+	margin-bottom 50px
+.get-individual-partnership-form__button
+	font-size 0.875rem
+	text-transform uppercase
+	font-weight bold
+	display block
+	color #fff
+	background #ff5910
+	padding 15px
+	border none
+	border-radius 3px
+	border-bottom 2px solid #c15906
+	text-align center
+	width 230px
+	margin 0 auto
+	margin-top 80px
+	&:hover
+		background #fe6f31
+
+
+
+/* ------------- Форма - реквизиты ------------- */
+
+.show-recvisits-form
+	display none
+	background #f8fcff
+	padding 30px
+	position absolute
+	top 0
+	left 0
+	right 0
+	margin auto
+	width 100%
+	max-width 300px
+	height auto
+	z-index 1000000000
+	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
+
+
+
+/* ------------- Форма - успешная отправка ------------- */
+.success-form
+	display none
+	background #f8fcff
+	padding 30px
+	position absolute
+	top 0
+	left 0
+	right 0
+	margin auto
+	width 100%
+	max-width 850px
+	height auto
+	z-index 1000000000
+	box-shadow 0px 10px 30px 15px rgba(0,0,0,0.05)
+	transition-duration .3s
+.success-form__description
+	text-align center
+	color #31475d
+	font-size 1.25rem
+	margin-bottom 80px
+.success-form__title
 	color #31475d
 	font-size 1.625rem
 	text-align center
-	margin-top 30px
-	margin-bottom 40px
+	margin-top 80px
+	margin-bottom 20px
+
+
 
 
 
