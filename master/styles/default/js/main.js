@@ -118,8 +118,15 @@ var appSite = {
 			return false;
 		});
 	},
+	bind2gisMapReadCoords:function(){
+		var rAllCoords =[];
+		$('[data-map-coords]').find('[data-open-map]').each(function(){
+			rAllCoords.push($(this).attr("data-open-map"));
+		});
+		return rAllCoords;
+	},
 	bind2gisMap:function(){
-
+		var aCoord = appSite.bind2gisMapReadCoords();
 		var map;
 			DG.then(function () {
 				map = DG.map('map', {
@@ -137,7 +144,10 @@ var appSite = {
 					// shadowSize: [68, 95],
 					// shadowAnchor: [22, 94]
 				});
-				DG.marker([52.970143, 36.063397], {icon: myIcon}).addTo(map);
+				aCoord.forEach(function(sVal) {
+					var aCrd = sVal.split(',');
+					DG.marker(aCrd, {icon: myIcon}).addTo(map);
+				});
 			});
 
 
