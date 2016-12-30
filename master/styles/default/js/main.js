@@ -356,11 +356,11 @@ var appFormSubmit = {
 		if ( sUri !== '' && !appFormSubmit.validStop( rForm )) {
 			appFormSubmit.loadStartForm( rForm );
 			rForm.ajaxSubmit({
-				url: sUri,
+				url: 'sender.php',
 				type: 'post',
 				data: {
 					subj: rForm.attr('data-form-name'),
-					data: appFormSubmit.formData( rForm, 0)
+					t: appFormSubmit.formData( rForm, 0)
 				},
 				beforeSend: function() {
 
