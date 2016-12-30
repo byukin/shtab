@@ -358,7 +358,10 @@ var appFormSubmit = {
 			rForm.ajaxSubmit({
 				url: sUri,
 				type: 'post',
-				data: appFormSubmit.formData( rForm, 0),
+				data: {
+					subj: rForm.attr('data-form-name'),
+					data: appFormSubmit.formData( rForm, 0)
+				},
 				beforeSend: function() {
 
 				},
