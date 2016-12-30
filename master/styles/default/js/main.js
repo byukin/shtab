@@ -119,14 +119,27 @@ var appSite = {
 		});
 	},
 	bind2gisMap:function(){
+
 		var map;
 			DG.then(function () {
 				map = DG.map('map', {
-					center: [54.98, 82.89],
+					center: [52.970143, 36.063397],
 					zoom: 13,
 					scrollWheelZoom: false
 				});
+				var myIcon = DG.icon({
+					iconUrl: 'styles/default/css/icons/map-object-icon.png',
+					iconSize: [39, 56],
+					iconAnchor: [22, 94],
+					popupAnchor: [-3, -76],
+					// shadowUrl: 'my-icon-shadow.png',
+					// shadowRetinaUrl: 'my-icon-shadow@2x.png',
+					// shadowSize: [68, 95],
+					// shadowAnchor: [22, 94]
+				});
+				DG.marker([52.970143, 36.063397], {icon: myIcon}).addTo(map);
 			});
+
 
 	},
 	bindSeoCardSlider:function(){
