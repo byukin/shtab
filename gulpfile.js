@@ -36,8 +36,8 @@ gulp.task('webserver', ['watch'], function() {
       livereload: true,
       directoryListing: true,
 	  open: true,
-	 host: '10.100.100.56',
-	 port: 8000
+	 //host: '10.100.100.56',
+	 //port: 8000
     }));
 });
 
