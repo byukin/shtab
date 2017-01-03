@@ -42,12 +42,21 @@ var appSite = {
 		appSite.bindSeoCardSlider();
 		appSite.bindOpenForm('[data-form-type]');
 		appSite.bindFormSteps();
+		//appSite.bindAdaptiveMenu();
 		appScrolling.bindScroll('[data-scroll-to]' , 'href');
 		appScrolling.bindScroll('[data-scroll-to-b]' , 'data-href');
 	},
 	initReady:function(){
 		$(window).load(function(){
 			appSite.init();
+		});
+	},
+	bindAdaptiveMenu:function(){
+		$('.adaptive-menu-burger').click(function(){
+			$('.adaptive-menu').fadeIn(100);
+		});
+		$('.adaptive-menu').click(function(){
+			$(this).fadeOut(100);
 		});
 	},
 	bindHideScroll:function(sSw){

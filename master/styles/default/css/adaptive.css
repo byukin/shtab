@@ -70,3 +70,246 @@
     margin-top: -15px;
   }
 }
+@media (max-width: 1280px) {
+  .head-menu__item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 1140px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .main-info-content__title span {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  .header-logo {
+    float: none;
+    margin-bottom: 20px;
+    width: 200px;
+    background-size: contain;
+  }
+  .header-contacts {
+    float: none;
+  }
+  .header-contacts__adress {
+    margin-bottom: 20px;
+  }
+  .header-contacts__time {
+    margin-bottom: 20px;
+  }
+  .header-contacts__phone {
+    margin-bottom: 20px;
+  }
+  .main-form-top__title {
+    font-size: 1.6rem;
+  }
+  .head {
+    display: none;
+  }
+  .adaptive-menu-burger {
+    display: block;
+  }
+  .main-info-image {
+    display: none;
+  }
+  .main-info-block {
+    background: #fff;
+  }
+  .main-info-content {
+    flex-basis: 100%;
+  }
+  .gifts__title {
+    width: 100%;
+  }
+  .footer__copyrights {
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+  .main-search-form {
+    width: 100%;
+    max-width: auto;
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .advantages {
+    flex-wrap: wrap;
+  }
+  .extra-advantages {
+    flex-wrap: wrap;
+  }
+  .advantages__item {
+    flex-basis: 50%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  .gifts-block {
+    background: #7b625d;
+  }
+  .gifts-boxes {
+    display: block;
+  }
+  .gifts-boxes__item {
+    margin: 0 auto;
+  }
+  .houses-item {
+    flex-basis: 50%;
+  }
+  .main-form-block {
+    padding: 0;
+    background: #fff;
+  }
+  .main-form-top__form {
+    display: block;
+    width: 90%;
+  }
+  .main-form-top__left {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .main-form-top__right {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .main-form-consultant {
+    display: flex;
+    width: 90%;
+  }
+  .feedback-block {
+    background: #7b625d;
+  }
+  .feedback__item {
+    height: auto;
+    padding-bottom: 40px;
+  }
+  .feedback__content {
+    width: 80%;
+    display: block;
+  }
+  .feedback__thumbnail {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  .feedback-prev {
+    top: 130px;
+    right: 80px;
+    left: auto;
+  }
+  .feedback-next {
+    top: 130px;
+  }
+  .seo-cards {
+    display: block;
+  }
+  .seo-cards__item {
+    display: none;
+  }
+  .seo-cards__item_plan {
+    display: none;
+  }
+  .seo-cards__item_gray {
+    padding: 20px;
+  }
+  .seo-cards__item_padding {
+    margin-top: 0;
+  }
+  .contact-us__left {
+    padding-left: 0;
+  }
+}
+@media (max-width: 960px) {
+  .extra-tour {
+    flex-wrap: wrap;
+  }
+  .extra-tour__content {
+    flex-basis: 100%;
+    padding: 20px;
+  }
+  .extra-tour__thumbnail {
+    flex-basis: 100%;
+  }
+  .footer {
+    display: block;
+  }
+  .footer__logo {
+    margin-bottom: 20px;
+  }
+  .footer__copyrights {
+    padding-left: 0px;
+    margin-bottom: 20px;
+  }
+  .footer__contacts {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .main-info-content__subtitle {
+    width: 100%;
+  }
+  .advantages__item {
+    flex-basis: 80%;
+  }
+  .houses-item {
+    flex-basis: 100%;
+  }
+  .main-form-bottom__form {
+    width: 100%;
+    display: block;
+  }
+  .main-form-bottom__phone {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .main-form-bottom__submit {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .extra {
+    background: #31475d;
+  }
+  .extra-cards {
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .extra-economy {
+    flex-basis: 100%;
+    background: #f2f5f9;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  .extra-gift {
+    flex-basis: 100%;
+    margin-left: 0;
+    background: #f2f5f9;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  .contact-us {
+    display: block;
+  }
+  .contact-us__left {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .contact-us__right {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .creditals {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .advantages__item {
+    flex-basis: 100%;
+  }
+}

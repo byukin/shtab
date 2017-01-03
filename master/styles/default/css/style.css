@@ -12,7 +12,7 @@ html {
 body {
   padding: 0;
   margin: 0;
-  min-width: 1024px;
+  min-width: 280px;
 }
 .clearfix:after {
   content: ".";
@@ -56,7 +56,6 @@ section {
 }
 .layout {
   max-width: 1170px;
-  min-width: 1024px;
   margin: 0 auto;
   position: relative;
 }
@@ -75,6 +74,7 @@ h2 {
 .head {
   background: #31475d;
   padding: 15px 20px 15px 20px;
+  box-sizing: border-box;
 }
 .head-menu {
   box-sizing: border-box;
@@ -97,6 +97,10 @@ h2 {
 }
 .head-menu__link:hover {
   color: #ff7100;
+}
+.head-menu__item_burger {
+  display: none;
+  padding: 0;
 }
 /* ------------- Топ-маню-фикс ------------- */
 .head-fixed {
@@ -128,6 +132,7 @@ h2 {
 /* ------------- Шапка ------------- */
 .header {
   padding: 20px;
+  box-sizing: border-box;
 }
 .header-logo {
   background-image: url("icons/main-logo.svg");
@@ -208,8 +213,10 @@ h2 {
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
+  box-sizing: border-box;
 }
 .main-info {
+  position: relative;
   display: flex;
   width: 100%;
 }
@@ -275,6 +282,7 @@ h2 {
 .advantages-block {
   padding: 40px 20px;
   padding-bottom: 60px;
+  box-sizing: border-box;
 }
 .advantages {
   display: flex;
@@ -347,6 +355,7 @@ h2 {
   padding: 20px;
   background: url("icons/gift-background.png");
   background-repeat: repeat-x;
+  box-sizing: border-box;
 }
 .gifts__title {
   text-align: center;
@@ -419,6 +428,7 @@ h2 {
 .houses-block {
   padding: 20px;
   padding-bottom: 60px;
+  box-sizing: border-box;
 }
 .houses-block__title {
   color: #31475d;
@@ -444,6 +454,9 @@ h2 {
 }
 .houses-item__thumbnail {
   position: relative;
+}
+.houses-item__img {
+  width: 100%;
 }
 .houses-item-params {
   position: absolute;
@@ -568,6 +581,7 @@ h2 {
 .houses-on-map {
   background: #31475d;
   padding-top: 20px;
+  box-sizing: border-box;
 }
 .houses-on-map__title {
   text-align: center;
@@ -585,6 +599,7 @@ h2 {
   padding-bottom: 60px;
   background-position: center center;
   background-size: cover;
+  box-sizing: border-box;
 }
 .main-form-top {
   background: url("images/main-form-top.png");
@@ -631,6 +646,7 @@ h2 {
   background: #fff;
   border: 1px solid #ccc;
   padding: 15px;
+  box-sizing: border-box;
   font-size: 1rem;
   border-radius: 3px;
 }
@@ -763,6 +779,7 @@ h2 {
   position: relative;
   padding-top: 60px;
   padding-bottom: 60px;
+  box-sizing: border-box;
   background: linear-gradient(to bottom, #fff, 45%, #31475d 45%);
 }
 .extra:before {
@@ -940,6 +957,7 @@ h2 {
 }
 /* ------------- Предложения ------------- */
 .offers-block {
+  display: none;
   padding: 20px;
   padding-top: 40px;
   box-sizing: border-box;
@@ -1032,6 +1050,7 @@ h2 {
   padding-bottom: 40px;
   background: url("icons/gift-background.png");
   background-repeat: repeat-x;
+  box-sizing: border-box;
 }
 .feedback-block__title {
   color: #fff;
@@ -1324,6 +1343,7 @@ h2 {
 /* ------------- Подвал ------------- */
 .footer-block {
   padding: 20px;
+  box-sizing: border-box;
   padding-top: 40px;
   background: #f6f8fb;
 }
@@ -1449,6 +1469,39 @@ h2 {
 }
 .novalid {
   border: 1px solid #f00;
+}
+.adaptive-menu-burger {
+  display: none;
+  width: 30px;
+  height: 30px;
+  background: url("icons/menu-burger.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.adaptive-menu {
+  display: none;
+  position: absolute;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #31475d;
+  z-index: 100;
+}
+.adaptive-menu__item {
+  margin-bottom: 15px;
+}
+.adaptive-menu__link {
+  font-size: 1.25rem;
+  color: #fff;
+  border-bottom: none;
 }
 /* ------------- Шаговая форма ------------- */
 .main-search-form {
