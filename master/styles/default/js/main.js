@@ -59,9 +59,6 @@ var appSite = {
 			$(this).fadeOut(100);
 		});
 	},
-	bindHideScroll:function(sSw){
-			//$('body').css('overflow-y', sSw);
-	},
 	bindFormSetWait:function(rThis){
 		var rWait = rThis.find('[data-form-set-wait]');
 		if (rWait) {
@@ -109,21 +106,28 @@ var appSite = {
 		var rScreenCover = $('.screen-cover');
 		var rElement = $(sEl);
 		rElement.click(function(){
-			appSite.bindHideScroll('hidden');
 			var rThis = $(this);
 			var formtype = rThis.attr("data-form-type");
 			var rFormType = $(formtype);
 			rFormType.attr('data-modal-opened', true);
 			rFormType.fadeIn(200);
 			rScreenCover.fadeIn(200);
-			appModalLite.setPosTpl( 0, rFormType );
+			//appModalLite.setPosTpl( 0, rFormType );
 			appSite.bindFormSetWait( rFormType );
+			var formHeight = $(rFormType).height();
+			var windowHeight = $(window).height();
+			if (formHeight > windowHeight) {
+				var scld = window.scrollY;
+				rFormType.css('bottom','auto');
+				rFormType.css('top',''+scld+'px');
+			} else {
+				rFormType.css('position','fixed');
+			}
 			return false;
 		});
 		$('.form__close , .screen-cover').click(function(){
 			$('[data-modal-form]').css('display','none').removeAttr('data-modal-opened');
 			rScreenCover.css('display','none');
-			appSite.bindHideScroll('auto');
 			return false;
 		});
 	},
@@ -614,7 +618,7 @@ var appBind = {
 			appSite.init();
 			appFormSubmit.initClick();
 		});
-		appModalLite.bindResize();
+		//appModalLite.bindResize();
 		appScrolling.toTopButton();
 	}
 };
