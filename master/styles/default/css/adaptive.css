@@ -216,7 +216,23 @@
   .contact-us__left {
     padding-left: 0;
   }
-  .get-gift-form {
+  .get-gift-form_var-1 {
+    min-width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1150px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .get-gift-form_var-2 {
+    min-width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1150px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .get-gift-form_var-3 {
     min-width: auto;
     max-width: 100%;
     box-sizing: border-box;
@@ -388,6 +404,12 @@
   }
   .get-excursion-form {
     height: 700px;
+  }
+  .get-excursion-form-content {
+    width: 240px;
+  }
+  .get-excursion-form__input-phone {
+    width: 240px;
   }
   .get-credit-rates-form {
     height: 700px;
