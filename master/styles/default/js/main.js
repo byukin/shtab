@@ -175,7 +175,9 @@ var appSite = {
 			map = DG.map('map', {
 				center: [52.970143, 36.063397],
 				zoom: 12,
-				scrollWheelZoom: false
+				scrollWheelZoom: false,
+				tap: false,
+				dragging: false
 			});
 			var myIcon = DG.icon({
 				iconUrl: 'styles/default/css/icons/map-object-icon.png',
