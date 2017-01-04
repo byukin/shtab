@@ -41,6 +41,7 @@ var appSite = {
 		appSite.bindSeoCardSlider();
 		appSite.bindOpenForm('[data-form-type]');
 		appSite.bindFormSteps();
+		appSite.bindAdaptiveMenu();
 		appScrolling.bindScroll('[data-scroll-to]' , 'href');
 		appScrolling.bindScroll('[data-scroll-to-b]' , 'data-href');
 	},
@@ -55,6 +56,9 @@ var appSite = {
 		});
 		$('.adaptive-menu').click(function(){
 			$(this).fadeOut(100);
+		});
+		$('.adaptive-menu__link').click(function(){
+			$('.adaptive-menu').fadeOut(100);
 		});
 	},
 	bindHideScroll:function(sSw){
