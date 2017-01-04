@@ -49,6 +49,14 @@ var appSite = {
 			appSite.init();
 		});
 	},
+	bindAdaptiveMenu:function(){
+		$('.adaptive-menu-burger').click(function(){
+			$('.adaptive-menu').fadeIn(100);
+		});
+		$('.adaptive-menu').click(function(){
+			$(this).fadeOut(100);
+		});
+	},
 	bindHideScroll:function(sSw){
 			//$('body').css('overflow-y', sSw);
 	},
