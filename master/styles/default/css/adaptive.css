@@ -130,11 +130,6 @@
     padding-left: 20px;
     box-sizing: border-box;
   }
-  .main-search-form {
-    width: 100%;
-    max-width: auto;
-    height: 100%;
-  }
 }
 @media (max-width: 1024px) {
   .advantages {
@@ -221,6 +216,85 @@
   .contact-us__left {
     padding-left: 0;
   }
+  .get-gift-form {
+    min-width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1150px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .get-gift-form__description {
+    width: 100%;
+  }
+  .get-gift-form-content {
+    width: 100%;
+  }
+  .get-gift-form__gift-inputs ul {
+    width: 100%;
+    text-align: center;
+    max-width: 1024px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+  .get-gift-form__gift-inputs ul li {
+    margin: 10px;
+    display: block;
+  }
+  .get-gift-form__input-name {
+    width: 100%;
+  }
+  .get-gift-form__input-mail {
+    width: 100%;
+  }
+  .get-gift-form__input-phone {
+    width: 100%;
+  }
+  .get-gift-form__gift-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .get-gift-form__gift-list ul li {
+    flex-basis: 100%;
+    font-size: 0.9375rem;
+    padding: 10px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+  }
+  .get-gift-form__gift-list ul li:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-top: -2px;
+    width: 20px;
+    height: 20px;
+    background: url("icons/checkbox.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .get-gift-form__title {
+    font-size: 1rem;
+  }
+  .get-gift-form__description {
+    font-size: 1.5rem;
+  }
+  .get-gift-form__gift-list span {
+    font-size: 1.25rem;
+  }
+  .get-gift-form-content {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  .get-gift-form__sub-description {
+    margin-top: 0;
+    margin-bottom: -10px;
+  }
+  .get-gift-form__button {
+    margin-top: 30px;
+  }
 }
 @media (max-width: 960px) {
   .extra-tour {
@@ -245,6 +319,84 @@
   }
   .footer__contacts {
     margin-bottom: 20px;
+  }
+  .main-search-form {
+    width: 100%;
+    max-width: auto;
+    height: 900px;
+  }
+  .main-search-form__title {
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+  .main-search-form__checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 5vh;
+  }
+  .main-search-form__checkboxes-left {
+    flex-basis: 100%;
+  }
+  .main-search-form__checkboxes-right {
+    flex-basis: 100%;
+  }
+  .main-search-form__buttons {
+    display: block;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .main-search-form__button_prev {
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 240px;
+    white-space: nowrap;
+    margin: 0 auto;
+    display: block;
+    margin-top: 80px;
+  }
+  .get-plans-form__title {
+    font-size: 1.5rem;
+  }
+  .get-plans-form__room-label {
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+  }
+  .get-plans-form__button {
+    margin-top: 40px;
+  }
+  .get-plans-form__sub-description {
+    margin-top: 30px;
+  }
+  .nalog-economy-form {
+    height: 800px;
+  }
+  .nalog-economy-form__title {
+    width: 100%;
+  }
+  .nalog-economy-form__description {
+    margin-bottom: -30px;
+  }
+  .exclusive-offers-form {
+    height: 700px;
+  }
+  .get-excursion-form {
+    height: 700px;
+  }
+  .get-credit-rates-form {
+    height: 700px;
+  }
+  .get-partnership-form {
+    height: 700px;
+  }
+  .get-individual-partnership-form {
+    height: 700px;
   }
 }
 @media (max-width: 768px) {

@@ -1,4 +1,3 @@
-
 var appScrolling = {
 	toTopButton:function(){
 		$(window).scroll(function() {
@@ -42,7 +41,6 @@ var appSite = {
 		appSite.bindSeoCardSlider();
 		appSite.bindOpenForm('[data-form-type]');
 		appSite.bindFormSteps();
-		//appSite.bindAdaptiveMenu();
 		appScrolling.bindScroll('[data-scroll-to]' , 'href');
 		appScrolling.bindScroll('[data-scroll-to-b]' , 'data-href');
 	},
@@ -51,13 +49,8 @@ var appSite = {
 			appSite.init();
 		});
 	},
-	bindAdaptiveMenu:function(){
-		$('.adaptive-menu-burger').click(function(){
-			$('.adaptive-menu').fadeIn(100);
-		});
-		$('.adaptive-menu').click(function(){
-			$(this).fadeOut(100);
-		});
+	bindHideScroll:function(sSw){
+			//$('body').css('overflow-y', sSw);
 	},
 	bindFormSetWait:function(rThis){
 		var rWait = rThis.find('[data-form-set-wait]');
@@ -106,9 +99,15 @@ var appSite = {
 		var rScreenCover = $('.screen-cover');
 		var rElement = $(sEl);
 		rElement.click(function(){
+			//appSite.bindHideScroll('hidden');
 			var rThis = $(this);
 			var formtype = rThis.attr("data-form-type");
 			var rFormType = $(formtype);
+			var rFrm = rFormType.find('form');
+			var sStr = $.trim(  rThis.attr('data-form-set-name') );
+			if (sStr) {
+				rFrm.attr('data-form-name', sStr );
+			}
 			rFormType.attr('data-modal-opened', true);
 			rFormType.fadeIn(200);
 			rScreenCover.fadeIn(200);
@@ -117,7 +116,7 @@ var appSite = {
 			var formHeight = $(rFormType).height();
 			var windowHeight = $(window).height();
 			if (formHeight > windowHeight) {
-				var scld = window.scrollY;
+				var scld = window.scrollY + 30;
 				rFormType.css('bottom','auto');
 				rFormType.css('top',''+scld+'px');
 			} else {
@@ -128,42 +127,75 @@ var appSite = {
 		$('.form__close , .screen-cover').click(function(){
 			$('[data-modal-form]').css('display','none').removeAttr('data-modal-opened');
 			rScreenCover.css('display','none');
+			appSite.bindHideScroll('auto');
 			return false;
+		});
+	},
+	bindFormPosition:function(){
+
+		$(window).resize(function() {
+
 		});
 	},
 	bind2gisMapReadCoords:function(){
 		var rAllCoords =[];
-		$('[data-map-coords]').find('[data-open-map]').each(function(){
-			rAllCoords.push($(this).attr("data-open-map"));
+		$('[data-open-map]').each(function(){
+			rAllCoords.push( $(this).attr("data-open-map") );
 		});
 		return rAllCoords;
 	},
+
+	bind2gisMapReadData:function(){
+		var rAllData = {
+		    aCoord: [],
+		    aTitle: []
+		};
+		$('[data-open-map]').each(function(){
+			rAllData.aCoord.push( $.trim( $(this).attr("data-open-map") ) );
+			rAllData.aTitle.push( $.trim( $(this).attr("data-name-house") ) );
+		});
+		return rAllData;
+	},
+
+/*
+    Удалить
+    bind2gisMapReadNames:function(){
+		var rAllCoords =[];
+		$('[data-name-house]').each(function(){
+			rAllCoords.push( $(this).attr("data-name-house") );
+		});
+		return rAllCoords;
+	},
+*/
+
 	bind2gisMap:function(){
-		var aCoord = appSite.bind2gisMapReadCoords();
+		var aData = appSite.bind2gisMapReadData();
 		var map;
-			DG.then(function () {
-				map = DG.map('map', {
-					center: [52.970143, 36.063397],
-					zoom: 13,
-					scrollWheelZoom: false
-				});
-				var myIcon = DG.icon({
-					iconUrl: 'styles/default/css/icons/map-object-icon.png',
-					iconSize: [39, 56],
-					iconAnchor: [22, 94],
-					popupAnchor: [-3, -76],
-					// shadowUrl: 'my-icon-shadow.png',
-					// shadowRetinaUrl: 'my-icon-shadow@2x.png',
-					// shadowSize: [68, 95],
-					// shadowAnchor: [22, 94]
-				});
-				aCoord.forEach(function(sVal) {
-					var aCrd = sVal.split(',');
-					DG.marker(aCrd, {icon: myIcon}).addTo(map);
-				});
+		DG.then(function () {
+			map = DG.map('map', {
+				center: [52.970143, 36.063397],
+				zoom: 12,
+				scrollWheelZoom: false
 			});
-
-
+			var myIcon = DG.icon({
+				iconUrl: 'styles/default/css/icons/map-object-icon.png',
+				iconSize: [39, 56],
+				iconAnchor: [39, 56],
+				popupAnchor: [-3, -76],
+				// shadowUrl: 'my-icon-shadow.png',
+				// shadowRetinaUrl: 'my-icon-shadow@2x.png',
+				// shadowSize: [68, 95],
+				// shadowAnchor: [22, 94]
+			});
+			aData.aCoord.forEach(function(sVal, iK) {
+				var aCrd = sVal.split(',');
+//				DG.marker(aCrd, {icon: myIcon}).addTo(map).bindLabel('!');
+				DG.marker(aCrd, {
+				    icon: myIcon,
+				    //title: aData.aTitle[iK]
+				}).addTo(map).bindLabel( aData.aTitle[iK] );
+			});
+		});
 	},
 	bindSeoCardSlider:function(){
 		  $('.seo-cards__slider').slick({
@@ -241,7 +273,7 @@ var appSite = {
                     var myMap = new ymaps.Map('houses-modal-map', {
                         center: aMapCoord,
                         zoom: iMapZoom,
-                        type: 'yandex#satellite',
+                        type: 'yandex#hybrid',
                     }, {
                         //searchControlProvider: 'yandex#satellite',
                     }),
@@ -253,12 +285,12 @@ var appSite = {
                         // Необходимо указать данный тип макета.
                         iconLayout: 'default#image',
                         // Своё изображение иконки метки.
-                        iconImageHref: '/img/ava.png',
+                        iconImageHref: 'styles/default/css/icons/map-object-icon.png',
                         // Размеры метки.
-                        iconImageSize: [50, 50],
+                        iconImageSize: [39, 56],
                         // Смещение левого верхнего угла иконки относительно
                         // её "ножки" (точки привязки).
-                        iconImageOffset: [-25, -70]
+                        iconImageOffset: [0, 0]
                     });
                     myMap.geoObjects.add(myPlacemark);
                     myMap.controls.add(new ymaps.control.SmallZoomControl () );
@@ -446,8 +478,10 @@ var appFormSubmit = {
 		}
 	},
 	sendOkModal: function(sStr) {
-		//$('.screen-cover').trigger('click');
+		$('.screen-cover').trigger('click');
+		$('.screen-cover').fadeIn();
 		$('.success-form').fadeIn();
+		appModalLite.setPosTpl( 0, $('.success-form') );
 	},
 	sendOkTpl: function(sText) {
 		return '\
