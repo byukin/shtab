@@ -389,11 +389,12 @@ h2 {
   background: rgba(255,255,255,0.15);
   box-shadow: 0px 0px 40px 30px rgba(255,255,255,0.15);
 }
-.gifts-boxes__item:hover .gifts-boxes__img {
-  transform: scale(1.15);
-}
 .gifts-boxes__item.notactive {
-  opacity: 0.4;
+  opacity: 0.3;
+}
+.gifts-boxes__item.active {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.13);
 }
 .gifts-boxes__img {
   margin-top: 20px;
@@ -402,11 +403,13 @@ h2 {
 }
 .gifts-box-scale-up {
   transition: all 0.2s ease-in-out;
-  transform: scale(1.15);
+  transform: scale(1.13);
 }
 .gifts-box-scale-down {
   transition: all 0.2s ease-in-out;
-  transform: scale(0.85);
+  transform: scale(0.87);
+  cursor: default;
+  opacity: 0.3;
 }
 .gifts-boxes__button {
   font-size: 0.875rem;
@@ -2387,6 +2390,7 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   width: 80%;
   margin: 0 auto;
   margin-top: 30px;
+  margin-bottom: 10px;
 }
 .get-gift-form__button {
   font-size: 0.875rem;

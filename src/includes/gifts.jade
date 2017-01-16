@@ -2,14 +2,14 @@ section#gifts.gifts-block
 	.layout
 		h2.gifts__title Выберите один из 3-х подарков для&nbsp;вашей новой квартиры
 		.gifts__subtitle Кликните мышкой на&nbsp;одну из&nbsp;коробок и&nbsp;узнайте, какой подарок вам достался
-		.gifts-boxes
-			.gifts-boxes__item(data-goal-box data-goal-hit="/podarok1/" data-form-type=".get-gift-form_var-1").notactive
+		.gifts-boxes(data-boxes-group)
+			.gifts-boxes__item(data-goal-box data-box-item data-goal-hit="/podarok1/" data-form-type="" data-gift-name="g1")
 				img(src="styles/default/css/images/box-1.png").gifts-boxes__img
 				button.gifts-boxes__button Выбрать подарок<br>№1
-			.gifts-boxes__item(data-goal-box data-goal-hit="/podarok2/" data-form-type=".get-gift-form_var-2")
+			.gifts-boxes__item(data-goal-box data-box-item data-goal-hit="/podarok2/" data-form-type="" data-gift-name="g2")
 				img(src="styles/default/css/images/box-2.png").gifts-boxes__img
 				button.gifts-boxes__button Выбрать подарок<br>№2
-			.gifts-boxes__item(data-goal-box data-goal-hit="/podarok3/" data-form-type=".get-gift-form_var-3")
+			.gifts-boxes__item(data-goal-box data-box-item data-goal-hit="/podarok3/" data-form-type="" data-gift-name="g3")
 				img(src="styles/default/css/images/box-3.png").gifts-boxes__img
 				button.gifts-boxes__button Выбрать подарок<br>№3
 		.gift-boxes__rules Выбор можно сделать только один раз
