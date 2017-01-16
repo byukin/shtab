@@ -242,27 +242,26 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 
 
 // Форма - получения подарка
-.get-gift-form(data-modal-form)
+.get-gift-form_var-1(data-modal-form)
 	.form__close
-	form(action="/" method="POST" data-form-name="Получения подарка" data-form-post="get-gift-form")
+	form(action="/" method="POST" data-form-name="Получения подарка" data-form-post="get-gift-form_var-1")
 		.get-gift-form__wait(data-form-set-wait)
 			.get-gift-form__wait-icon
 			.get-gift-form__title_wait Идет определение подарка
 		.get-gift-form__title Вы получаете:
-		.get-gift-form__description Именной подарочный сертификат на&nbsp;50&nbsp;000&nbsp;руб!
+		.get-gift-form__description Именной подарочный сертификат на&nbsp;86&nbsp;000&nbsp;руб!
 		.get-gift-form-content
 			.get-gift-form__sub-description Включающий
 			.get-gift-form__gift-list
 				ul
+					li <strong>5 000 руб.</strong> на покупку кухонной столешницы из искусственного камня от компании REALSTONES
 					li <strong>20 000 руб.</strong> на ремонт новой квартиры от студии ремонта «Ярус»
-					li <strong>15 000 руб.</strong> на покупку напольных покрытий от магазина «Паркет-Маркет»
-					li <strong>5 000 руб.</strong> на покупку интерьерного освещения от магазина «Мир Люстр»
-					li <strong>10 000 руб.</strong> на установку натяжного потолка от компании «Мелодия Комфорта»
-					li <strong>10 000 руб.</strong> на установку натяжного потолка от компании «Мелодия Комфорта»
-					li <strong>10 000 руб.</strong> на установку натяжного потолка от компании «Мелодия Комфорта»
-					li <strong>10 000 руб.</strong> на установку натяжного потолка от компании «Мелодия Комфорта»
-					li <strong>10 000 руб.</strong> на установку натяжного потолка от компании «Мелодия Комфорта»
-					li <strong>10 000 руб.</strong> на установку натяжного потолка от компании «Мелодия Комфорта»
+					li <strong>1 000 руб.</strong> на каждую дверь от салона UNION (в комплекте с полотном, коробкой, наличником)
+					li <strong>5 000 руб.</strong> на дизайн интерьера новой квартиры от студии «Метр 57»
+					li <strong>2 000 руб.</strong> на покупку декоративной отделки, красок, обоев и штукатурки от студии «Хамелеон»
+					li <strong>2 000 руб.</strong>  на новую сантехнику от магазина AquaFire
+					li <strong>1 000 руб.</strong> на услуги грузчиков и транспорта для переезда в новую квартиру от компании «Персональное решение»
+					li <strong>50 000 руб.</strong> на мебель для новой квартиры от магазина «Альфа-мебель»
 				span Чтобы закрепить за собой подарочный сертификат, заполните форму
 			.get-gift-form__gift-inputs
 				ul
@@ -275,6 +274,79 @@ button(data-scroll-top-button, data-scroll-to-b , data-href=".head").scrolltop__
 
 		button(data-form-submit).get-gift-form__button Перезвоните мне
 		.get-gift-form__gift-rules Подарочный сертификат действителен при покупке квартиры в Центре новостроек «Штаб-квартира». Подробные  условия получения подарка – в нашем офисе
+
+
+// Форма - получения подарка
+.get-gift-form_var-2(data-modal-form)
+	.form__close
+	form(action="/" method="POST" data-form-name="Получения подарка" data-form-post="get-gift-form_var-1")
+		.get-gift-form__wait(data-form-set-wait)
+			.get-gift-form__wait-icon
+			.get-gift-form__title_wait Идет определение подарка
+		.get-gift-form__title Вы получаете:
+		.get-gift-form__description Именной подарочный сертификат на&nbsp;36&nbsp;000&nbsp;руб!
+		.get-gift-form-content
+			.get-gift-form__sub-description Включающий
+			.get-gift-form__gift-list
+				ul
+					li <strong>5 000 руб.</strong> на покупку кухонной столешницы из искусственного камня от компании REALSTONES
+					li <strong>2 000 руб.</strong> на покупку декоративной отделки, красок, обоев и штукатурки от студии «Хамелеон»
+					li <strong>20 000 руб.</strong> на ремонт новой квартиры от студии ремонта «Ярус»
+					li <strong>1 000 руб.</strong> на каждую дверь от салона UNION (в комплекте с полотном, коробкой, наличником)
+					li <strong>5 000 руб.</strong> на дизайн интерьера новой квартиры от студии «Метр 57»
+					li <strong>2 000 руб.</strong>  на новую сантехнику от магазина AquaFire
+					li <strong>1 000 руб.</strong> на услуги грузчиков и транспорта для переезда в новую квартиру от компании «Персональное решение»
+				span Чтобы закрепить за собой подарочный сертификат, заполните форму
+			.get-gift-form__gift-inputs
+				ul
+					li
+						input(type="text" name="name" placeholder="*ФИО").required.get-gift-form__input-name
+					li
+						input(type="text" name="mail" placeholder="*E-mail").required.get-gift-form__input-mail
+					li
+						input(type="text" name="phone" placeholder="*Ваш номер телефона").required.get-gift-form__input-phone
+
+		button(data-form-submit).get-gift-form__button Перезвоните мне
+		.get-gift-form__gift-rules Подарочный сертификат действителен при покупке квартиры в Центре новостроек «Штаб-квартира». Подробные  условия получения подарка – в нашем офисе
+
+
+
+// Форма - получения подарка
+.get-gift-form_var-3(data-modal-form)
+	.form__close
+	form(action="/" method="POST" data-form-name="Получения подарка" data-form-post="get-gift-form_var-1")
+		.get-gift-form__wait(data-form-set-wait)
+			.get-gift-form__wait-icon
+			.get-gift-form__title_wait Идет определение подарка
+		.get-gift-form__title Вы получаете:
+		.get-gift-form__description Именной подарочный сертификат на&nbsp;16&nbsp;000&nbsp;руб!
+		.get-gift-form-content
+			.get-gift-form__sub-description Включающий
+			.get-gift-form__gift-list
+				ul
+					li <strong>5 000 руб.</strong> на покупку кухонной столешницы из искусственного камня от компании REALSTONES
+					li <strong>1 000 руб.</strong> на каждую дверь от салона UNION (в комплекте с полотном, коробкой, наличником)
+					li <strong>5 000 руб.</strong> на дизайн интерьера новой квартиры от студии «Метр 57»
+					li <strong>1 000 руб.</strong> на услуги грузчиков и транспорта для переезда в новую квартиру от компании «Персональное решение»
+					li <strong>2 000 руб.</strong>  на новую сантехнику от магазина AquaFire
+					li <strong>2 000 руб.</strong> на покупку декоративной отделки, красок, обоев и штукатурки от студии «Хамелеон»
+				span Чтобы закрепить за собой подарочный сертификат, заполните форму
+			.get-gift-form__gift-inputs
+				ul
+					li
+						input(type="text" name="name" placeholder="*ФИО").required.get-gift-form__input-name
+					li
+						input(type="text" name="mail" placeholder="*E-mail").required.get-gift-form__input-mail
+					li
+						input(type="text" name="phone" placeholder="*Ваш номер телефона").required.get-gift-form__input-phone
+
+		button(data-form-submit).get-gift-form__button Перезвоните мне
+		.get-gift-form__gift-rules Подарочный сертификат действителен при покупке квартиры в Центре новостроек «Штаб-квартира». Подробные  условия получения подарка – в нашем офисе
+
+
+
+
+
 
 
 // Форма - бронирования квартиры из популярных предложений

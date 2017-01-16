@@ -353,9 +353,8 @@ h2 {
 /* ------------- Блок подарки ------------- */
 .gifts-block {
   padding: 20px;
-  background: url("icons/gift-background.png");
-  background-repeat: repeat-x;
   box-sizing: border-box;
+  background: linear-gradient(to bottom, #694a45 1%, #a5807b 100%);
 }
 .gifts__title {
   text-align: center;
@@ -374,7 +373,7 @@ h2 {
   display: flex;
   margin: 0 auto;
   max-width: 900px;
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: center;
 }
 .gifts-boxes__item {
@@ -390,20 +389,24 @@ h2 {
   background: rgba(255,255,255,0.15);
   box-shadow: 0px 0px 40px 30px rgba(255,255,255,0.15);
 }
-.gifts-boxes__item:hover .gifts-boxes-top__img {
-  top: 30px;
-  transition-duration: 0.3s;
+.gifts-boxes__item:hover .gifts-boxes__img {
+  transform: scale(1.15);
+}
+.gifts-boxes__item.notactive {
+  opacity: 0.4;
 }
 .gifts-boxes__img {
-  margin-top: 50px;
+  margin-top: 20px;
+  transition: all 0.2s ease-in-out;
+  width: 240px;
 }
-.gifts-boxes-top__img {
-  position: absolute;
-  left: 31px;
-  top: 53px;
-  right: 0;
-  margin: auto;
-  transition-duration: 0.3s;
+.gifts-box-scale-up {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.15);
+}
+.gifts-box-scale-down {
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.85);
 }
 .gifts-boxes__button {
   font-size: 0.875rem;
@@ -413,16 +416,17 @@ h2 {
   background: none;
   display: block;
   margin: 0 auto;
-  width: 140px;
+  width: 160px;
   padding: 15px;
   text-align: center;
   outline: none;
 }
 .gift-boxes__rules {
   color: #fff;
-  margin-top: 40px;
+  margin-top: 60px;
   margin-bottom: 40px;
   text-align: center;
+  position: relative;
 }
 /* ------------- Блок подарки ------------- */
 .houses-block {
@@ -2263,7 +2267,7 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   background: #fe6f31;
 }
 /* ------------- Форма - запрос ставок по ипотеке ------------- */
-.get-gift-form {
+.get-gift-form_var-1 {
   display: none;
   background: #f8fcff url("images/gift-sert.png");
   background-repeat: no-repeat;
@@ -2273,11 +2277,49 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
   margin: auto;
   width: 100%;
-  max-width: 850px;
-  height: 920px;
+  max-width: 1024px;
+  overflow: hidden;
+  height: 600px;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.get-gift-form_var-2 {
+  display: none;
+  background: #f8fcff url("images/gift-sert.png");
+  background-repeat: no-repeat;
+  background-position: center 20px;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 1024px;
+  overflow: hidden;
+  height: 600px;
+  z-index: 1000000000;
+  box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
+  transition-duration: 0.3s;
+}
+.get-gift-form_var-3 {
+  display: none;
+  background: #f8fcff url("images/gift-sert.png");
+  background-repeat: no-repeat;
+  background-position: center 20px;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 1024px;
+  overflow: hidden;
+  height: 600px;
   z-index: 1000000000;
   box-shadow: 0px 10px 30px 15px rgba(0,0,0,0.05);
   transition-duration: 0.3s;
@@ -2310,7 +2352,7 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   padding: 10px;
   font-size: 1rem;
   border-radius: 3px;
-  width: 320px;
+  width: 100%;
   margin-bottom: 20px;
   font-family: 'Open Sans';
 }
@@ -2320,7 +2362,7 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   padding: 10px;
   font-size: 1rem;
   border-radius: 3px;
-  width: 320px;
+  width: 100%;
   margin-bottom: 20px;
   font-family: 'Open Sans';
 }
@@ -2330,7 +2372,7 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   padding: 10px;
   font-size: 1rem;
   border-radius: 3px;
-  width: 320px;
+  width: 100%;
   font-family: 'Open Sans';
 }
 .get-gift-form__input-subfixes {
@@ -2345,7 +2387,6 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   width: 80%;
   margin: 0 auto;
   margin-top: 30px;
-  margin-bottom: 50px;
 }
 .get-gift-form__button {
   font-size: 0.875rem;
@@ -2361,7 +2402,7 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   text-align: center;
   width: 230px;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 0px;
 }
 .get-gift-form__button:hover {
   background: #fe6f31;
@@ -2380,7 +2421,7 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
   width: 44px;
   height: 54px;
   margin: 0 auto;
-  margin-top: 35vh;
+  margin-top: 250px;
   background: url("icons/main-search-form__wait.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -2395,23 +2436,40 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
 .get-gift-form__gift-list {
   margin-top: 20px;
 }
-.get-gift-form__gift-list li {
-  margin-bottom: 5px;
+.get-gift-form__gift-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1024px;
+  margin: 0 auto;
 }
-.get-gift-form__gift-list li:before {
+.get-gift-form__gift-list ul li {
+  flex-basis: 33.33333%;
+  font-size: 0.9375rem;
+  padding: 10px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+.get-gift-form__gift-list ul li:before {
   content: "";
   display: inline-block;
   vertical-align: middle;
   margin-right: 5px;
   margin-top: -2px;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   background: url("icons/checkbox.png");
   background-repeat: no-repeat;
+  background-size: contain;
 }
 .get-gift-form__gift-inputs ul {
-  width: 320px;
-  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  max-width: 1024px;
+  margin-top: -10px;
+}
+.get-gift-form__gift-inputs ul li {
+  margin: 10px;
+  display: inline-block;
 }
 .get-gift-form__gift-list span {
   text-align: center;
@@ -2426,6 +2484,8 @@ input[type="checkbox"].get-plans-form__room-checkbox:checked + label {
 .get-gift-form__gift-rules {
   font-size: 0.825rem;
   text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
   margin-top: 20px;
 }
 /* ------------- Форма - подборка эксклюзивных предложений от застройщиков ------------- */

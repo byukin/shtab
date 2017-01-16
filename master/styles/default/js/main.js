@@ -1,3 +1,4 @@
+
 var appScrolling = {
 	toTopButton:function(){
 		$(window).scroll(function() {
@@ -41,6 +42,7 @@ var appSite = {
 		appSite.bindSeoCardSlider();
 		appSite.bindOpenForm('[data-form-type]');
 		appSite.bindFormSteps();
+		appSite.bindFormCheckboxes();
 		appSite.bindAdaptiveMenu();
 		appScrolling.bindScroll('[data-scroll-to]' , 'href');
 		appScrolling.bindScroll('[data-scroll-to-b]' , 'data-href');
@@ -48,6 +50,21 @@ var appSite = {
 	initReady:function(){
 		$(window).load(function(){
 			appSite.init();
+		});
+	},
+	bindFormCheckboxes:function(){
+		var rCheck = $('input[type=checkbox]');
+		rCheck.click(function(){
+			var rThis = $(this);
+			var sType = rThis.data('checkbox-all');
+			var rAll = rThis.parents("[data-checkbox-group]");
+			if (sType) {
+				rAll.find('input[type=checkbox]:not("[data-checkbox-all]")').prop('checked', false);
+			}
+			else {
+				rAll.find('[data-checkbox-all]').prop('checked', false);
+			}
+
 		});
 	},
 	bindAdaptiveMenu:function(){
@@ -67,9 +84,14 @@ var appSite = {
 	bindFormSetWait:function(rThis){
 		var rWait = rThis.find('[data-form-set-wait]');
 		if (rWait) {
+			rThis.css('height','600px');
+			rThis.css('overflow','hidden');
 			rWait.removeClass('invisible');
 			var rWaitTm = setTimeout(function(){
 				rWait.addClass('invisible');
+				rThis.css('height','auto');
+				rThis.css('overflow','auto');
+				appModalLite.setPosTpl( 0, rThis );
 			},3000);
 		}
 	},
@@ -123,19 +145,15 @@ var appSite = {
 			rFormType.attr('data-modal-opened', true);
 			rFormType.fadeIn(200);
 			rScreenCover.fadeIn(200);
-			//appModalLite.setPosTpl( 0, rFormType );
+			appModalLite.setPosTpl( 0, rFormType );
+			//appSite.bindFormResizeFix();
 			appSite.bindFormSetWait( rFormType );
-			var formHeight = $(rFormType).height();
-			var windowHeight = $(window).height();
-			if (formHeight > windowHeight) {
-				var scld = window.scrollY + 30;
-				rFormType.css('bottom','auto');
-				rFormType.css('top',''+scld+'px');
-			} else {
-				rFormType.css('position','fixed');
-			}
 			return false;
 		});
+		appSite.bindCloseModal();
+	},
+	bindCloseModal: function() {
+		var rScreenCover = $('.screen-cover');
 		$('.form__close , .screen-cover').click(function(){
 			$('[data-modal-form]').css('display','none').removeAttr('data-modal-opened');
 			rScreenCover.css('display','none');
@@ -143,11 +161,35 @@ var appSite = {
 			return false;
 		});
 	},
-	bindFormPosition:function(){
-
-		$(window).resize(function() {
-
-		});
+	bindFormResizeFix: function() {
+	    var rFormType = $('[data-modal-opened]');
+		var formHeight = $(rFormType).height();
+		var windowHeight = $(window).height();
+		if (formHeight > windowHeight) {
+			var scld = window.scrollY + 30;
+			rFormType.css('bottom','auto');
+			rFormType.css('top',''+scld+'px');
+		}
+		else {
+			rFormType.css('position','fixed');
+		}
+	},
+	bind2gisMapOpenForm: function(sFormType, sStr) {
+		var rScreenCover = $('.screen-cover');
+		//appSite.bindHideScroll('hidden');
+		var rThis = $(this);
+		var rFormType = $(sFormType);
+		var rFrm = rFormType.find('form');
+		if (sStr) {
+			rFrm.attr('data-form-name', sStr );
+		}
+		rFormType.attr('data-modal-opened', true);
+		rFormType.fadeIn(200);
+		rScreenCover.fadeIn(200);
+		appModalLite.setPosTpl( 0, rFormType );
+		appSite.bindFormSetWait( rFormType );
+		//appSite.bindFormResizeFix();
+		appSite.bindCloseModal();
 	},
 	bind2gisMapReadCoords:function(){
 		var rAllCoords =[];
@@ -156,7 +198,6 @@ var appSite = {
 		});
 		return rAllCoords;
 	},
-
 	bind2gisMapReadData:function(){
 		var rAllData = {
 		    aCoord: [],
@@ -168,18 +209,6 @@ var appSite = {
 		});
 		return rAllData;
 	},
-
-/*
-    Удалить
-    bind2gisMapReadNames:function(){
-		var rAllCoords =[];
-		$('[data-name-house]').each(function(){
-			rAllCoords.push( $(this).attr("data-name-house") );
-		});
-		return rAllCoords;
-	},
-*/
-
 	bind2gisMap:function(){
 		var aData = appSite.bind2gisMapReadData();
 		var map;
@@ -189,13 +218,13 @@ var appSite = {
 				zoom: 12,
 				scrollWheelZoom: false,
 				tap: false,
-				dragging: false
+				dragging: true
 			});
 			var myIcon = DG.icon({
 				iconUrl: 'styles/default/css/icons/map-object-icon.png',
 				iconSize: [39, 56],
 				iconAnchor: [39, 56],
-				popupAnchor: [-3, -76],
+				popupAnchor: [-3, -76]
 				// shadowUrl: 'my-icon-shadow.png',
 				// shadowRetinaUrl: 'my-icon-shadow@2x.png',
 				// shadowSize: [68, 95],
@@ -203,39 +232,70 @@ var appSite = {
 			});
 			aData.aCoord.forEach(function(sVal, iK) {
 				var aCrd = sVal.split(',');
-//				DG.marker(aCrd, {icon: myIcon}).addTo(map).bindLabel('!');
 				DG.marker(aCrd, {
-				    icon: myIcon,
+				    icon: myIcon
 				    //title: aData.aTitle[iK]
-				}).addTo(map).bindLabel( aData.aTitle[iK] );
+				})
+				.addTo(map)
+				.bindLabel( aData.aTitle[iK] )
+				.on('click', function(e) {
+					appSite.bind2gisMapOpenForm('.get-plans-form', aData.aTitle[iK]);
+				});
 			});
 		});
 	},
 	bindSeoCardSlider:function(){
-		  $('.seo-cards__slider').slick({
-				infinite: false,
+		  $('.seo-cards__slider_').slick({
+				infinite: true,
 			  	adaptiveHeight: true,
 				prevArrow: '.seo-cards-prev',
-			  	nextArrow: '.seo-cards-next',
+			  	nextArrow: '.seo-cards-next'
 			});
 	},
 	bindFeedback:function(){
-		  $('.feedback-carousel').slick({
-				infinite: false,
+		try {
+			$('.feedback-carousel').slick({
+				infinite: true,
 			  	adaptiveHeight: true,
 				prevArrow: '.feedback-prev',
-			  	nextArrow: '.feedback-next',
+			  	nextArrow: '.feedback-next'
 			});
+		} catch (e) { }
 	},
 	bindOffers:function(){
-		  $('.offers-carousel').slick({
-				infinite: false,
+		try {
+			$('.offers-carousel').slick({
+				infinite: true,
 				slidesToShow: 4,
-				slidesToScroll: 4,
+				slidesToScroll: 1,
 			  	adaptiveHeight: true,
 			  	prevArrow: '.offers-prev',
 			  	nextArrow: '.offers-next',
+			  	responsive: [
+				    {
+				      breakpoint: 1140,
+				      settings: {
+				        slidesToShow: 3,
+				        slidesToScroll: 1
+				      }
+				    },
+				    {
+				      breakpoint: 820,
+				      settings: {
+				        slidesToShow: 2,
+				        slidesToScroll: 1
+				      }
+				    },
+				    {
+				      breakpoint: 610,
+				      settings: {
+				        slidesToShow: 1,
+				        slidesToScroll: 1
+				      }
+				    }
+				  ]
 			});
+		} catch (e) { }
 	},
 	bindOpenMap:function(){
 		var rMap = $('[data-open-map]');
@@ -287,7 +347,7 @@ var appSite = {
                     var myMap = new ymaps.Map('houses-modal-map', {
                         center: aMapCoord,
                         zoom: iMapZoom,
-                        type: 'yandex#hybrid',
+                        type: 'yandex#hybrid'
                     }, {
                         //searchControlProvider: 'yandex#satellite',
                     }),
@@ -363,12 +423,82 @@ var appMetrics = {
 			}
 		} catch (e) { }
 	},
+	triggerHit: function(sGoal) {
+		try {
+			var bTrig = false;
+			for(var prop in window) {
+				if ( window.hasOwnProperty(prop) ) {
+					if (prop.indexOf('yaCounter') != -1) {
+						var rYaCounter = window[prop];
+						rYaCounter.hit( sGoal );
+						bTrig = true;
+					}
+				}
+			}
+			if ( !bTrig ) {
+				appMetrics.consoleLog( 'Metrics hit ' + sGoal + ' was not triggered' );
+			}
+			else {
+				appMetrics.consoleLog( sGoal );
+			}
+		} catch (e) { }
+	},
 	consoleLog: function(sStr) {
 		if ( appMetrics.vars.console ) {
 			console.log( sStr );
 		}
 	}
 };
+
+//
+var appMetricsHref = {
+	init: function() {
+		// Клики по элементам
+		appMetricsHref.bindClick('[data-goal-box]', 'box_');
+	},
+	bindClick: function(sElem, sPref) {
+		$(sElem).click(function() {
+			var rThis = $(this);
+			appMetricsHref.readHref(
+				appMetricsHref.readAttr(
+					rThis
+				),
+				sPref,
+				rThis
+			);
+		});
+	},
+	readHref: function(sHref, sPref, rThis) {
+		var aHref = sHref.split('#');
+		var sHrefGoal = sPref;
+		try {
+			if (aHref[1]) {
+				sHrefGoal += aHref[1];
+			}
+			else {
+				sHrefGoal += aHref[0];
+			}
+			if ( rThis.attr('data-goal-hit') ) {
+				appMetrics.triggerHit( sHref );
+			}
+			else {
+				appMetrics.triggerGoal( sHrefGoal );
+			}
+		} catch(e) { }
+	},
+	readAttr: function(rThis) {
+		var sGoal = $.trim( rThis.attr('data-goal') );
+		var sH = $.trim( rThis.attr('data-goal-hit') );
+		if ( sH ) {
+			sGoal = sH;
+		}
+		if (!sGoal) {
+			sGoal =  $.trim( rThis.attr('href') );
+		}
+		return  sGoal;
+	}
+};
+
 
 //
 var appFormSubmit = {
@@ -385,7 +515,7 @@ var appFormSubmit = {
 	},
 	validateMask: {
 		'email': /@/,
-		'phone': /[\+\-_0-9\s]+$/,
+		'phone': /[\+\-_0-9\s]+$/
 		//'text':  /[а-яА-ЯёЁa-zA-Z0-9\s]+$/,
 	},
 	initClick: function() {
@@ -590,7 +720,7 @@ var appIsMobile = {
 			if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4))) check = true
 		})(navigator.userAgent || navigator.vendor || window.opera);
 		return check;
-	},
+	}
 };
 
 
@@ -633,7 +763,8 @@ var appModalLite = {
 			if (!vNoTop) {
 				var iModalTop = (appModalLite.getPageS()[1]) + (((appModalLite.getPageH() / 2) - (rModal.height() / 2) - (iModalPaddingTB )));
 				if ((rModal.height() + (iModalPaddingTB)) > $(window).height()) {
-					iModalTop = (appModalLite.getPageS()[1] + appModalLite.getPageH()) - (rModal.height() + (iModalPaddingTB * 2));
+					//iModalTop = (appModalLite.getPageS()[1] + appModalLite.getPageH()) - (rModal.height() + (iModalPaddingTB * 2));
+					iModalTop = appModalLite.getPageS()[1]+iModalPaddingLR;
 				}
 				if (iModalTop < 0) {
 					iModalTop = 0;
@@ -653,20 +784,25 @@ var appModalLite = {
 		$(window).resize(function() {
 			appModalLite.setPosTpl( isMobile, $('[data-modal-opened]') );
 		});
-	},
+	}
 };
 
 //
 var appBind = {
 	ready: function() {
 		$(document).ready(function() {
-
-		});
-		$(window).load(function() {
 			appSite.init();
 			appFormSubmit.initClick();
+			appMetricsHref.init();
 		});
-		//appModalLite.bindResize();
+		$(window).load(function() {
+			//appSite.init();
+			//appFormSubmit.initClick();
+		});
+		$(window).resize(function() {
+            //appSite.bindFormResizeFix();
+		});
+		appModalLite.bindResize();
 		appScrolling.toTopButton();
 	}
 };
