@@ -72,8 +72,8 @@ h2
 	text-align center
 .head-menu__item
 	display inline-block
-	padding-left 15px
-	padding-right 15px
+	padding-left 10px
+	padding-right 10px
 	&:first-child
 		padding-left 0
 	&:last-child
@@ -86,6 +86,20 @@ h2
 .head-menu__item_burger
 	display none
 	padding 0
+.head-menu__submit
+	border none
+	color #fff
+	text-transform uppercase
+	font-weight bold
+	padding 10px 15px
+	background #ff7100
+	border-radius 2px
+	border-bottom 2px solid #c15906
+	cursor pointer
+	&:hover
+		background #fe811e
+
+
 /* ------------- Топ-маню-фикс ------------- */
 .head-fixed
 	background $headblue
@@ -98,8 +112,8 @@ h2
 	display none
 .head-menu-fixed__item
 	display inline-block
-	padding-left 15px
-	padding-right 15px
+	padding-left 5px
+	padding-right 5px
 	&:first-child
 		padding-left 0
 	&:last-child
@@ -186,12 +200,13 @@ h2
 	position relative
 	display flex
 	width 100%
+	background #f8fcff
 .main-info-image
 	flex-basis 50%
 	background url(images/main-info-image-1.png)
-	background-size cover
+	background-size contain
 	background-repeat no-repeat
-	background-position center center
+	background-position center left
 .main-info-content
 	flex-basis 50%
 	text-align center
@@ -214,6 +229,7 @@ h2
 	font-weight 600
 	width 60%
 	margin 0 auto
+	margin-bottom 60px
 	margin-top -10px
 .main-info-content__button
 	background #ff7100 url(icons/main-info-content__button.png)
@@ -238,6 +254,80 @@ h2
 		background #fe811e url(icons/main-info-content__button.png)
 		background-repeat no-repeat
 		background-position 15px 13px
+
+.main-info-filter
+	background #0081ba
+	padding 30px
+	display flex
+.main-info-filter__complex
+	margin-right 30px
+.main-info-filter__rooms
+	margin-right 30px
+.main-info-filter__rooms li
+	display inline-block
+	margin-right 3px
+.main-info-filter__square
+	margin-right 30px
+.main-info-filter__price
+	margin-right 30px
+.main-info-filter__label
+	color #fff
+	font-weight bold
+	margin-top -15px
+	margin-bottom 10px
+.main-info-filter__input
+	background #fff
+	border-radius 3px
+	border none
+	font-size 1rem
+	font-weight bold
+	font-family 'Open Sans'
+	padding 10px
+	max-width 170px
+
+.main-info-filter__number
+	width 40px
+	height 40px
+	display block
+	box-sizing border-box
+	vertical-align top
+	background #2bb5f7
+	border 0px solid #ebebeb
+	font-size 1.25rem
+	text-align center
+	line-height 40px
+	cursor pointer
+	color #fff
+
+input[type="checkbox"].main-info-filter__checkbox + label
+	&:before
+		content ""
+		opacity 0
+		display none
+input[type="checkbox"].main-info-filter__checkbox
+	&:checked + label
+		background #ff5910
+		border-color #ff5910
+		color #fff
+.main-info-filter__subfix
+	color #fff
+	display inline-block
+	margin-left 5px
+
+.main-info-filter__button
+	border none
+	color #fff
+	width 140px
+	margin-top 17px
+	text-transform uppercase
+	font-weight bold
+	padding 12px 15px
+	background #ff7100
+	border-radius 2px
+	border-bottom 2px solid #c15906
+	cursor pointer
+	&:hover
+		background #fe811e
 
 /* ------------- Преимущества ------------- */
 .advantages-block
@@ -669,6 +759,63 @@ h2
 	margin-top 30px
 
 
+
+/* ------------- Новости ------------- */
+.news-block
+	padding 20px
+	padding-top 60px
+	padding-bottom 80px
+	box-sizing border-box
+	position relative
+.news-block__title
+	text-align center
+	color #31475d
+	max-width 1170px
+	margin 0 auto
+	margin-bottom 40px
+.news-block-item
+	display flex
+	border 1px solid #ebebeb
+	margin-top 30px
+.news-block-item__thumbnail
+	max-width 370px
+	flex-basis 30%
+.news-block-item__image
+	width 370px
+.news-block-item__content
+	padding 30px
+	box-sizing border-box
+	flex-basis 70%
+.news-block-item__title
+	font-size 1.25rem
+	font-weight bold
+	margin-bottom 10px
+.news-block-item__text
+	margin-bottom 5px
+.news-block-item__more
+	font-weight bold
+	color #0074be
+	margin-bottom 15px
+.news-block-item__date
+	color #666
+	font-size 0.9375rem
+.news-block-more
+	background #ff7100
+	padding 15px 25px
+	border none
+	border-bottom: 2px solid #c15906;
+	color #fff
+	font-size 0.9375rem
+	font-weight bold
+	margin 0 auto
+	margin-top 60px
+	text-transform uppercase
+	border-radius 3px
+	display block
+	white-space nowrap
+	&:hover
+		background #fe811e
+
 /* ------------- Экстра ------------- */
 .extra
 	background #31475d
@@ -825,9 +972,77 @@ h2
 .banks__title
 	color #31475d
 
+/* ------------- Рекламный блок ------------- */
+.adv-block
+	padding 20px
+	padding-top 60px
+	padding-bottom 60px
+	box-sizing border-box
+	background url(images/adv-block.jpg)
+	text-align center
+	background-repeat no-repeat
+	background-size cover
+.adv-block__banner
+	max-width 695px
+/* ------------- Подписка на рассылку ------------- */
+.subscription-block
+	padding 20px
+	padding-top 60px
+	padding-bottom 60px
+	box-sizing border-box
+	background linear-gradient(to bottom, #694a45 1%, #a5807b 100%)
+	text-align center
+.subscription-form
+	background #f9fcff
+	padding 40px
+.subscription-form__title
+	font-size 1.5625rem
+	font-weight bold
+	max-width 70%
+	margin 0 auto
+	margin-bottom 20px
+.subscription-form__subtitle
+	font-size 1.25rem
+	margin-bottom -10px
+.subscription-form__inputs
+	max-width 560px
+	margin 0 auto
+	margin-bottom 20px
+	white-space nowrap
+.subscription-form__input
+	border 1px solid #ebebeb
+	font-family 'Open Sans'
+	border-radius 3px
+	font-size 1rem
+	background #fff
+	padding 15px
+	width 55%
+	margin-right 30px
+	display inline-block
+	box-sizing border-box
+.subscription-form__button
+	width 40%
+	box-sizing border-box
+	background #ff7100
+	padding 15px 25px
+	border none
+	border-bottom: 2px solid #c15906;
+	color #fff
+	font-size 0.9375rem
+	font-weight bold
+	margin 0 auto
+	margin-top 60px
+	text-transform uppercase
+	border-radius 3px
+	display inline-block
+	white-space nowrap
+	&:hover
+		background #fe811e
+
+
+
 /* ------------- Предложения ------------- */
 .offers-block
-	display none
 	padding 20px
 	padding-top 40px
 	box-sizing border-box
@@ -1316,7 +1531,6 @@ h2
 	top 0
 	left 0
 	right 0
-	bottom 0
 	margin auto
 	width 100%
 	max-width 910px

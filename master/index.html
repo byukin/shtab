@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link href="styles/default/css/style.css" rel="stylesheet"/>
 		<link href="styles/default/css/adaptive.css" rel="stylesheet"/>
+		<link href="styles/default/css/add.css" rel="stylesheet"/>
 	</head>
 	<body>
 		<!-- includes/head-->
@@ -16,15 +17,17 @@
 			<div class="layout">
 				<div class="head-menu">
 					<ul>
-						<li class="head-menu__item_burger"><a href="" class="head-menu__link">Бургер</a></li>
-						<li class="head-menu__item"><a href="" class="head-menu__link">Подарки</a></li>
-						<li class="head-menu__item"><a href="" class="head-menu__link">Каталог квартир</a></li>
-						<li class="head-menu__item"><a href="" class="head-menu__link">Консультация эксперта</a></li>
-						<li class="head-menu__item"><a href="" class="head-menu__link">Свежие предложения</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Каталог новостроек</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Ипотека</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Вопросы и ответы</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Ваши выгоды</a></li>
 						<li class="head-menu__item"><a href="" class="head-menu__link">Отзывы</a></li>
-						<li class="head-menu__item"><a href="" class="head-menu__link">Бронирование</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Жителям</a></li>
 						<li class="head-menu__item"><a href="" class="head-menu__link">О центре</a></li>
 						<li class="head-menu__item"><a href="" class="head-menu__link">Контакты</a></li>
+						<li class="head-menu__item">
+							<button class="head-menu__submit">Подобрать квартиру</button>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -48,9 +51,48 @@
 				<div class="main-info">
 					<div class="main-info-image"></div>
 					<div class="main-info-content">
-						<h1 class="main-info-content__title">Продажа квартир в&nbsp;новостройках Орла<br><span>без комиссии</span></h1>
-						<div class="main-info-content__subtitle">Поиск по базе из более 800 вариантов квартир:</div>
-						<button data-form-type=".main-search-form" class="main-info-content__button">Подобрать<br>квартиру</button>
+						<h1 class="main-info-content__title">Продажа квартир в&nbsp;новостройках Орла<br><span>по ценам застройщиков</span></h1>
+						<div class="main-info-content__subtitle">Поиск по базе из более 700 вариантов квартир:</div>
+					</div>
+				</div>
+				<div class="main-info-filter">
+					<div class="main-info-filter__complex">
+						<div class="main-info-filter__label">Жилой комплекс:</div>
+						<input type="text" placeholder="Не важно" class="main-info-filter__input"/>
+					</div>
+					<div class="main-info-filter__rooms">
+						<div class="main-info-filter__label">Комнат:</div>
+						<ul>
+							<li>
+								<input type="checkbox" name="rooms[]" id="1-room-plan" value="1" checked="checked" class="main-info-filter__checkbox"/>
+								<label for="1-room-plan" class="main-info-filter__number">1</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="2-room-plan" value="2" class="main-info-filter__checkbox"/>
+								<label for="2-room-plan" class="main-info-filter__number">2</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="3-room-plan" value="3" class="main-info-filter__checkbox"/>
+								<label for="3-room-plan" class="main-info-filter__number">3</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="4-room-plan" value="4+" class="main-info-filter__checkbox"/>
+								<label for="4-room-plan" class="main-info-filter__number">4+</label>
+							</li>
+						</ul>
+					</div>
+					<div class="main-info-filter__square">
+						<div class="main-info-filter__label">Площадь:</div>
+						<input type="text" placeholder="От" class="main-info-filter__input"/>
+						<div class="main-info-filter__subfix">м<sup>2</sup></div>
+					</div>
+					<div class="main-info-filter__price">
+						<div class="main-info-filter__label">Цена:</div>
+						<input type="text" placeholder="До" class="main-info-filter__input"/>
+						<div class="main-info-filter__subfix">Р</div>
+					</div>
+					<div class="main-info-filter__submit">
+						<button class="main-info-filter__button">Найти</button>
 					</div>
 				</div>
 			</div>
@@ -452,58 +494,41 @@
 				</div>
 			</div>
 		</section>
-		<!-- includes/extra-->
-		<section class="extra">
+		<!-- includes/news-->
+		<section class="news-block">
 			<div class="layout">
-				<div class="extra-tour">
-					<div class="extra-tour__content">
-						<div class="extra-tour__title">Виртуальная экскурсия по будущей квартире</div>
-						<div class="extra-tour__text">Вы сможете виртуально посетить все квартиры в&nbsp;нашей базе новостроек. Мы свяжемся с&nbsp;вами и&nbsp;пригласим в&nbsp;офис</div>
-						<button data-form-type=".get-excursion-form" class="extra-tour__submit">записаться на экскурсию</button>
-					</div>
-					<div class="extra-tour__thumbnail"><img src="styles/default/css/images/extra-tour.png" class="extra-tour__img"/></div>
-				</div>
-				<div class="extra-cards">
-					<div class="extra-economy">
-						<div class="extra-economy__title">Экономия до 908 000 руб.<br>при покупке квартиры</div>
-						<div class="extra-economy__text">Бесплатно оформим для вас налоговый вычет.  Поможем вернуть каждому из супругов до 260 000 рублей за покупку жилья + 390 000 рублей за проценты по ипотеке</div>
-						<button data-form-type=".nalog-economy-form" class="extra-tour__submit">Узнать подробности</button>
-					</div>
-					<div class="extra-gift">
-						<div class="extra-gift__title">Подарки от партнеров<br>на сумму до 150 000 руб.</div>
-						<div class="extra-gift__text">Выберите подарки при покупке квартиры в Центре новостроек «Штаб-квартира»</div>
-						<button data-scroll-to-b="data-scroll-to-b" data-href="#gifts" class="extra-gift__submit">выбрать подарок</button>
+				<h2 class="news-block__title">Новости рынка новостроек Орла</h2>
+				<div class="news-block-item">
+					<div class="news-block-item__thumbnail"><img src="uploads/img/house-1.png" class="news-block-item__image"/></div>
+					<div class="news-block-item__content">
+						<div class="news-block-item__title">14.01.2016–20.01.2016 г. происходит заселение в квартиры 1-3 подъездов дома по ул. Зеленина, 14</div>
+						<div class="news-block-item__text">Уважаемые покупатели квартир ПАО «Орелстрой»! Штаб-квартира сообщает, что с 14.01.2016 по 20.01.2016 будет происходить заселение в квартиры 1-3 подъездов дома по ул. Зеленина, 14. Поздравляем!</div>
+						<div class="news-block-item__more">Подробности по телефону отдела заселения ПАО «Орелстрой»: (4862) 54-92-92</div>
+						<div class="news-block-item__date">28 ноября 2016 г.</div>
 					</div>
 				</div>
-				<div class="extra-advantages">
-					<div class="advantages__item">
-						<div class="advantages__icon icon-4"></div>
-						<div class="advantages__title">Оформление ипотеки прямо&nbsp;в&nbsp;офисе</div>
-						<div class="advantages__text">Ипотеку по&nbsp;наиболее выгодной ставке Сбербанка вы можете оформить прямо в&nbsp;нашем офисе</div>
-						<button data-form-type=".get-credit-rates-form" class="advantages__button advantages__excursion">узнать ставки по ипотеке</button>
-					</div>
-					<div class="advantages__item">
-						<div class="advantages__icon icon-5"></div>
-						<div class="advantages__title">Квартиры по выгодным ценам,<br>без комиссии</div>
-						<div class="advantages__text">Мы не&nbsp;риелторы, оформление квартиры  осуществляется напрямую с&nbsp;застройщиком</div>
-						<button data-form-type=".exclusive-offers-form" class="advantages__button advantages__excursion">получить подборку</button>
-					</div>
-					<div class="advantages__item">
-						<div class="advantages__icon icon-6"></div>
-						<div class="advantages__title">Бронирование квартиры за&nbsp;5&nbsp;минут</div>
-						<div class="advantages__text">Забронируйте любую понравившуюся квартиру в&nbsp;новостройке на&nbsp;3-5&nbsp;дней БЕСПЛАТНО!</div>
-						<button data-form-type=".main-search-form" class="advantages__button advantages__gift">Забронировать</button>
+				<div class="news-block-item">
+					<div class="news-block-item__thumbnail"><img src="uploads/img/house-1.png" class="news-block-item__image"/></div>
+					<div class="news-block-item__content">
+						<div class="news-block-item__title">14.01.2016–20.01.2016 г. происходит заселение в квартиры 1-3 подъездов дома по ул. Зеленина, 14</div>
+						<div class="news-block-item__text">Уважаемые покупатели квартир ПАО «Орелстрой»! Штаб-квартира сообщает, что с 14.01.2016 по 20.01.2016 будет происходить заселение в квартиры 1-3 подъездов дома по ул. Зеленина, 14. Поздравляем!</div>
+						<div class="news-block-item__more">Подробности по телефону отдела заселения ПАО «Орелстрой»: (4862) 54-92-92</div>
+						<div class="news-block-item__date">28 ноября 2016 г.</div>
 					</div>
 				</div>
+				<div class="news-block-item">
+					<div class="news-block-item__thumbnail"><img src="uploads/img/house-1.png" class="news-block-item__image"/></div>
+					<div class="news-block-item__content">
+						<div class="news-block-item__title">14.01.2016–20.01.2016 г. происходит заселение в квартиры 1-3 подъездов дома по ул. Зеленина, 14</div>
+						<div class="news-block-item__text">Уважаемые покупатели квартир ПАО «Орелстрой»! Штаб-квартира сообщает, что с 14.01.2016 по 20.01.2016 будет происходить заселение в квартиры 1-3 подъездов дома по ул. Зеленина, 14. Поздравляем!</div>
+						<div class="news-block-item__more">Подробности по телефону отдела заселения ПАО «Орелстрой»: (4862) 54-92-92</div>
+						<div class="news-block-item__date">28 ноября 2016 г.</div>
+					</div>
+				</div>
+				<button class="news-block-more">Читать все новости</button>
 			</div>
 		</section>
-		<!-- includes/banks-->
-		<section class="banks">
-			<div class="layout">
-				<h2 class="banks__title">Мы подберем для вас<br>наиболее выгодные условия по ипотеке</h2><img src="styles/default/css/images/banks.png"/>
-			</div>
-		</section>
-		<!-- includes/offers-->
+		<!-- Брать с рабочего сайта !!!!-->
 		<section class="offers-block">
 			<h2 class="offers-block__title">Самые популярные предложения в новостройках:</h2>
 			<div class="layout">
@@ -577,61 +602,73 @@
 				</div>
 			</div>
 		</section>
-		<!-- includes/feedback-->
-		<section class="feedback-block">
+		<!-- includes/extra-->
+		<section class="extra">
 			<div class="layout">
-				<h2 class="feedback-block__title">Что говорят о нас владельцы новых квартир</h2>
-				<div class="feedback-prev"></div>
-				<div class="feedback-next"></div>
-				<div class="feedback feedback-carousel">
-					<div class="feedback__item">
-						<div class="feedback__content">
-							<div class="feedback__left">
-								<div class="feedback__thumbnail"><img src="uploads/img/feedback__img-1.png" class="feedback__img"/></div>
-							</div>
-							<div class="feedback__right">
-								<div class="feedback__title">Подобрали квартиру очень быстро</div>
-								<div class="feedback__text">Дорогая Штабквартира! Вы большие молодцы, спасибо Вам огромное! Благодаря Вам мы с мужем смогли оформить ипотеку и приобрести очень быстро в такой не простой для нас всех год: много где заставляли долго ждать, а потом отказывали, а ваши советы и работа помогли нам решить все с банком и купить себе жилье! Еще раз большое спасибо!</div>
-								<div class="feedback__name">Людмила Платонова</div>
-							</div>
-						</div>
+				<div class="extra-tour">
+					<div class="extra-tour__content">
+						<div class="extra-tour__title">Виртуальная экскурсия по будущей квартире</div>
+						<div class="extra-tour__text">Вы сможете виртуально посетить все квартиры в&nbsp;нашей базе новостроек. Мы свяжемся с&nbsp;вами и&nbsp;пригласим в&nbsp;офис</div>
+						<button data-form-type=".get-excursion-form" class="extra-tour__submit">записаться на экскурсию</button>
 					</div>
-					<div class="feedback__item">
-						<div class="feedback__content">
-							<div class="feedback__left">
-								<div class="feedback__thumbnail"><img src="uploads/img/feedback__img-2.png" class="feedback__img"/></div>
-							</div>
-							<div class="feedback__right">
-								<div class="feedback__title">Все очень понравилось</div>
-								<div class="feedback__text">Я очень долго сомневался где мне лучше купить квартиру: в новостройке или на вторичке. С одной стороны хотелось въехать в новое жилье, с другой стороны многие районы находятся далеко. В конце-концов обратился в агентство «Штабквартира», где мне помогли окончательно решить для себя с выбором и купить квартиру именно в новостройке в районе Алроса. За что им очень благодарен!</div>
-								<div class="feedback__name">Михаил Колесников</div>
-							</div>
-						</div>
+					<div class="extra-tour__thumbnail"><img src="styles/default/css/images/extra-tour.png" class="extra-tour__img"/></div>
+				</div>
+				<div class="extra-cards">
+					<div class="extra-economy">
+						<div class="extra-economy__title">Экономия до 908 000 руб.<br>при покупке квартиры</div>
+						<div class="extra-economy__text">Бесплатно оформим для вас налоговый вычет.  Поможем вернуть каждому из супругов до 260 000 рублей за покупку жилья + 390 000 рублей за проценты по ипотеке</div>
+						<button data-form-type=".nalog-economy-form" class="extra-tour__submit">Узнать подробности</button>
 					</div>
-					<div class="feedback__item">
-						<div class="feedback__content">
-							<div class="feedback__left">
-								<div class="feedback__thumbnail"><img src="uploads/img/feedback__img-4.png" class="feedback__img"/></div>
-							</div>
-							<div class="feedback__right">
-								<div class="feedback__title">Очень благодарна сотрудникам</div>
-								<div class="feedback__text">Обратилась в Штаб-квартиру. Отговорили покупать квартиру у одного застройщика, и действительно, начались проблемы через 3 месяца: к сроку сдать дом не успели, стройка не завершена до сих пор. А я уже въехала в новую квартиру и праздную новоселье! Большое спасибо Анне и ее коллегам!!!</div>
-								<div class="feedback__name">Юлия Антонова</div>
-							</div>
-						</div>
+					<div class="extra-gift">
+						<div class="extra-gift__title">Подарки от партнеров<br>на сумму до 150 000 руб.</div>
+						<div class="extra-gift__text">Выберите подарки при покупке квартиры в Центре новостроек «Штаб-квартира»</div>
+						<button data-scroll-to-b="data-scroll-to-b" data-href="#gifts" class="extra-gift__submit">выбрать подарок</button>
 					</div>
-					<div class="feedback__item">
-						<div class="feedback__content">
-							<div class="feedback__left">
-								<div class="feedback__thumbnail"><img src="uploads/img/feedback__img-3.png" class="feedback__img"/></div>
-							</div>
-							<div class="feedback__right">
-								<div class="feedback__title">Помогли сэкономить при покупке</div>
-								<div class="feedback__text">Никогда не думал, что при покупке такой большой вещи как квартира можно сэкономить. А оказывается можно! И за это гигантское спасибо команде из «Штабквартиры» — они помогла мне с женой рассчитать налоговые вычеты для каждого из нас по нашей ипотеке. Всего получилось большее полумиллиона рублей! Вы представляете себе: мы не только въедем сразу в новую квартиру, но и сможем сразу же обставить ее мебелью! Это же здорово))</div>
-								<div class="feedback__name">Евгений Новиков</div>
-							</div>
-						</div>
+				</div>
+				<div class="extra-advantages">
+					<div class="advantages__item">
+						<div class="advantages__icon icon-4"></div>
+						<div class="advantages__title">Оформление ипотеки прямо&nbsp;в&nbsp;офисе</div>
+						<div class="advantages__text">Ипотеку по&nbsp;наиболее выгодной ставке Сбербанка вы можете оформить прямо в&nbsp;нашем офисе</div>
+						<button data-form-type=".get-credit-rates-form" class="advantages__button advantages__excursion">узнать ставки по ипотеке</button>
 					</div>
+					<div class="advantages__item">
+						<div class="advantages__icon icon-5"></div>
+						<div class="advantages__title">Квартиры по выгодным ценам,<br>без комиссии</div>
+						<div class="advantages__text">Мы не&nbsp;риелторы, оформление квартиры  осуществляется напрямую с&nbsp;застройщиком</div>
+						<button data-form-type=".exclusive-offers-form" class="advantages__button advantages__excursion">получить подборку</button>
+					</div>
+					<div class="advantages__item">
+						<div class="advantages__icon icon-6"></div>
+						<div class="advantages__title">Бронирование квартиры за&nbsp;5&nbsp;минут</div>
+						<div class="advantages__text">Забронируйте любую понравившуюся квартиру в&nbsp;новостройке на&nbsp;3-5&nbsp;дней БЕСПЛАТНО!</div>
+						<button data-form-type=".main-search-form" class="advantages__button advantages__gift">Забронировать</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- includes/banks-->
+		<section class="banks">
+			<div class="layout">
+				<h2 class="banks__title">Мы подберем для вас<br>наиболее выгодные условия по ипотеке</h2><img src="styles/default/css/images/banks.png"/>
+			</div>
+		</section>
+		<!-- includes/adv-->
+		<section class="adv-block">
+			<div class="layout"><img src="uploads/img/adv-block-banner.jpg" class="adv-block__banner"/></div>
+		</section>
+		<!-- includes/subscription-->
+		<section class="subscription-block">
+			<div class="layout">
+				<div class="subscription-form">
+					<form action="">
+						<div class="subscription-form__title">Хотите первыми выбирать привлекательные планировки и этажи в новых домах?</div>
+						<div class="subscription-form__subtitle">Подпишитесь на рассылку, мы будем присылать их вам на e-mail</div>
+						<div class="subscription-form__inputs">
+							<input type="text" placeholder="Введите ваш e-mail" class="subscription-form__input"/>
+							<button type="submit" class="subscription-form__button">Подписаться</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</section>

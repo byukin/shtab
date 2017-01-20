@@ -80,6 +80,22 @@ var appGiftsBox = {
 		sResultText: 'Ожидайте звонка нашего специалиста'
 	},
 	init: function() {
+		appGiftsBox.bindGiftsReady();
+		appGiftsBox.bindGifts();
+	},
+	bindGiftsReady: function() {
+		var rReadGifts = setInterval(function(){
+			//console.log('Read:');
+			var rGifts = appGiftsBox.bindReadMemory();
+			if ( rGifts ) {
+				appGiftsBox.bindSetMemory( rGifts );
+				if (rGifts.ok) {
+					clearInterval( rReadGifts );
+				}
+			}
+		}, 100);
+	},
+	bindGifts: function() {
 		var rGifts = appGiftsBox.bindReadMemory();
 		if ( rGifts ) {
 			appGiftsBox.bindSetMemory( rGifts );
@@ -104,8 +120,6 @@ var appGiftsBox = {
 		rOther.unbind('click');
 		rOther.unbind('hover');
 		rOther.find(appGiftsBox.vars.sText).remove();
-
-
 		if (rGifts.ok) {
 			$(appGiftsBox.vars.sResultBlock).html(appGiftsBox.vars.sResultText);
 			rGiftCurrent.find(appGiftsBox.vars.sText).html(appGiftsBox.vars.sSent);
@@ -118,7 +132,7 @@ var appGiftsBox = {
 		var aRand = appGiftsBox.shuffleArr( [1,2,3] );
 		var rItem = $(appGiftsBox.vars.sBox);
 		rItem.each(function(iIndex) {
-			console.log(iIndex);
+			//console.log(iIndex);
 			var rThis = $(this);
 			rThis.attr('data-form-type', appGiftsBox.vars.sForm+aRand[iIndex]  );
 		});
@@ -137,22 +151,20 @@ var appGiftsBox = {
 			rOther.removeClass(appGiftsBox.vars.sDown);
 		});
 	},
-	bindSentForm:function(rForm){
+	bindSentForm: function(rForm) {
 		var sForm = '.'+rForm.data('form-post');
-		var rLocal = appLocal.dataReadJson('gift');
-		if (rLocal && rLocal.v == sForm) {
-			rLocal.ok = 1;
-			appLocal.dataInsertJson('gift', rLocal);
+		var rGifts = appLocal.dataReadJson('gift');
+		if (rGifts && rGifts.n && rGifts.v == sForm) {
+			rGifts.ok = 1;
+			appLocal.dataInsertJson( 'gift', rGifts );
+			appGiftsBox.bindSetMemory( rGifts );
 		}
 	},
 	saveGiftBox: function(sName, sVal) {
-		console.log(sName, sVal);
-		appLocal.dataInsertJson('gift', {n: sName, v: sVal, ok: 0});
-	},
-	randInt: function(min, max) {
-		var rand = min - 0.5 + Math.random() * (max - min + 1)
-		rand = Math.round(rand);
-		return rand;
+		//console.log(sName, sVal);
+		if ( sName ) {
+			appLocal.dataInsertJson('gift', {n: sName, v: sVal, ok: 0});
+		}
 	},
 	shuffleArr: function(aArr) {
 		var iC = aArr.length;
@@ -215,15 +227,19 @@ var appSite = {
 	bindHideScroll:function(sSw){
 			//$('body').css('overflow-y', sSw);
 	},
-	bindFormSetWait:function(rThis){
+	bindFormSetWait:function(rThis) {
+		// Атрибут ожидания
 		var rWait = rThis.find('[data-form-set-wait]');
+		// Атирибут пропуска
 		var rWaitHide = appLocal.dataReadJson( rWait.attr('data-form-set-wait-hide') );
-
-		if (!rWaitHide) {
-			if (rWait) {
+		// Нет пропуска момента ожидания
+		if ( !rWaitHide ) {
+			// Если есть элемент ожидания
+			if ( rWait.is('div') ) {
 				rThis.css('height','600px');
 				rThis.css('overflow','hidden');
 				rWait.removeClass('invisible');
+				//
 				var rWaitTm = setTimeout(function(){
 					appSite.bindFormSetWaitUpdate(rWait , rThis);
 				},3000);
@@ -292,7 +308,6 @@ var appSite = {
 			appModalLite.setPosTpl( 0, rFormType );
 			//appSite.bindFormResizeFix();
 			appSite.bindFormSetWait( rFormType );
-
 			appGiftsBox.saveGiftBox( rThis.data('gift-name') , formtype );
 			appGiftsBox.bindSetMemory( {n: rThis.data('gift-name'), v: formtype } );
 			return false;
@@ -447,7 +462,7 @@ var appSite = {
 	bindOpenMap:function(){
 		var rMap = $('[data-open-map]');
 		rMap.click(function(){
-			console.log("click");
+			//console.log("click");
 			var rThis = $(this);
 			appSite.openMapBlock(rThis);
 		});
@@ -455,7 +470,7 @@ var appSite = {
 	openMapBlock:function(rThis) {
 		var sUri = rThis.attr('href');
 		var aCoord = rThis.attr("data-open-map").split(",");
-		console.log("fancy");
+		//console.log("fancy");
         try {
             $.fancybox({
                 "padding": 0,
@@ -470,7 +485,7 @@ var appSite = {
                 }
             });
         } catch(e) {
-				console.log("fancyerror");
+				//console.log("fancyerror");
 			}
 	},
 	openMap:function(aMapCoord, sUri){
@@ -511,7 +526,7 @@ var appSite = {
                         iconImageSize: [39, 56],
                         // Смещение левого верхнего угла иконки относительно
                         // её "ножки" (точки привязки).
-                        iconImageOffset: [0, 0]
+                        iconImageOffset: [-9, -38]
                     });
                     myMap.geoObjects.add(myPlacemark);
                     myMap.controls.add(new ymaps.control.SmallZoomControl () );
@@ -646,7 +661,6 @@ var appMetricsHref = {
 	}
 };
 
-
 //
 var appFormSubmit = {
 	attr: {
@@ -699,6 +713,7 @@ var appFormSubmit = {
 	formData: function(isThis, iOnData) {
 		var aData = {};
 		var sSubmit = isThis.attr( appFormSubmit.attr.frm );
+		aData[ 'sDescr' ] = isThis.find('[data-form-description]').text();
 		aData[ sSubmit ] = sSubmit;
 		if (iOnData) {
 			isThis.find('[name]').each(function (i) {
@@ -760,7 +775,7 @@ var appFormSubmit = {
 		var sErrorSend = appFormSubmit.readError(rForm, sRes);
 		if (sErrorSend === '') {
 			rForm.trigger('reset');
-			// appGiftsBox.bindSentForm(rForm);
+			appGiftsBox.bindSentForm(rForm);
 			// rForm.find('.success-form').css('display', 'block');
 			appFormSubmit.sendOkModal( rForm.data('send-ok') );
 			appMetrics.triggerGoal( rForm.data('goal') );

@@ -3,7 +3,36 @@ section.main-info-block
 		.main-info
 			.main-info-image
 			.main-info-content
-				h1.main-info-content__title Продажа квартир в&nbsp;новостройках Орла<br><span>без комиссии</span>
-				.main-info-content__subtitle Поиск по базе из более 800 вариантов квартир:
-				button(data-form-type=".main-search-form").main-info-content__button Подобрать<br>квартиру
+				h1.main-info-content__title Продажа квартир в&nbsp;новостройках Орла<br><span>по ценам застройщиков</span>
+				.main-info-content__subtitle Поиск по базе из более 700 вариантов квартир:
+		.main-info-filter
+			.main-info-filter__complex
+				.main-info-filter__label Жилой комплекс:
+				input(type="text" placeholder="Не важно").main-info-filter__input
+			.main-info-filter__rooms
+				.main-info-filter__label Комнат:
+				ul
+					li
+						input(type="checkbox" name="rooms[]" id="1-room-plan" value="1" checked).main-info-filter__checkbox
+						label(for="1-room-plan").main-info-filter__number 1
+					li
+						input(type="checkbox" name="rooms[]" id="2-room-plan" value="2").main-info-filter__checkbox
+						label(for="2-room-plan").main-info-filter__number 2
+					li
+						input(type="checkbox" name="rooms[]" id="3-room-plan" value="3").main-info-filter__checkbox
+						label(for="3-room-plan").main-info-filter__number 3
+					li
+						input(type="checkbox" name="rooms[]" id="4-room-plan" value="4+").main-info-filter__checkbox
+						label(for="4-room-plan").main-info-filter__number 4+
+			.main-info-filter__square
+				.main-info-filter__label Площадь:
+				input(type="text" placeholder="От").main-info-filter__input
+				.main-info-filter__subfix м<sup>2</sup>
+			.main-info-filter__price
+				.main-info-filter__label Цена:
+				input(type="text" placeholder="До").main-info-filter__input
+				.main-info-filter__subfix Р
+			.main-info-filter__submit
+				button.main-info-filter__button Найти
+
 
