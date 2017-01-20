@@ -72,7 +72,12 @@ var appGiftsBox = {
 		sGroup: '[data-boxes-group]',
 		sUp: 'gifts-box-scale-up',
 		sDown: 'gifts-box-scale-down',
-		sForm: '.get-gift-form_var-'
+		sForm: '.get-gift-form_var-',
+		sVisited: 'Получить&nbsp;подарок',
+		sSent: 'Подарок&nbsp;оформлен',
+		sText: '[data-box-item-text]',
+		sResultBlock: '[data-box-item-result]',
+		sResultText: 'Ожидайте звонка нашего специалиста'
 	},
 	init: function() {
 		var rGifts = appGiftsBox.bindReadMemory();
@@ -88,14 +93,26 @@ var appGiftsBox = {
 		return appLocal.dataReadJson('gift');
 	},
 	bindSetMemory: function( rGifts ) {
+		// rGifts.ok = 1;
 		var rGiftCurrent = $('[data-gift-name="'+rGifts.n+'"]');
 		rGiftCurrent.addClass(appGiftsBox.vars.sUp);
 		rGiftCurrent.attr('data-form-type', rGifts.v );
 		rGiftCurrent.unbind('hover');
+		rGiftCurrent.find(appGiftsBox.vars.sText).html(appGiftsBox.vars.sVisited);
 		var rOther = rGiftCurrent.parents(appGiftsBox.vars.sGroup).find(appGiftsBox.vars.sBox+':not(".'+appGiftsBox.vars.sUp+'")');
 		rOther.addClass(appGiftsBox.vars.sDown);
 		rOther.unbind('click');
 		rOther.unbind('hover');
+		rOther.find(appGiftsBox.vars.sText).remove();
+
+
+		if (rGifts.ok) {
+			$(appGiftsBox.vars.sResultBlock).html(appGiftsBox.vars.sResultText);
+			rGiftCurrent.find(appGiftsBox.vars.sText).html(appGiftsBox.vars.sSent);
+			rGiftCurrent.unbind('click');
+			rGiftCurrent.unbind('hover');
+			rGiftCurrent.css('cursor','default');
+		}
 	},
 	bindRandomize:function() {
 		var aRand = appGiftsBox.shuffleArr( [1,2,3] );
@@ -120,9 +137,17 @@ var appGiftsBox = {
 			rOther.removeClass(appGiftsBox.vars.sDown);
 		});
 	},
+	bindSentForm:function(rForm){
+		var sForm = '.'+rForm.data('form-post');
+		var rLocal = appLocal.dataReadJson('gift');
+		if (rLocal && rLocal.v == sForm) {
+			rLocal.ok = 1;
+			appLocal.dataInsertJson('gift', rLocal);
+		}
+	},
 	saveGiftBox: function(sName, sVal) {
 		console.log(sName, sVal);
-		appLocal.dataInsertJson('gift', {n: sName, v: sVal});
+		appLocal.dataInsertJson('gift', {n: sName, v: sVal, ok: 0});
 	},
 	randInt: function(min, max) {
 		var rand = min - 0.5 + Math.random() * (max - min + 1)
@@ -192,17 +217,27 @@ var appSite = {
 	},
 	bindFormSetWait:function(rThis){
 		var rWait = rThis.find('[data-form-set-wait]');
-		if (rWait) {
-			rThis.css('height','600px');
-			rThis.css('overflow','hidden');
-			rWait.removeClass('invisible');
-			var rWaitTm = setTimeout(function(){
-				rWait.addClass('invisible');
-				rThis.css('height','auto');
-				rThis.css('overflow','auto');
-				appModalLite.setPosTpl( 0, rThis );
-			},3000);
+		var rWaitHide = appLocal.dataReadJson( rWait.attr('data-form-set-wait-hide') );
+
+		if (!rWaitHide) {
+			if (rWait) {
+				rThis.css('height','600px');
+				rThis.css('overflow','hidden');
+				rWait.removeClass('invisible');
+				var rWaitTm = setTimeout(function(){
+					appSite.bindFormSetWaitUpdate(rWait , rThis);
+				},3000);
+			}
 		}
+		else {
+			appSite.bindFormSetWaitUpdate(rWait , rThis);
+		}
+	},
+	bindFormSetWaitUpdate:function(rWait , rThis){
+		rWait.addClass('invisible');
+		rThis.css('height','auto');
+		rThis.css('overflow','auto');
+		appModalLite.setPosTpl( 0, rThis );
 	},
 	bindFormStepWait:function(rStep){
 		var sAttr = 'data-form-step-wait';
@@ -725,6 +760,7 @@ var appFormSubmit = {
 		var sErrorSend = appFormSubmit.readError(rForm, sRes);
 		if (sErrorSend === '') {
 			rForm.trigger('reset');
+			// appGiftsBox.bindSentForm(rForm);
 			// rForm.find('.success-form').css('display', 'block');
 			appFormSubmit.sendOkModal( rForm.data('send-ok') );
 			appMetrics.triggerGoal( rForm.data('goal') );

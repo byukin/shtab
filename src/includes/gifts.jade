@@ -5,11 +5,11 @@ section#gifts.gifts-block
 		.gifts-boxes(data-boxes-group)
 			.gifts-boxes__item(data-goal-box data-box-item data-goal-hit="/podarok1/" data-form-type="" data-gift-name="g1")
 				img(src="styles/default/css/images/box-1.png").gifts-boxes__img
-				button.gifts-boxes__button Выбрать подарок<br>№1
+				button(data-box-item-text).gifts-boxes__button Выбрать подарок<br>№1
 			.gifts-boxes__item(data-goal-box data-box-item data-goal-hit="/podarok2/" data-form-type="" data-gift-name="g2")
 				img(src="styles/default/css/images/box-2.png").gifts-boxes__img
-				button.gifts-boxes__button Выбрать подарок<br>№2
+				button(data-box-item-text).gifts-boxes__button Выбрать подарок<br>№2
 			.gifts-boxes__item(data-goal-box data-box-item data-goal-hit="/podarok3/" data-form-type="" data-gift-name="g3")
 				img(src="styles/default/css/images/box-3.png").gifts-boxes__img
-				button.gifts-boxes__button Выбрать подарок<br>№3
-		.gift-boxes__rules Выбор можно сделать только один раз
+				button(data-box-item-text).gifts-boxes__button Выбрать подарок<br>№3
+		.gift-boxes__rules(data-box-item-result) Выбор можно сделать только один раз

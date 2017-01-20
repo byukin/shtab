@@ -8,6 +8,8 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
 	cssmin = require('gulp-cssmin'),
 	htmlprettify = require('gulp-html-prettify'),
+	imagemin = require('gulp-imagemin'),
+	smushit = require('gulp-smushit'),
 	rename = require('gulp-rename');
 
 var path = {
@@ -17,7 +19,7 @@ var path = {
         css: 'master/styles/default/css/',
         icons: 'master/styles/default/css/icons/',
 		img: 'master/styles/default/css/img/',
-        fonts: 'master/styles/default/css/fonts/'
+        fonts: 'master/styles/default/css/fonts/',
     },
     src: { //Пути откуда брать исходники
         html: 'src/**/*.jade',
@@ -29,6 +31,17 @@ var path = {
 
 };
 
+gulp.task('smushit', function () {
+    return gulp.src('master/styles/default/css/zip/*.{jpg,png}')
+        .pipe(smushit())
+        .pipe(gulp.dest('master/styles/default/css/zip/zipped'));
+});
+
+gulp.task('imagemin', () =>
+    gulp.src('master/styles/default/css/zip/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'))
+);
 
 gulp.task('webserver', ['watch'], function() {
   gulp.src('./')

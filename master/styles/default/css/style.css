@@ -396,6 +396,9 @@ h2 {
   transition: all 0.2s ease-in-out;
   transform: scale(1.13);
 }
+.gift-visited .gifts-boxes__button {
+  display: none;
+}
 .gifts-boxes__img {
   margin-top: 20px;
   transition: all 0.2s ease-in-out;
