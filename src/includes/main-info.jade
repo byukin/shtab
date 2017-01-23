@@ -8,7 +8,10 @@ section.main-info-block
 		.main-info-filter
 			.main-info-filter__complex
 				.main-info-filter__label Жилой комплекс:
-				input(type="text" placeholder="Не важно").main-info-filter__input
+				label
+					select.main-info-filter__select
+						option(selected) Не важно
+						option Разградский
 			.main-info-filter__rooms
 				.main-info-filter__label Комнат:
 				ul

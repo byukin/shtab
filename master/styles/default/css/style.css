@@ -304,6 +304,7 @@ h2 {
 }
 .main-info-filter__rooms {
   margin-right: 30px;
+  white-space: nowrap;
 }
 .main-info-filter__rooms li {
   display: inline-block;
@@ -311,9 +312,11 @@ h2 {
 }
 .main-info-filter__square {
   margin-right: 30px;
+  white-space: nowrap;
 }
 .main-info-filter__price {
   margin-right: 30px;
+  white-space: nowrap;
 }
 .main-info-filter__label {
   color: #fff;
@@ -375,6 +378,17 @@ input[type="checkbox"].main-info-filter__checkbox:checked + label {
 }
 .main-info-filter__button:hover {
   background: #fe811e;
+}
+.main-info-filter__select {
+  background: #fff;
+  border-radius: 3px;
+  border: none;
+  font-size: 1rem;
+  font-weight: normal;
+  font-family: 'Open Sans';
+  padding: 7px;
+  margin-top: 1px;
+  width: 260px;
 }
 /* ------------- Преимущества ------------- */
 .advantages-block {
