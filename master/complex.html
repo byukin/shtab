@@ -1,0 +1,790 @@
+<!DOCTYPE html5>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8"/>
+		<meta name="description" content=""/>
+		<meta name="keywords" content=""/>
+		<meta http-equiv="content-language" content="ru"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link href="styles/default/css/style.css" rel="stylesheet"/>
+		<link href="styles/default/css/adaptive.css" rel="stylesheet"/>
+		<link href="styles/default/css/add.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<!-- includes/head-->
+		<section class="head">
+			<div class="layout">
+				<div class="head-menu">
+					<ul>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Каталог новостроек</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Ипотека</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Вопросы и ответы</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Ваши выгоды</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Отзывы</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Жителям</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">О центре</a></li>
+						<li class="head-menu__item"><a href="" class="head-menu__link">Контакты</a></li>
+						<li class="head-menu__item">
+							<button class="head-menu__submit">Подобрать квартиру</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- includes/header-->
+		<section class="header">
+			<div class="layout clearfix">
+				<div class="header-logo"></div>
+				<div class="header-contacts">
+					<ul>
+						<li class="header-contacts__adress">Орел, Московская 42</li>
+						<li class="header-contacts__time">с 9:00 до 18:00</li>
+						<li class="header-contacts__phone"><a href="tel:+74862780815" class="header-contacts__link">(4862) 78-08-15</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- includes/main-filter-->
+		<section class="filter-block">
+			<div class="layout">
+				<div class="filter-info">
+					<h1 class="filter-info__title">Продажа квартир в&nbsp;новостройках Орла</h1>
+					<div class="filter-info__subtitle">Поиск по базе из более 700 вариантов квартир:</div>
+				</div>
+				<div class="main-info-filter">
+					<div class="main-info-filter__complex">
+						<div class="main-info-filter__label">Жилой комплекс:</div>
+						<label>
+							<select class="main-info-filter__select">
+								<option selected="selected">Не важно</option>
+								<option>Разградский</option>
+							</select>
+						</label>
+					</div>
+					<div class="main-info-filter__rooms">
+						<div class="main-info-filter__label">Комнат:</div>
+						<ul>
+							<li>
+								<input type="checkbox" name="rooms[]" id="1-room-plan" value="1" checked="checked" class="main-info-filter__checkbox"/>
+								<label for="1-room-plan" class="main-info-filter__number">1</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="2-room-plan" value="2" class="main-info-filter__checkbox"/>
+								<label for="2-room-plan" class="main-info-filter__number">2</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="3-room-plan" value="3" class="main-info-filter__checkbox"/>
+								<label for="3-room-plan" class="main-info-filter__number">3</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="4-room-plan" value="4+" class="main-info-filter__checkbox"/>
+								<label for="4-room-plan" class="main-info-filter__number">4+</label>
+							</li>
+						</ul>
+					</div>
+					<div class="main-info-filter__square">
+						<div class="main-info-filter__label">Площадь:</div>
+						<input type="text" placeholder="От" class="main-info-filter__input"/>
+						<div class="main-info-filter__subfix">м<sup>2</sup></div>
+					</div>
+					<div class="main-info-filter__price">
+						<div class="main-info-filter__label">Цена:</div>
+						<input type="text" placeholder="До" class="main-info-filter__input"/>
+						<div class="main-info-filter__subfix">Р</div>
+					</div>
+					<div class="main-info-filter__submit">
+						<button class="main-info-filter__button">Найти</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- includes/main-breadcrumbs-->
+		<section class="breadcrumbs">
+			<div class="layout">
+				<ul>
+					<li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+					<li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Жилые комплексы</a></li>
+					<li class="breadcrumbs__item"><a href="" class="breadcrumbs__link active">Микрорайон Болховский</a></li>
+				</ul>
+			</div>
+		</section>
+		<!-- includes/complex-info-->
+		<section class="complex-info">
+			<div class="layout">
+				<h1 class="complex-info__title">Микрорайон Болховский</h1>
+				<div class="complex-info__text">Микрорайон «Первый» – это квартиры в Орле от 28 т.р. за кв.м., с возможностью выбора готовой отделки, в экологически чистом районе с полной инфраструктурой в 15 минутах от центра, с отличной транспортной доступностью, c гарантией роста стоимости квадратного метра на 70%.</div><a href="" class="complex-info__link">Описание комплекса</a>
+			</div>
+		</section>
+		<!-- includes/flats-summary-->
+		<section class="flats-summary-block">
+			<div class="layout">
+				<div class="flats-summary">
+					<h1 class="flats-summary__title">115 квартир в продаже</h1>
+					<ul>
+						<li class="flats-summary__item"><a href="" class="flats-summary__link">ул. Генерала Лаврова, 6</a></li>
+						<li class="flats-summary__item"><a href="" class="flats-summary__link">ул. Генерала Лаврова, 8</a></li>
+						<li class="flats-summary__item"><a href="" class="flats-summary__link">ул. Естина, 2</a></li>
+						<li class="flats-summary__item"><a href="" class="flats-summary__link">ул. Естина, 4</a></li>
+						<li class="flats-summary__item"><a href="" class="flats-summary__link">ул. Естина, 9</a></li>
+						<li class="flats-summary__item"><a href="" class="flats-summary__link">ул. Генерала Лаврова, 10</a></li>
+						<li class="flats-summary__item"><a href="" class="flats-summary__link">ул. Естина, 11</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- includes/main-form-->
+		<section class="main-form-block">
+			<div class="layout">
+				<div class="main-form-top">
+					<h2 class="main-form-top__title">Не хотите искать самостоятельно?<br>Оставьте Ваши пожелания по подбору квартиры</h2>
+					<div class="main-form-top__subtitle">Получите на e-mail подборку эксклюзивных предложений</div>
+					<form action="/" method="POST" data-form-post="main-form-top" class="main-form-top__form">
+						<div class="main-form-top__left">
+							<textarea type="text" name="message" placeholder="Укажите пожелания по подбору квартиры" class="main-form-top__message"></textarea>
+						</div>
+						<div class="main-form-top__right">
+							<input type="text" name="mail" placeholder="*Ваш e-mail" class="main-form-top__mail"/>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="main-form-top__phone"/>
+							<button data-form-submit="data-form-submit" class="main-form-top__submit">Получить подборку</button>
+						</div>
+					</form>
+				</div>
+				<div class="main-form-bottom">
+					<h2 class="main-form-bottom__title">Или свяжитесь напрямую с нашим экспертом</h2>
+					<div class="main-form-consultant">
+						<div class="main-form-consultant__photo"><img src="styles/default/css/images/consultant.png" class="main-form-consultant__img"/></div>
+						<div class="main-form-consultant__info">
+							<div class="main-form-consultant__name">Анна Смирнова</div>
+							<div class="main-form-consultant__text">Эксперт по недвижимости Центра новостроек «Штаб-квартира»</div>
+							<div class="main-form-consultant__phone">Звоните: <strong>(4862) 78-08-15</strong></div>
+						</div>
+					</div>
+					<div class="main-form-bottom__subtitle">Или оставьте номер, Анна перезвонит вам</div>
+					<form action="/" method="POST" data-form-post="main-form-bottom" class="main-form-bottom__form">
+						<input type="text" name="phone" placeholder="*Номер телефона" class="main-form-bottom__phone"/>
+						<button data-form-submit="data-form-submit" class="main-form-bottom__submit">Перезвоните мне</button>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- includes/advantages-->
+		<section class="advantages-block">
+			<div class="layout">
+				<div class="advantages">
+					<div class="advantages__item">
+						<div class="advantages__icon icon-1"></div>
+						<div class="advantages__title">Экономия до 908 000 руб. при&nbsp;покупке квартиры</div>
+						<div class="advantages__text">Бесплатно оформим для вас налоговый вычет.  Поможем вернуть каждому из&nbsp;супругов до 260 000 рублей за&nbsp;покупку жилья + 390 000 рублей за проценты по ипотеке</div><a href="" data-form-type=".nalog-economy-form" class="advantages__link">Узнать подробности</a>
+					</div>
+					<div class="advantages__item">
+						<div class="advantages__icon icon-2"></div>
+						<div class="advantages__title">Виртуальная экскурсия по&nbsp;вашей будущей квартире</div>
+						<div class="advantages__text">Вы сможете виртуально посетить все квартиры в нашей базе новостроек. Мы свяжемся с&nbsp;вами и&nbsp;пригласим в&nbsp;офис</div>
+						<button data-form-type=".get-excursion-form" class="advantages__button advantages__excursion">Записаться на экскурсию</button>
+					</div>
+					<div class="advantages__item">
+						<div class="advantages__icon icon-3"></div>
+						<div class="advantages__title">Подарки от партнеров на&nbsp;сумму&nbsp;до 150 000 руб.</div>
+						<div class="advantages__text">Выберите подарки при покупке квартиры в&nbsp;Центре новостроек «Штаб-квартира»</div>
+						<button data-scroll-to-b="data-scroll-to-b" data-href="#gifts" class="advantages__button advantages__gift">Выбрать подарок</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Брать с рабочего сайта !!!!-->
+		<section class="offers-block">
+			<h2 class="offers-block__title">Самые популярные предложения в новостройках:</h2>
+			<div class="layout">
+				<div class="offers-prev"></div>
+				<div class="offers-next"></div>
+				<div class="offers offers-carousel">
+					<div class="offers__item"><img src="uploads/img/plan.png"/>
+						<div class="offers__content">
+							<div class="offers__title">ЖК «Разградский»</div>
+							<div class="offers__square">Студия., 24 м<sup></sup></div>
+							<div class="offers__price">1 000 000 руб.</div>
+							<button data-form-type=".get-offer-form" class="offers__button">Забронировать</button>
+						</div>
+					</div>
+					<div class="offers__item"><img src="uploads/img/plan.png"/>
+						<div class="offers__content">
+							<div class="offers__title">ЖК «Разградский»</div>
+							<div class="offers__square">Студия., 24 м<sup></sup></div>
+							<div class="offers__price">1 000 000 руб.</div>
+							<button data-form-type=".get-offer-form" class="offers__button">Забронировать</button>
+						</div>
+					</div>
+					<div class="offers__item"><img src="uploads/img/plan.png"/>
+						<div class="offers__content">
+							<div class="offers__title">ЖК «Разградский»</div>
+							<div class="offers__square">Студия., 24 м<sup></sup></div>
+							<div class="offers__price">1 000 000 руб.</div>
+							<button data-form-type=".get-offer-form" class="offers__button">Забронировать</button>
+						</div>
+					</div>
+					<div class="offers__item"><img src="uploads/img/plan.png"/>
+						<div class="offers__content">
+							<div class="offers__title">ЖК «Разградский»</div>
+							<div class="offers__square">Студия., 24 м<sup></sup></div>
+							<div class="offers__price">1 000 000 руб.</div>
+							<button data-form-type=".get-offer-form" class="offers__button">Забронировать</button>
+						</div>
+					</div>
+					<div class="offers__item"><img src="uploads/img/plan.png"/>
+						<div class="offers__content">
+							<div class="offers__title">ЖК «Разградский»</div>
+							<div class="offers__square">Студия., 24 м<sup></sup></div>
+							<div class="offers__price">1 000 000 руб.</div>
+							<button data-form-type=".get-offer-form" class="offers__button">Забронировать</button>
+						</div>
+					</div>
+					<div class="offers__item"><img src="uploads/img/plan.png"/>
+						<div class="offers__content">
+							<div class="offers__title">ЖК «Разградский»</div>
+							<div class="offers__square">Студия., 24 м<sup></sup></div>
+							<div class="offers__price">1 000 000 руб.</div>
+							<button data-form-type=".get-offer-form" class="offers__button">Забронировать</button>
+						</div>
+					</div>
+					<div class="offers__item"><img src="uploads/img/plan.png"/>
+						<div class="offers__content">
+							<div class="offers__title">ЖК «Разградский»</div>
+							<div class="offers__square">Студия., 24 м<sup></sup></div>
+							<div class="offers__price">1 000 000 руб.</div>
+							<button data-form-type=".get-offer-form" class="offers__button">Забронировать</button>
+						</div>
+					</div>
+					<div class="offers__item"><img src="uploads/img/plan.png"/>
+						<div class="offers__content">
+							<div class="offers__title">ЖК «Разградский»</div>
+							<div class="offers__square">Студия., 24 м<sup></sup></div>
+							<div class="offers__price">1 000 000 руб.</div>
+							<button data-form-type=".get-offer-form" class="offers__button">Забронировать</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- includes/adv-->
+		<section class="adv-block">
+			<div class="layout"><img src="uploads/img/adv-block-banner.jpg" class="adv-block__banner"/></div>
+		</section>
+		<!-- includes/subscription-->
+		<section class="subscription-block">
+			<div class="layout">
+				<div class="subscription-form">
+					<form action="">
+						<div class="subscription-form__title">Хотите первыми выбирать привлекательные планировки и этажи в новых домах?</div>
+						<div class="subscription-form__subtitle">Подпишитесь на рассылку, мы будем присылать их вам на e-mail</div>
+						<div class="subscription-form__inputs">
+							<input type="text" placeholder="Введите ваш e-mail" class="subscription-form__input"/>
+							<button type="submit" class="subscription-form__button">Подписаться</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- includes/footer-->
+		<section class="footer-block">
+			<div class="layout">
+				<div class="footer">
+					<div class="footer__logo"></div>
+					<div class="footer__copyrights">© Центр новостроек «Штаб-квартира»<br>Все права защищены<br>ИНН 5752072787<br>ОГРН 1155749010658</div>
+					<div class="footer__contacts">
+						<div class="footer__phone">Позвоните:&nbsp;<a href="tel:+74862780815" class="footer__phone-link">(4862) 78-08-15</a></div>
+						<div class="footer__mail">Пишите:&nbsp;<a href="mailto:mail@780815.ru" class="footer__mail-link">mail@780815.ru</a></div>
+						<div class="footer__adress">Приходите: Московская, 42<br>(ТЦ «Аэлита», 3 этаж, офис 41 и 43, FREEDOM)</div>
+					</div>
+					<div class="footer__rights">
+						<div class="footer__partners">
+							<ul>
+								<li><a href="#" data-form-type=".get-partnership-form" class="footer__partners-link">Застройщикам</a></li>
+								<li><a href="#" data-form-type=".get-individual-partnership-form" class="footer__partners-link">Партнерам</a></li>
+							</ul>
+						</div>
+						<div class="footer__developer">Сделано в&nbsp;<a href="#" class="footer__developer-link">«ОрелСайтСтрой»</a></div>
+					</div>
+				</div>
+				<div class="creditals">Информация на данном сайте носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями статьи 437 ГК РФ. Актуальные цены и предложения уточняйте по телефону (4862) 78-08-15</div>
+			</div>
+		</section>
+		<!-- includes/modals-->
+		<button data-scroll-top-button="data-scroll-top-button" data-scroll-to-b="data-scroll-to-b" data-href=".head" class="scrolltop__button"><img src="styles/default/css/icons/scrolltop__button.png"> Наверх</button>
+		<div class="adaptive-menu-burger"></div>
+		<div class="adaptive-menu">
+			<div class="form__close"></div>
+			<ul>
+				<li class="adaptive-menu__item"><a href=".gifts-block" data-scroll-to="data-scroll-to" class="adaptive-menu__link">Подарки</a></li>
+				<li class="adaptive-menu__item"><a href="" data-scroll-to="data-scroll-to" class="adaptive-menu__link">Каталог квартир</a></li>
+				<li class="adaptive-menu__item"><a href="" data-scroll-to="data-scroll-to" class="adaptive-menu__link">Консультация эксперта</a></li>
+				<li class="adaptive-menu__item"><a href="" data-scroll-to="data-scroll-to" class="adaptive-menu__link">Свежие предложения</a></li>
+				<li class="adaptive-menu__item"><a href="" data-scroll-to="data-scroll-to" class="adaptive-menu__link">Отзывы</a></li>
+				<li class="adaptive-menu__item"><a href="" data-scroll-to="data-scroll-to" class="adaptive-menu__link">Бронирование</a></li>
+				<li class="adaptive-menu__item"><a href="" data-scroll-to="data-scroll-to" class="adaptive-menu__link">О центре</a></li>
+				<li class="adaptive-menu__item"><a href="" data-scroll-to="data-scroll-to" class="adaptive-menu__link">Контакты</a></li>
+			</ul>
+		</div>
+		<div class="screen-cover"></div>
+		<!-- Форма - подбор вариантов квартир-->
+		<div data-modal-form="data-modal-form" class="main-search-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Подбор вариантов квартир" data-form-post="main-search-form">
+				<div class="main-search-form__description">Подбор вариантов квартир</div>
+				<div data-form-step="data-form-step" class="main-search-form__screen">
+					<div class="main-search-form__steps">Шаг 1 из 5</div>
+					<div class="main-search-form__title">Выберите жилой комлекс</div>
+					<div class="main-search-form__checkboxes">
+						<div class="main-search-form__checkboxes-left">
+							<ul>
+								<li>
+									<input type="checkbox" name="complex[]" id="doesntmatter" value="Не важно" class="main-search-form__checkbox"/>
+									<label for="doesntmatter" class="main-search-form__label">Не важно</label>
+								</li>
+								<li>
+									<input type="checkbox" name="complex[]" id="razgradsky" value="Разградский" class="main-search-form__checkbox"/>
+									<label for="razgradsky" class="main-search-form__label">Разградский</label>
+								</li>
+								<li>
+									<input type="checkbox" name="complex[]" id="pervyi" value="Микрорайон «Первый»" class="main-search-form__checkbox"/>
+									<label for="pervyi" class="main-search-form__label">Микрорайон «Первый»</label>
+								</li>
+								<li>
+									<input type="checkbox" name="complex[]" id="revolution" value="ЖК на ул. Революции, 3" class="main-search-form__checkbox"/>
+									<label for="revolution" class="main-search-form__label">ЖК на ул. Революции, 3</label>
+								</li>
+								<li>
+									<input type="checkbox" name="complex[]" id="solovinaya" value="Соловьиная роща" class="main-search-form__checkbox"/>
+									<label for="solovinaya" class="main-search-form__label">Соловьиная роща</label>
+								</li>
+							</ul>
+						</div>
+						<div class="main-search-form__checkboxes-right">
+							<ul>
+								<li>
+									<input type="checkbox" name="complex[]" id="ostrov" value="Зеленый остров" class="main-search-form__checkbox"/>
+									<label for="ostrov" class="main-search-form__label">Зеленый остров</label>
+								</li>
+								<li>
+									<input type="checkbox" name="complex[]" id="moscow" value="ЖК на ул. Московское шоссе, 155" class="main-search-form__checkbox"/>
+									<label for="moscow" class="main-search-form__label">ЖК на ул. Московское шоссе, 155</label>
+								</li>
+								<li>
+									<input type="checkbox" name="complex[]" id="star" value="Северная звезда" class="main-search-form__checkbox"/>
+									<label for="star" class="main-search-form__label">Северная звезда</label>
+								</li>
+								<li>
+									<input type="checkbox" name="complex[]" id="andrianova-37" value="ЖК на ул. Андрианова, 37" class="main-search-form__checkbox"/>
+									<label for="andrianova-37" class="main-search-form__label">ЖК на ул. Андрианова, 37</label>
+								</li>
+								<li>
+									<input type="checkbox" name="complex[]" id="andrianova-31" value="ЖК на ул. Андрианова, 31" class="main-search-form__checkbox"/>
+									<label for="andrianova-31" class="main-search-form__label">ЖК на ул. Андрианова, 31</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<button data-form-step-next="data-form-step-next" class="main-search-form__button">Следующий шаг</button>
+					<div class="main-search-form__subinfo">Услуга подбора бесплатна и ни к чему вас не обязывает</div>
+				</div>
+				<div data-form-step="data-form-step" class="main-search-form__screen main-search-form__screen-2 invisible">
+					<div class="main-search-form__steps">Шаг 2 из 5</div>
+					<div class="main-search-form__title main-search-form__title-screen-2">Укажите количество комнат</div>
+					<div class="main-search-form__room-checkboxes">
+						<ul>
+							<li>
+								<input type="checkbox" name="rooms[]" id="1-room" value="1" class="main-search-form__room-checkbox"/>
+								<label for="1-room" class="main-search-form__room-label">1</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="2-room" value="2" class="main-search-form__room-checkbox"/>
+								<label for="2-room" class="main-search-form__room-label">2</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="3-room" value="3" class="main-search-form__room-checkbox"/>
+								<label for="3-room" class="main-search-form__room-label">3</label>
+							</li>
+							<li>
+								<input type="checkbox" name="rooms[]" id="4-room" value="4+" class="main-search-form__room-checkbox"/>
+								<label for="4-room" class="main-search-form__room-label">4+</label>
+							</li>
+						</ul>
+					</div>
+					<div class="main-search-form__buttons">
+						<button data-form-step-prev="data-form-step-prev" class="main-search-form__button_prev"><span>К предыдущему шагу</span></button>
+						<button data-form-step-next="data-form-step-next" class="main-search-form__button">Следующий шаг</button>
+					</div>
+				</div>
+				<div data-form-step="data-form-step" class="main-search-form__screen main-search-form__screen-3 invisible">
+					<div class="main-search-form__steps">Шаг 3 из 5</div>
+					<div class="main-search-form__title main-search-form__title-screen-3">Укажите площадь и цену
+						<ul>
+							<li><span class="main-search-form__input-title">Площадь</span><span class="main-search-form__input-prefixes">От</span>
+								<input type="text" name="square" class="main-search-form__input-square"/><span class="main-search-form__input-prefixes">м<sup>2</sup></span>
+							</li>
+							<li><span class="main-search-form__input-title">Цена</span><span class="main-search-form__input-prefixes">До</span>
+								<input type="text" name="price" class="main-search-form__input-price"/><span class="main-search-form__input-prefixes">р.</span>
+							</li>
+						</ul>
+					</div>
+					<div class="main-search-form__buttons">
+						<button data-form-step-prev="data-form-step-prev" class="main-search-form__button_prev"><span>К предыдущему шагу</span></button>
+						<button data-form-step-next="data-form-step-next" class="main-search-form__button">Следующий шаг</button>
+					</div>
+				</div>
+				<div data-form-step="data-form-step" class="main-search-form__screen main-search-form__screen-4 invisible">
+					<div class="main-search-form__steps">Шаг 4 из 5</div>
+					<div class="main-search-form__title main-search-form__title-screen-4">Выберите вариант с отделкой
+						<ul>
+							<li>
+								<input type="checkbox" name="otdelka[]" id="otdelka-doesntmatter" value="Не важно" class="main-search-form__checkbox"/>
+								<label for="otdelka-doesntmatter" class="main-search-form__label">Не важно</label>
+							</li>
+							<li>
+								<input type="checkbox" name="otdelka[]" id="otdelka-razgradsky" value="Разградский" class="main-search-form__checkbox"/>
+								<label for="otdelka-razgradsky" class="main-search-form__label">Разградский</label>
+							</li>
+							<li>
+								<input type="checkbox" name="otdelka[]" id="otdelka-pervyi" value="Первый" class="main-search-form__checkbox"/>
+								<label for="otdelka-pervyi" class="main-search-form__label">Микрорайон «Первый»</label>
+							</li>
+						</ul>
+					</div>
+					<div class="main-search-form__buttons">
+						<button data-form-step-prev="data-form-step-prev" class="main-search-form__button_prev"><span>К предыдущему шагу</span></button>
+						<button data-form-step-next="data-form-step-next" class="main-search-form__button">Следующий шаг</button>
+					</div>
+				</div>
+				<div data-form-step="data-form-step" data-form-step-wait="data-form-step-wait" class="main-search-form__screen main-search-form__screen-5 invisible">
+					<div class="main-search-form__wait"></div>
+					<div class="main-search-form__title main-search-form__title-screen-5">Ваши данные обрабатываются</div>
+				</div>
+				<div data-form-step="data-form-step" class="main-search-form__screen main-search-form__screen-6 invisible">
+					<div class="main-search-form__steps">Шаг 5 из 5</div>
+					<div class="main-search-form__title main-search-form__title-screen-6">Ваши данные переданы эксперту</div>
+					<div class="main-search-form__description">Мы подберем объекты и пришлем на ваш e-mail</div>
+					<ul>
+						<li>
+							<input type="text" name="mail" placeholder="*Ваш e-mail" class="required main-search-form__input-mail"/><span class="main-search-form__input-subfixes">Чтобы прислать вам подборку</span>
+						</li>
+						<li>
+							<input type="text" name="phone" placeholder="Номер телефона в любом формате" class="main-search-form__input-phone"/><span class="main-search-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</span>
+						</li>
+					</ul>
+					<div class="main-search-form__buttons">
+						<button data-form-submit="data-form-submit" class="main-search-form__button">Получить подборку</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<!-- Форма - получение планировок квартир в наличии-->
+		<div data-modal-form="data-modal-form" class="get-plans-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Получение планировок квартир в наличии" data-form-post="get-plans-form">
+				<div class="get-plans-form__title">Получите на e-mail описание<br>и планировки квартир в наличии</div>
+				<div class="get-plans-form__description">укажите количество комнат</div>
+				<div class="get-plans-form__room-checkboxes">
+					<ul>
+						<li>
+							<input type="checkbox" name="rooms[]" id="1-room-plan" value="1" class="get-plans-form__room-checkbox"/>
+							<label for="1-room-plan" class="get-plans-form__room-label">1</label>
+						</li>
+						<li>
+							<input type="checkbox" name="rooms[]" id="2-room-plan" value="2" class="get-plans-form__room-checkbox"/>
+							<label for="2-room-plan" class="get-plans-form__room-label">2</label>
+						</li>
+						<li>
+							<input type="checkbox" name="rooms[]" id="3-room-plan" value="3" class="get-plans-form__room-checkbox"/>
+							<label for="3-room-plan" class="get-plans-form__room-label">3</label>
+						</li>
+						<li>
+							<input type="checkbox" name="rooms[]" id="4-room-plan" value="4+" class="get-plans-form__room-checkbox"/>
+							<label for="4-room-plan" class="get-plans-form__room-label">4+</label>
+						</li>
+					</ul>
+				</div>
+				<div class="get-plans-form-content">
+					<ul>
+						<li>
+							<input type="text" name="mail" placeholder="*Ваш e-mail" class="required get-plans-form__input-mail"/>
+						</li>
+						<li>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="required get-plans-form__input-phone"/>
+							<div class="get-plans-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</div>
+						</li>
+					</ul>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-plans-form__button">Получить</button>
+				<div class="get-plans-form__sub-description">Или позвоните эксперту <strong>(4862) 78-08-15</strong></div>
+			</form>
+		</div>
+		<!-- Форма - узнать подробности про налоговый вычет и экономию-->
+		<div data-modal-form="data-modal-form" class="nalog-economy-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Узнать подробности про налоговый вычет и экономию" data-form-post="nalog-economy-form">
+				<div class="nalog-economy-form__title">Услуги предполагают оказание помощи в подготовке и оформлении документов, которые дают право на получение налоговых вычетов. При этом мы не гарантируем 100% получение налогового вычета, т.к. решение о его выплате и размере принимает Федеральная налоговая служба РФ</div>
+				<div class="nalog-economy-form__description">Чтобы узнать все подробности, оставьте номер телефона</div>
+				<div class="nalog-economy-form-content">
+					<ul>
+						<li>
+							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required nalog-economy-form__input-phone"/>
+						</li>
+					</ul>
+				</div>
+				<button data-form-submit="data-form-submit" class="nalog-economy-form__button">Перезвоните мне</button>
+				<div class="nalog-economy-form__sub-description">Или позвоните эксперту <strong>(4862) 78-08-15</strong></div>
+			</form>
+		</div>
+		<!-- Форма - подборка эксклюзивных предложений от застройщиков-->
+		<div data-modal-form="data-modal-form" class="exclusive-offers-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Подборка эксклюзивных предложений от застройщиков" data-form-post="exclusive-offers-form">
+				<div class="exclusive-offers-form__title">Получите на e-mail подборку эксклюзивных предложений от&nbsp;застройщиков Орла</div>
+				<div class="exclusive-offers-form-content">
+					<ul>
+						<li>
+							<input type="text" name="mail" placeholder="*Ваш e-mail" class="required exclusive-offers-form__input-mail"/>
+							<div class="exclusive-offers-form__input-subfixes">Чтобы выслать вам купон</div>
+						</li>
+						<li>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="required exclusive-offers-form__input-phone"/>
+							<div class="exclusive-offers-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</div>
+						</li>
+					</ul>
+				</div>
+				<button data-form-submit="data-form-submit" class="exclusive-offers-form__button">Получить подборку</button>
+			</form>
+		</div>
+		<!-- Форма - запись на экскурсию-->
+		<div data-modal-form="data-modal-form" class="get-excursion-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Запись на экскурсию" data-form-post="get-excursion-form">
+				<div class="get-excursion-form__title">Оставьте номер телефона, мы перезвоним и согласуем время вашей экскурсии</div>
+				<div class="get-excursion-form-content">
+					<ul>
+						<li>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="required get-excursion-form__input-phone"/>
+							<div class="get-excursion-form__input-subfixes">Чтобы задать вопросы и проконсультировать вас</div>
+						</li>
+					</ul>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-excursion-form__button">Перезвоните мне</button>
+				<div class="get-excursion-form__sub-description">Или позвоните, чтобы записаться <strong>(4862) 78-08-15</strong></div>
+			</form>
+		</div>
+		<!-- Форма - запрос ставок по ипотеке-->
+		<div data-modal-form="data-modal-form" class="get-credit-rates-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Запрос ставок по ипотеке" data-form-post="get-credit-rates-form">
+				<div class="get-credit-rates-form__title">Оставьте номер телефона</div>
+				<div class="get-credit-rates-form__description">Эксперт сообщит вам наиболее выгодные ставки по ипотеке</div>
+				<div class="get-credit-rates-form-content">
+					<ul>
+						<li>
+							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-credit-rates-form__input-phone"/>
+						</li>
+					</ul>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-credit-rates-form__button">Перезвоните мне</button>
+				<div class="get-credit-rates-form__sub-description">Или позвоните: <strong>(4862) 78-08-15</strong></div>
+			</form>
+		</div>
+		<!-- Форма - получения подарка-->
+		<div data-modal-form="data-modal-form" class="get-gift-form_var-1">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Получения подарка" data-form-post="get-gift-form_var-1">
+				<div data-form-set-wait="data-form-set-wait" data-form-set-wait-hide="gift" class="get-gift-form__wait">
+					<div class="get-gift-form__wait-icon"></div>
+					<div class="get-gift-form__title_wait">Идет определение подарка</div>
+				</div>
+				<div class="get-gift-form__title">Вы получаете:</div>
+				<div class="get-gift-form__description">Именной подарочный сертификат на&nbsp;86&nbsp;000&nbsp;руб!</div>
+				<div class="get-gift-form-content">
+					<div class="get-gift-form__sub-description">Включающий</div>
+					<div class="get-gift-form__gift-list">
+						<ul>
+							<li><strong>5 000 руб.</strong> на покупку кухонной столешницы из искусственного камня от компании REALSTONES</li>
+							<li><strong>20 000 руб.</strong> на ремонт новой квартиры от студии ремонта «Ярус»</li>
+							<li><strong>1 000 руб.</strong> на каждую дверь от салона UNION (в комплекте с полотном, коробкой, наличником)</li>
+							<li><strong>5 000 руб.</strong> на дизайн интерьера новой квартиры от студии «Метр 57»</li>
+							<li><strong>2 000 руб.</strong> на покупку декоративной отделки, красок, обоев и штукатурки от студии «Хамелеон»</li>
+							<li><strong>2 000 руб.</strong>  на новую сантехнику от магазина AquaFire</li>
+							<li><strong>1 000 руб.</strong> на услуги грузчиков и транспорта для переезда в новую квартиру от компании «Персональное решение»</li>
+							<li><strong>50 000 руб.</strong> на мебель для новой квартиры от магазина «Альфа-мебель»</li>
+						</ul><span>Чтобы закрепить за собой подарочный сертификат, заполните форму</span>
+					</div>
+					<div class="get-gift-form__gift-inputs">
+						<ul>
+							<li>
+								<input type="text" name="name" placeholder="*ФИО" class="required get-gift-form__input-name"/>
+							</li>
+							<li>
+								<input type="text" name="mail" placeholder="*E-mail" class="required get-gift-form__input-mail"/>
+							</li>
+							<li>
+								<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-gift-form__input-phone"/>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-gift-form__button">Перезвоните мне</button>
+				<div class="get-gift-form__gift-rules">Подарочный сертификат действителен при покупке квартиры в Центре новостроек «Штаб-квартира». Подробные  условия получения подарка – в нашем офисе</div>
+			</form>
+		</div>
+		<!-- Форма - получения подарка-->
+		<div data-modal-form="data-modal-form" class="get-gift-form_var-2">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Получения подарка" data-form-post="get-gift-form_var-2">
+				<div data-form-set-wait="data-form-set-wait" data-form-set-wait-hide="gift" class="get-gift-form__wait">
+					<div class="get-gift-form__wait-icon"></div>
+					<div class="get-gift-form__title_wait">Идет определение подарка</div>
+				</div>
+				<div class="get-gift-form__title">Вы получаете:</div>
+				<div class="get-gift-form__description">Именной подарочный сертификат на&nbsp;36&nbsp;000&nbsp;руб!</div>
+				<div class="get-gift-form-content">
+					<div class="get-gift-form__sub-description">Включающий</div>
+					<div class="get-gift-form__gift-list">
+						<ul>
+							<li><strong>5 000 руб.</strong> на покупку кухонной столешницы из искусственного камня от компании REALSTONES</li>
+							<li><strong>2 000 руб.</strong> на покупку декоративной отделки, красок, обоев и штукатурки от студии «Хамелеон»</li>
+							<li><strong>20 000 руб.</strong> на ремонт новой квартиры от студии ремонта «Ярус»</li>
+							<li><strong>1 000 руб.</strong> на каждую дверь от салона UNION (в комплекте с полотном, коробкой, наличником)</li>
+							<li><strong>5 000 руб.</strong> на дизайн интерьера новой квартиры от студии «Метр 57»</li>
+							<li><strong>2 000 руб.</strong>  на новую сантехнику от магазина AquaFire</li>
+							<li><strong>1 000 руб.</strong> на услуги грузчиков и транспорта для переезда в новую квартиру от компании «Персональное решение»</li>
+						</ul><span>Чтобы закрепить за собой подарочный сертификат, заполните форму</span>
+					</div>
+					<div class="get-gift-form__gift-inputs">
+						<ul>
+							<li>
+								<input type="text" name="name" placeholder="*ФИО" class="required get-gift-form__input-name"/>
+							</li>
+							<li>
+								<input type="text" name="mail" placeholder="*E-mail" class="required get-gift-form__input-mail"/>
+							</li>
+							<li>
+								<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-gift-form__input-phone"/>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-gift-form__button">Перезвоните мне</button>
+				<div class="get-gift-form__gift-rules">Подарочный сертификат действителен при покупке квартиры в Центре новостроек «Штаб-квартира». Подробные  условия получения подарка – в нашем офисе</div>
+			</form>
+		</div>
+		<!-- Форма - получения подарка-->
+		<div data-modal-form="data-modal-form" class="get-gift-form_var-3">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Получения подарка" data-form-post="get-gift-form_var-3">
+				<div data-form-set-wait="data-form-set-wait" data-form-set-wait-hide="gift" class="get-gift-form__wait">
+					<div class="get-gift-form__wait-icon"></div>
+					<div class="get-gift-form__title_wait">Идет определение подарка</div>
+				</div>
+				<div class="get-gift-form__title">Вы получаете:</div>
+				<div class="get-gift-form__description">Именной подарочный сертификат на&nbsp;16&nbsp;000&nbsp;руб!</div>
+				<div class="get-gift-form-content">
+					<div class="get-gift-form__sub-description">Включающий</div>
+					<div class="get-gift-form__gift-list">
+						<ul>
+							<li><strong>5 000 руб.</strong> на покупку кухонной столешницы из искусственного камня от компании REALSTONES</li>
+							<li><strong>1 000 руб.</strong> на каждую дверь от салона UNION (в комплекте с полотном, коробкой, наличником)</li>
+							<li><strong>5 000 руб.</strong> на дизайн интерьера новой квартиры от студии «Метр 57»</li>
+							<li><strong>1 000 руб.</strong> на услуги грузчиков и транспорта для переезда в новую квартиру от компании «Персональное решение»</li>
+							<li><strong>2 000 руб.</strong>  на новую сантехнику от магазина AquaFire</li>
+							<li><strong>2 000 руб.</strong> на покупку декоративной отделки, красок, обоев и штукатурки от студии «Хамелеон»</li>
+						</ul><span>Чтобы закрепить за собой подарочный сертификат, заполните форму</span>
+					</div>
+					<div class="get-gift-form__gift-inputs">
+						<ul>
+							<li>
+								<input type="text" name="name" placeholder="*ФИО" class="required get-gift-form__input-name"/>
+							</li>
+							<li>
+								<input type="text" name="mail" placeholder="*E-mail" class="required get-gift-form__input-mail"/>
+							</li>
+							<li>
+								<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-gift-form__input-phone"/>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-gift-form__button">Перезвоните мне</button>
+				<div class="get-gift-form__gift-rules">Подарочный сертификат действителен при покупке квартиры в Центре новостроек «Штаб-квартира». Подробные  условия получения подарка – в нашем офисе</div>
+			</form>
+		</div>
+		<!-- Форма - бронирования квартиры из популярных предложений-->
+		<div data-modal-form="data-modal-form" class="get-offer-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Бронирования квартиры из популярных предложений" data-form-post="get-offer-form">
+				<div class="get-offer-form__title">Оставьте номер телефона<br>и забронируйте квартиру на 5 дней БЕСПЛАТНО!</div>
+				<div class="get-offer-form-content">
+					<ul>
+						<li>
+							<input type="text" name="phone" placeholder="*Номер телефона" class="required get-offer-form__input-phone"/>
+						</li>
+					</ul>
+					<div class="get-offer-form__sub-description">Или забронируйте квартиру по телефону: <strong>(4862) 78-08-15</strong></div>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-offer-form__button">Забронировать</button>
+			</form>
+		</div>
+		<!-- Форма - партнерство с застройщиками-->
+		<div data-modal-form="data-modal-form" class="get-partnership-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Партнерство с застройщиками" data-form-post="get-partnership-form">
+				<div class="get-partnership-form__title">Приглашаем застройщиков Орла к сотрудничеству! Мы работаем на стандартных условиях, при этом предоставляем покупателю отличный сервис по демонстрации объектов, планировок, консультации по покупке квартир, оформлению ипотеки, налогового вычета и т.п.</div>
+				<div class="get-partnership-form__description">Чтобы узнать все подробности, оставьте номер телефона</div>
+				<div class="get-partnership-form-content">
+					<ul>
+						<li>
+							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-partnership-form__input-phone"/>
+						</li>
+					</ul>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-partnership-form__button">Перезвоните мне</button>
+				<div class="get-partnership-form__sub-description">Или позвоните эксперту <strong>(4862) 78-08-15</strong></div>
+			</form>
+		</div>
+		<!-- Форма - партнерство индивидуальное-->
+		<div data-modal-form="data-modal-form" class="get-individual-partnership-form">
+			<div class="form__close"></div>
+			<form action="/" method="POST" data-form-name="Партнерство с застройщиками" data-form-post="get-partnership-form">
+				<div class="get-individual-partnership-form__title">Хотите предоставлять нашим клиентам, приобретающим квартиры, скидки и подарки? Приглашаем партнеров к бесплатному участию в партнерской программе!</div>
+				<div class="get-individual-partnership-form__description">Чтобы узнать все подробности, оставьте номер телефона</div>
+				<div class="get-individual-partnership-form-content">
+					<ul>
+						<li>
+							<input type="text" name="phone" placeholder="*Ваш номер телефона" class="required get-individual-partnership-form__input-phone"/>
+						</li>
+					</ul>
+				</div>
+				<button data-form-submit="data-form-submit" class="get-individual-partnership-form__button">Перезвоните мне</button>
+				<div class="get-individual-partnership-form__sub-description">Или позвоните эксперту <strong>(4862) 78-08-15</strong></div>
+			</form>
+		</div>
+		<!-- Форма - реквизиты-->
+		<div data-modal-form="data-modal-form" class="show-recvisits-form">
+			<div class="form__close"></div>
+			<ul>
+				<li>ОГРН: 313574016400030</li>
+				<li>ИНН: 575307487102</li>
+				<li>Р/С: 40802810509100001851</li>
+				<li>Банк: ПАО АКБ «Авангард»</li>
+				<li>БИК: 044525201</li>
+				<li>К/С: 30101810000000000201</li>
+			</ul>
+		</div>
+		<!-- Форма - успешная отправка-->
+		<div data-modal-form="data-modal-form" class="success-form">
+			<div class="form__close"></div>
+			<div class="success-form__title">Информация принята</div>
+			<div class="success-form__description">В ближайшее время наш эксперт свяжется с вами</div>
+		</div>
+		<script src="styles/default/js/jquery.app-libs.4.min.js"></script>
+		<script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&amp;lang=ru-RU"></script>
+		<script src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+		<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+		<!-- script(src="styles/default/js-libs/fancybox/jquery.fancybox.pack.js")-->
+		<script src="styles/default/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+
+<section class="filter-block">
+	<div class="layout">
+		<div class="filter-info">
+			<h1 class="filter-info__title">Продажа квартир в&nbsp;новостройках Орла</h1>
+			<div class="filter-info__subtitle">Поиск по базе из более 700 вариантов квартир:</div>
+		</div>
+		<div class="main-info-filter">
+			<div class="main-info-filter__complex">
+				<div class="main-info-filter__label">Жилой комплекс:</div>
+				<label>
+					<select class="main-info-filter__select">
+						<option selected="selected">Не важно</option>
+						<option>Разградский</option>
+					</select>
+				</label>
+			</div>
+			<div class="main-info-filter__rooms">
+				<div class="main-info-filter__label">Комнат:</div>
+				<ul>
+					<li>
+						<input type="checkbox" name="rooms[]" id="1-room-plan" value="1" checked="checked" class="main-info-filter__checkbox"/>
+						<label for="1-room-plan" class="main-info-filter__number">1</label>
+					</li>
+					<li>
+						<input type="checkbox" name="rooms[]" id="2-room-plan" value="2" class="main-info-filter__checkbox"/>
+						<label for="2-room-plan" class="main-info-filter__number">2</label>
+					</li>
+					<li>
+						<input type="checkbox" name="rooms[]" id="3-room-plan" value="3" class="main-info-filter__checkbox"/>
+						<label for="3-room-plan" class="main-info-filter__number">3</label>
+					</li>
+					<li>
+						<input type="checkbox" name="rooms[]" id="4-room-plan" value="4+" class="main-info-filter__checkbox"/>
+						<label for="4-room-plan" class="main-info-filter__number">4+</label>
+					</li>
+				</ul>
+			</div>
+			<div class="main-info-filter__square">
+				<div class="main-info-filter__label">Площадь:</div>
+				<input type="text" placeholder="От" class="main-info-filter__input"/>
+				<div class="main-info-filter__subfix">м<sup>2</sup></div>
+			</div>
+			<div class="main-info-filter__price">
+				<div class="main-info-filter__label">Цена:</div>
+				<input type="text" placeholder="До" class="main-info-filter__input"/>
+				<div class="main-info-filter__subfix">Р</div>
+			</div>
+			<div class="main-info-filter__submit">
+				<button class="main-info-filter__button">Найти</button>
+			</div>
+		</div>
+	</div>
+</section>

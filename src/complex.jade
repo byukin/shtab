@@ -1,0 +1,46 @@
+doctype html5
+html
+	head
+		title
+		meta(charset="utf-8")
+		meta(name="description",content="")
+		meta(name="keywords",content="")
+		meta(http-equiv="content-language", content="ru")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		link(href="styles/default/css/style.css",rel="stylesheet")
+		link(href="styles/default/css/adaptive.css",rel="stylesheet")
+		link(href="styles/default/css/add.css",rel="stylesheet")
+	body
+		// includes/head
+		include includes/head
+		// includes/header
+		include includes/header
+		// includes/main-filter
+		include includes/filter
+		// includes/main-breadcrumbs
+		include includes/breadcrumbs
+		// includes/complex-info
+		include includes/complex-info
+		// includes/flats-summary
+		include includes/flats-summary
+		// includes/main-form
+		include includes/main-form
+		// includes/advantages
+		include includes/advantages
+		// Брать с рабочего сайта !!!!
+		include includes/offers
+		// includes/adv
+		include includes/adv
+		// includes/subscription
+		include includes/subscription
+		// includes/footer
+		include includes/footer
+		// includes/modals
+		include includes/modals
+
+		script(src="styles/default/js/jquery.app-libs.4.min.js")
+		script(src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU")
+		script(src="http://maps.api.2gis.ru/2.0/loader.js?pkg=full")
+		script(src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js")
+		// script(src="styles/default/js-libs/fancybox/jquery.fancybox.pack.js")
+		script(src="styles/default/js/main.js")
