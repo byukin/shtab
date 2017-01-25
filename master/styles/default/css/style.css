@@ -1761,7 +1761,9 @@ input[type="checkbox"].main-info-filter__checkbox:checked + label {
   border-bottom: 1px solid #ebebeb;
 }
 .flats-summary__title {
+  margin-top: 30px;
   margin-bottom: 20px;
+  font-size: 1.75rem;
 }
 .flats-summary__item {
   display: inline-block;
@@ -1777,6 +1779,205 @@ input[type="checkbox"].main-info-filter__checkbox:checked + label {
 }
 .flats-summary__link:hover {
   border-bottom: 1px dotted #ff7100;
+}
+/* ------------- Контент комплекса ------------- */
+.complex-content {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.connected-carousels .stage {
+  width: 550px;
+  position: relative;
+  margin-top: -5px;
+}
+/** Navigation container **/
+.connected-carousels .navigation {
+  width: 550px;
+  margin: 20px auto;
+  position: relative;
+}
+/** Shared carousel styles **/
+.connected-carousels .carousel {
+  overflow: hidden;
+  position: relative;
+}
+.connected-carousels .carousel ul {
+  width: 20000em;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.connected-carousels .carousel li {
+  float: left;
+}
+/** Stage carousel specific styles **/
+.connected-carousels .carousel-stage {
+  height: 400px;
+  border: 10px solid #fff;
+}
+/** Navigation carousel specific styles **/
+.connected-carousels .carousel-navigation {
+  height: 90px;
+  width: 550px;
+  background: #fff;
+  border: 10px solid #fff;
+}
+.connected-carousels .carousel-navigation li {
+  cursor: pointer;
+}
+.connected-carousels .carousel-navigation li img {
+  display: block;
+  border: 5px solid #fff;
+  height: 80px;
+}
+.connected-carousels .carousel-navigation li.active img {
+  border-color: #ccc;
+}
+/** Stage carousel controls **/
+.connected-carousels .prev-stage,
+.connected-carousels .next-stage {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 305px;
+  height: 410px;
+  color: #fff;
+}
+.connected-carousels .prev-stage {
+  left: 0;
+  border: none;
+}
+.connected-carousels .next-stage {
+  right: 0;
+  border: none;
+}
+.connected-carousels .prev-stage.inactive,
+.connected-carousels .next-stage.inactive {
+  display: none;
+}
+.connected-carousels .prev-stage span,
+.connected-carousels .next-stage span {
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background: #4e443c;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 1px #000;
+  font: 24px/27px Arial, sans-serif;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 2px #999;
+  -moz-box-shadow: 0 0 2px #999;
+  box-shadow: 0 0 2px #999;
+}
+.connected-carousels .prev-stage span {
+  left: 20px;
+}
+.connected-carousels .next-stage span {
+  right: 20px;
+}
+.connected-carousels .prev-stage:hover span,
+.connected-carousels .next-stage:hover span {
+  display: block;
+}
+/** Navigation carousel controls **/
+.connected-carousels .prev-navigation,
+.connected-carousels .next-navigation {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #4e443c;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 1px #000;
+  font: 16px/29px Arial, sans-serif;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 2px #999;
+  -moz-box-shadow: 0 0 2px #999;
+  box-shadow: 0 0 2px #999;
+}
+.connected-carousels .prev-navigation {
+  left: -15px;
+  top: 22px;
+  text-indent: 6px;
+}
+.connected-carousels .next-navigation {
+  right: -15px;
+  top: 22px;
+  text-indent: 20px;
+}
+.connected-carousels .prev-navigation.inactive,
+.connected-carousels .next-navigation.inactive {
+  opacity: 0.5;
+  cursor: default;
+}
+.complex-content-info {
+  display: flex;
+}
+.complex-content-info-left {
+  flex-basis: 50%;
+}
+.complex-content-info-right {
+  flex-basis: 50%;
+}
+.complex-content-info__title {
+  font-size: 1.375rem;
+  margin-top: 0;
+}
+.complex-content-info__button {
+  background: #ff7100;
+  border: none;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9375rem;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.complex-content-info__button:hover {
+  background: #fe811e;
+}
+.complex-content-info-list {
+  margin-top: 30px;
+}
+.complex-content-info-list__item {
+  display: flex;
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ebebeb;
+}
+.complex-content-info-list__label {
+  flex-basis: 50%;
+  font-size: 0.9375rem;
+}
+.complex-content-info-list__text {
+  flex-basis: 50%;
+  font-size: 0.9375rem;
+}
+.complex-content-info-list__text span {
+  background: #ebebeb;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+.complex-content-info__map-link {
+  font-weight: bold;
+  color: #0081ba;
+  border-bottom: 1px dotted #0081ba;
+  margin-top: 15px;
+  display: inline-block;
 }
 /* ------------- Модалы ------------- */
 .scrolltop__button {
