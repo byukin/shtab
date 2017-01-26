@@ -1495,8 +1495,8 @@ input[type="checkbox"].main-info-filter__checkbox
 .breadcrumbs
 	padding 20px
 	box-sizing border-box
-	padding-top 80px
-	padding-bottom 80px
+	padding-top 40px
+	padding-bottom 40px
 	text-align center
 .breadcrumbs__item
 	list-style-type none
@@ -1853,6 +1853,11 @@ input[type="checkbox"].main-info-filter__checkbox
 	background #f8fcff
 	border 1px solid #dee8ef
 	border-bottom none
+	box-sizing border-box
+	margin-right -1px
+	margin-left -1px
+.complex-content-flats.active
+	display flex
 .complex-content-flats
 	background #f8fcff
 	border 1px solid #dee8ef
@@ -1860,13 +1865,16 @@ input[type="checkbox"].main-info-filter__checkbox
 	z-index 99
 	padding 30px
 	box-sizing border-box
-	display flex
+	display none
 .complex-content-floors
 	flex-basis 15%
 	padding 30px
 	box-sizing border-box
-.complex-content-rooms
+.complex-content-rooms.active
+	display block
 	flex-basis 35%
+.complex-content-rooms
+	display none
 	padding-left 30px
 	padding-right 60px
 	box-sizing border-box
@@ -1958,6 +1966,92 @@ input[type="checkbox"].main-info-filter__checkbox
 	font-size 0.9375rem
 	box-sizing border-box
 
+/* ------------- Описание комплекса ------------- */
+
+
+.complex-description
+	padding 20px
+	padding-bottom 40px
+	box-sizing border-box
+	text-align center
+	margin-top 0px
+.complex-description__title
+	color #31475d
+	font-size 2.5rem
+.complex-description__text
+	text-align left
+	margin-bottom 60px
+table
+	border-collapse collapse
+	box-sizing border-box
+	width 100%
+	margin-top 30px
+tr
+	border 1px solid #D4D4D4
+td
+	padding 10px
+	border 1px solid #D4D4D4
+
+
+/* ------------- Страница квартиры ------------- */
+
+.flat-content
+	padding 20px
+	box-sizing border-box
+	padding-bottom 40px
+.flat-content-info
+	display flex
+.flat-content-info-left
+	flex-basis 50%
+.flat-content-info-right
+	flex-basis 50%
+.flat-content__title
+	font-size 2.5rem
+	text-align center
+	margin-top 0px
+	color #ff7100
+.flat-content-info__button
+	background #ff7100
+	border none
+	color #fff
+	padding 15px 25px
+	border-radius 3px
+	text-transform uppercase
+	font-weight bold
+	font-size 0.9375rem
+	text-align center
+	cursor pointer
+	&:hover
+		background #fe811e
+.flat-content-info__button_plain
+	background #fff
+	border 1px solid #ff7100
+	color #ff7100
+	padding 5px 10px
+	border-radius 3px
+	margin-top 10px
+	margin-bottom 10px
+	font-weight normal
+	font-size 0.9375rem
+	text-align center
+	cursor pointer
+	&:hover
+		background #fe811e
+		border 1px solid #fe811e
+		color #fff
+.flat-content-info-list
+	margin-top 30px
+.flat-content-info-list__item
+	display flex
+	padding-bottom 8px
+	margin-bottom 8px
+	border-bottom 1px solid #ebebeb
+.flat-content-info-list__label
+	flex-basis 50%
+	font-size 0.9375rem
+.flat-content-info-list__text
+	flex-basis 50%
+	font-size 0.9375rem
 
 
 /* ------------- Модалы ------------- */

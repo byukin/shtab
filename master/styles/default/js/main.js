@@ -32,6 +32,23 @@ var appLocal = {
 };
 
 
+var appTabs = {
+	init:function() {
+		appTabs.bindOpen('[data-tab-click]', 'ent');
+	},
+	bindOpen:function(sElem , sGroup) {
+		var rElem = $(sElem);
+		rElem.click(function(){
+			var rThis = $(this);
+			var sOpen = rThis.data('tab-click');
+			$('[data-tab-group="'+sGroup+'"]').find('[data-tab-open]').removeClass('active');
+			$('[data-tab-open="'+sOpen+'"]').addClass('active');
+			rElem.removeClass('active')
+			rThis.addClass('active');
+		});
+	},
+};
+
 var appScrolling = {
 	toTopButton:function(){
 		$(window).scroll(function() {
@@ -958,6 +975,7 @@ var appBind = {
 			appFormSubmit.initClick();
 			appMetricsHref.init();
 			appGiftsBox.init();
+			appTabs.init();
 		});
 		$(window).load(function() {
 			//appSite.init();

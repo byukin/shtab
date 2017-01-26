@@ -68,26 +68,133 @@
 				</div>
 			</div>
 		</div>
-		<div class="complex-content-tabs">
+		<div data-tab-group="ent" class="complex-content-tabs">
 			<div class="complex-content-entrance"><span>Подъезд</span>
 				<ul>
-					<li class="active">1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
+					<li data-tab-click="ent1" class="active">1</li>
+					<li data-tab-click="ent2">2</li>
+					<li data-tab-click="ent3">3</li>
+					<li data-tab-click="ent4">4</li>
 				</ul>
 			</div>
-			<div class="complex-content-flats">
+			<div data-tab-open="ent1" class="complex-content-flats active">
 				<div class="complex-content-floors">
 					<ul>
-						<li class="active">1-2 этаж</li>
-						<li>3-7 этаж</li>
-						<li>8-11 этаж</li>
-						<li>12-13 этаж</li>
-						<li>14-17 этаж</li>
+						<li data-tab-click="fl1" class="active">1-2 этаж</li>
+						<li data-tab-click="fl2">3-7 этаж</li>
+						<li data-tab-click="fl3">8-11 этаж</li>
+						<li data-tab-click="fl4">12-13 этаж</li>
+						<li data-tab-click="fl5">14-17 этаж</li>
 					</ul>
 				</div>
-				<div class="complex-content-rooms">
+				<div data-tab-open="fl1" class="complex-content-rooms active">
+					<ul>
+						<li><span>1</span> Однокомнатные
+							<ul>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+								<li class="complex-content-rooms__item active">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+							</ul>
+						</li>
+						<li><span>2</span> Двухкомнатные
+							<ul>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+							</ul>
+						</li>
+						<li><span>3</span> Трехкомнатные
+							<ul>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div data-tab-open="fl2" class="complex-content-rooms">
+					<ul>
+						<li><span>1</span> Однокомнатные
+							<ul>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+								<li class="complex-content-rooms__item active">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+							</ul>
+						</li>
+						<li><span>2</span> Двухкомнатные
+							<ul>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+							</ul>
+						</li>
+						<li><span>3</span> Трехкомнатные
+							<ul>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+								<li class="complex-content-rooms__item">
+									<div class="complex-content-square">41.0 м<sup>2</sup></div>
+									<div class="complex-content-divider"></div>
+									<div class="complex-content-price">2 550 000 Р</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="complex-content-plan">
+					<div class="complex-content-plan__thumbnail"><img src="uploads/img/complex-content-plan__thumbnail.jpg"/></div>
+					<div class="complex-content-plan__overlay">Наведите курсор на квартиру чтобы увидеть ее планировку</div>
+				</div>
+			</div>
+			<div data-tab-open="ent2" class="complex-content-flats">
+				<div class="complex-content-floors">
+					<ul>
+						<li data-tab-click="fl1" class="active">1-2 этаж</li>
+						<li data-tab-click="fl2">3-7 этаж</li>
+						<li data-tab-click="fl3">8-11 этаж</li>
+						<li data-tab-click="fl4">12-13 этаж</li>
+						<li data-tab-click="fl5">14-17 этаж</li>
+					</ul>
+				</div>
+				<div data-tab-open="fl1" class="complex-content-rooms active">
 					<ul>
 						<li><span>1</span> Однокомнатные
 							<ul>

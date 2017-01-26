@@ -66,23 +66,56 @@ section.complex-content
 				.complex-content-info-excursion__submit
 					button.complex-content-info-excursion__view Записаться на осмотр дома
 					button.complex-content-info-excursion__tour Записаться на 3-d экскурсию
-		.complex-content-tabs
+		.complex-content-tabs(data-tab-group="ent")
 			.complex-content-entrance
 				span Подъезд
 				ul
-					li.active 1
-					li 2
-					li 3
-					li 4
-			.complex-content-flats
+					li(data-tab-click="ent1").active 1
+					li(data-tab-click="ent2") 2
+					li(data-tab-click="ent3") 3
+					li(data-tab-click="ent4") 4
+			.complex-content-flats(data-tab-open="ent1").active
 				.complex-content-floors
 					ul
-						li.active 1-2 этаж
-						li 3-7 этаж
-						li 8-11 этаж
-						li 12-13 этаж
-						li 14-17 этаж
-				.complex-content-rooms
+						li(data-tab-click="fl1").active 1-2 этаж
+						li(data-tab-click="fl2") 3-7 этаж
+						li(data-tab-click="fl3") 8-11 этаж
+						li(data-tab-click="fl4") 12-13 этаж
+						li(data-tab-click="fl5") 14-17 этаж
+				.complex-content-rooms(data-tab-open="fl1").active
+					ul
+						li <span>1</span> Однокомнатные
+							ul
+								li.complex-content-rooms__item
+									.complex-content-square 41.0 м<sup>2</sup>
+									.complex-content-divider
+									.complex-content-price 2 550 000 Р
+								li.complex-content-rooms__item.active
+									.complex-content-square 41.0 м<sup>2</sup>
+									.complex-content-divider
+									.complex-content-price 2 550 000 Р
+								li.complex-content-rooms__item
+									.complex-content-square 41.0 м<sup>2</sup>
+									.complex-content-divider
+									.complex-content-price 2 550 000 Р
+						li <span>2</span> Двухкомнатные
+							ul
+								li.complex-content-rooms__item
+										.complex-content-square 41.0 м<sup>2</sup>
+										.complex-content-divider
+										.complex-content-price 2 550 000 Р
+						li <span>3</span> Трехкомнатные
+							ul
+								li.complex-content-rooms__item
+										.complex-content-square 41.0 м<sup>2</sup>
+										.complex-content-divider
+										.complex-content-price 2 550 000 Р
+								li.complex-content-rooms__item
+										.complex-content-square 41.0 м<sup>2</sup>
+										.complex-content-divider
+										.complex-content-price 2 550 000 Р
+
+				.complex-content-rooms(data-tab-open="fl2")
 					ul
 						li <span>1</span> Однокомнатные
 							ul
@@ -119,6 +152,56 @@ section.complex-content
 					.complex-content-plan__thumbnail
 						img(src="uploads/img/complex-content-plan__thumbnail.jpg")
 					.complex-content-plan__overlay Наведите курсор на квартиру чтобы увидеть ее планировку
+
+
+			.complex-content-flats(data-tab-open="ent2")
+				.complex-content-floors
+					ul
+						li(data-tab-click="fl1").active 1-2 этаж
+						li(data-tab-click="fl2") 3-7 этаж
+						li(data-tab-click="fl3") 8-11 этаж
+						li(data-tab-click="fl4") 12-13 этаж
+						li(data-tab-click="fl5") 14-17 этаж
+				.complex-content-rooms(data-tab-open="fl1").active
+					ul
+						li <span>1</span> Однокомнатные
+							ul
+								li.complex-content-rooms__item
+									.complex-content-square 41.0 м<sup>2</sup>
+									.complex-content-divider
+									.complex-content-price 2 550 000 Р
+								li.complex-content-rooms__item.active
+									.complex-content-square 41.0 м<sup>2</sup>
+									.complex-content-divider
+									.complex-content-price 2 550 000 Р
+								li.complex-content-rooms__item
+									.complex-content-square 41.0 м<sup>2</sup>
+									.complex-content-divider
+									.complex-content-price 2 550 000 Р
+						li <span>2</span> Двухкомнатные
+							ul
+								li.complex-content-rooms__item
+										.complex-content-square 41.0 м<sup>2</sup>
+										.complex-content-divider
+										.complex-content-price 2 550 000 Р
+						li <span>3</span> Трехкомнатные
+							ul
+								li.complex-content-rooms__item
+										.complex-content-square 41.0 м<sup>2</sup>
+										.complex-content-divider
+										.complex-content-price 2 550 000 Р
+								li.complex-content-rooms__item
+										.complex-content-square 41.0 м<sup>2</sup>
+										.complex-content-divider
+										.complex-content-price 2 550 000 Р
+
+				.complex-content-plan
+					.complex-content-plan__thumbnail
+						img(src="uploads/img/complex-content-plan__thumbnail.jpg")
+					.complex-content-plan__overlay Наведите курсор на квартиру чтобы увидеть ее планировку
+
+
+
 
 
 
