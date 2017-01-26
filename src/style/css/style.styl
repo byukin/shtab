@@ -1567,7 +1567,7 @@ input[type="checkbox"].main-info-filter__checkbox
 /** Navigation container **/
 
 .connected-carousels .navigation {
-    width: 550px;
+    width: 440px;
     margin: 20px auto;
     position: relative;
 }
@@ -1602,7 +1602,7 @@ input[type="checkbox"].main-info-filter__checkbox
 
 .connected-carousels .carousel-navigation {
     height: 90px;
-    width: 550px;
+    width: 400px;
 }
 
 .connected-carousels .carousel-navigation li {
@@ -1805,6 +1805,141 @@ input[type="checkbox"].main-info-filter__checkbox
 	&:hover
 		color #ff7100
 
+.complex-content-tabs
+	margin-top 50px
+.complex-content-entrance
+	text-align center
+	&:before
+		content "Выберите квартиру"
+		font-weight bold
+		font-size 1.1875rem
+		display inline-block
+		position absolute
+		left 0
+		margin-top 7px
+.complex-content-entrance span
+	font-weight bold
+	display inline-block
+.complex-content-entrance ul
+	display inline-block
+	vertical-align middle
+	margin-left 15px
+.complex-content-entrance ul li
+	display inline-block
+	list-style-type none
+	font-size 1.125rem
+	font-weight bold
+	padding 10px 17px
+	vertical-align middle
+	color #0081ba
+	cursor pointer
+	position relative
+	z-index 100
+	margin-bottom -1px
+.complex-content-entrance ul li.active
+	cursor default
+	color #000
+	background #f8fcff
+	border 1px solid #dee8ef
+	border-bottom none
+.complex-content-flats
+	background #f8fcff
+	border 1px solid #dee8ef
+	position relative
+	z-index 99
+	padding 30px
+	box-sizing border-box
+	display flex
+.complex-content-floors
+	flex-basis 15%
+	padding 30px
+	box-sizing border-box
+.complex-content-rooms
+	flex-basis 35%
+	padding-left 30px
+	padding-right 60px
+	box-sizing border-box
+.complex-content-plan
+	flex-basis 50%
+	position relative
+	padding 30px
+	background #fff
+	text-align center
+
+
+.complex-content-floors ul li
+	color #0081ba
+	margin-bottom 30px
+	cursor pointer
+	white-space nowrap
+.complex-content-floors ul li.active
+	color #000
+	cursor default
+	font-weight bold
+
+.complex-content-rooms ul li span
+	font-size 1.9375rem
+	color #d6dadc
+	display inline-block
+	margin-right 15px
+	font-weight bold
+	position absolute
+	margin-left -30px
+	margin-top -10px
+.complex-content-rooms ul li ul
+	border-top 1px solid #ebebeb
+	margin-top 10px
+	margin-bottom 15px
+
+.complex-content-rooms__item
+	display flex
+	cursor pointer
+.complex-content-rooms__item.active
+	background #fff
+	.complex-content-square
+		color #000
+	.complex-content-price
+		color #000
+.complex-content-square
+	flex-basis 25%
+	padding 5px
+	color #0081ba
+	white-space nowrap
+.complex-content-divider
+	flex-basis 40%
+	position relative
+	padding 5px
+	&:before
+		content ""
+		border-bottom 1px dotted #999
+		margin-top 15px
+		margin-left -5px
+		position absolute
+		width 90%
+		display block
+.complex-content-price
+	flex-basis 35%
+	padding 5px
+	margin-top 3px
+	color #0081ba
+	font-weight bold
+	white-space nowrap
+
+.complex-content-plan__thumbnail
+	height 260px
+.complex-content-plan__overlay
+	position absolute
+	bottom 0
+	width 100%
+	background rgba(0,0,0,0.6) url(icons/complex-content-plan__overlay.png)
+	background-position 12px 12px
+	background-repeat no-repeat
+	color #fff
+	font-weight bold
+	padding 10px 15px
+	margin-left -30px
+	font-size 0.9375rem
+	box-sizing border-box
 
 
 
