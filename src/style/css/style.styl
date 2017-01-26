@@ -259,6 +259,8 @@ h2
 	background #0081ba
 	padding 30px
 	display flex
+	position relative
+	z-index 10
 .main-info-filter__complex
 	margin-right 30px
 .main-info-filter__rooms
@@ -1469,6 +1471,15 @@ input[type="checkbox"].main-info-filter__checkbox
 	padding-right 20px
 	box-sizing border-box
 	margin-top -30px
+	&:after
+		content ""
+		position absolute
+		left 0
+		bottom 0
+		height 60px
+		width 100%
+		background #fff
+		z-index 0
 .filter-info__title
 	text-align center
 	color #31475d
@@ -1894,12 +1905,16 @@ input[type="checkbox"].main-info-filter__checkbox
 .complex-content-rooms__item
 	display flex
 	cursor pointer
-.complex-content-rooms__item.active
-	background #fff
-	.complex-content-square
-		color #000
-	.complex-content-price
-		color #000
+	transition-duration .3s
+.complex-content-rooms__item
+	&:hover
+		background #fff
+		.complex-content-square
+			color #000
+			transition-duration .3s
+		.complex-content-price
+			color #000
+			transition-duration .3s
 .complex-content-square
 	flex-basis 25%
 	padding 5px
@@ -1925,18 +1940,20 @@ input[type="checkbox"].main-info-filter__checkbox
 	font-weight bold
 	white-space nowrap
 
-.complex-content-plan__thumbnail
-	height 260px
+.complex-content-plan__thumbnail img
+	width 100%
+	max-width 260px
 .complex-content-plan__overlay
 	position absolute
 	bottom 0
 	width 100%
 	background rgba(0,0,0,0.6) url(icons/complex-content-plan__overlay.png)
-	background-position 12px 12px
+	background-position 17px 17px
 	background-repeat no-repeat
 	color #fff
 	font-weight bold
-	padding 10px 15px
+	padding 15px 15px
+	padding-left 40px
 	margin-left -30px
 	font-size 0.9375rem
 	box-sizing border-box
