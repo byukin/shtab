@@ -2307,6 +2307,7 @@ td {
 .flat-submit {
   padding: 20px;
   box-sizing: border-box;
+  padding-bottom: 40px;
 }
 .flat-submit-forms {
   display: flex;
