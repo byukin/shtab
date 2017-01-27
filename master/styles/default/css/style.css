@@ -2303,6 +2303,65 @@ td {
   flex-basis: 50%;
   font-size: 0.9375rem;
 }
+/* ------------- Блок форм на странице квартиры ------------- */
+.flat-submit {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.flat-submit-forms {
+  display: flex;
+}
+.flat-submit-view {
+  padding: 40px;
+  flex-basis: 50%;
+  background: #f8fcff;
+  border-right: 1px solid #ebebeb;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+.flat-submit-excursion {
+  padding: 40px;
+  flex-basis: 50%;
+  background: #f8fcff;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+.flat-submit-view__text {
+  margin-bottom: 20px;
+}
+.flat-submit-excursion__text {
+  margin-bottom: 20px;
+}
+.flat-submit-view__button {
+  border-radius: 3px;
+  border: 1px solid #ff7100;
+  background: url("icons/complex-info-view.jpg");
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  padding: 10px 15px;
+  padding-left: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.flat-submit-view__button:hover {
+  color: #ff7100;
+}
+.flat-submit-excursion__button {
+  border-radius: 3px;
+  border: 1px solid #ff7100;
+  background: url("icons/complex-info-excursion.jpg");
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  padding: 10px 15px;
+  padding-left: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.flat-submit-excursion__button:hover {
+  color: #ff7100;
+}
 /* ------------- Модалы ------------- */
 .scrolltop__button {
   position: fixed;
