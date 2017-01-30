@@ -74,6 +74,39 @@
   .head-menu__item {
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 0.9375rem;
+  }
+  .main-info-filter {
+    flex-wrap: wrap;
+  }
+  .main-info-filter__complex {
+    flex-basis: 70%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .main-info-filter__select {
+    width: 90%;
+  }
+  .main-info-filter__rooms {
+    flex-basis: 30%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .main-info-filter__input {
+    width: 90%;
+    max-width: 80%;
+  }
+  .main-info-filter__square {
+    flex-basis: 35%;
+    margin-right: 0;
+  }
+  .main-info-filter__price {
+    flex-basis: 35%;
+    margin-right: 0;
+  }
+  .main-info-filter__submit {
+    flex-basis: 30%;
+    margin-right: 0;
   }
 }
 @media (max-width: 1140px) {
@@ -480,6 +513,39 @@
   .creditals {
     padding-left: 0;
     padding-right: 0;
+  }
+  .main-info-filter__complex {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  .main-info-filter__select {
+    width: 100%;
+  }
+  .main-info-filter__rooms {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .main-info-filter__input {
+    width: 95%;
+    max-width: 100%;
+  }
+  .main-info-filter__square {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .main-info-filter__price {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .main-info-filter__submit {
+    flex-basis: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 }
 @media (max-width: 480px) {
